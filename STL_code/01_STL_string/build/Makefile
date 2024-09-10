@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/Cmake
+CMAKE_SOURCE_DIR = /home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/Cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/build
+CMAKE_BINARY_DIR = /home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/build/CMakeFiles /home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/build/CMakeFiles /home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named myname
+# Target rules for targets named 01_STL_string
 
 # Build rule for target.
-myname: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myname
-.PHONY : myname
+01_STL_string: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 01_STL_string
+.PHONY : 01_STL_string
 
 # fast build rule for target.
-myname/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myname.dir/build.make CMakeFiles/myname.dir/build
-.PHONY : myname/fast
+01_STL_string/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/01_STL_string.dir/build.make CMakeFiles/01_STL_string.dir/build
+.PHONY : 01_STL_string/fast
 
-home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.o: home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.o
-.PHONY : home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.o
+home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.o: home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.o
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.o
 
 # target to build an object file
-home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myname.dir/build.make CMakeFiles/myname.dir/home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.o
-.PHONY : home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.o
+home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/01_STL_string.dir/build.make CMakeFiles/01_STL_string.dir/home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.o
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.o
 
-home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.i: home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.i
-.PHONY : home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.i
+home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.i: home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.i
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.i
 
 # target to preprocess a source file
-home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myname.dir/build.make CMakeFiles/myname.dir/home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.i
-.PHONY : home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.i
+home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/01_STL_string.dir/build.make CMakeFiles/01_STL_string.dir/home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.i
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.i
 
-home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.s: home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.s
-.PHONY : home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.s
+home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.s: home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.s
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.s
 
 # target to generate assembly for a file
-home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myname.dir/build.make CMakeFiles/myname.dir/home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.s
-.PHONY : home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.cpp.s
+home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/01_STL_string.dir/build.make CMakeFiles/01_STL_string.dir/home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.s
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... myname"
-	@echo "... home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.o"
-	@echo "... home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.i"
-	@echo "... home/liubo/00-liubo/my_github/Cpp_design_pattern/code/observe_pattern/src/main.s"
+	@echo "... 01_STL_string"
+	@echo "... home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.o"
+	@echo "... home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.i"
+	@echo "... home/liubo/00-liubo/my_github/STL_tutorial/STL/01_STL_string/src/01_STL_string.s"
 .PHONY : help
 
 

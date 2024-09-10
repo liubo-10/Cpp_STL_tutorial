@@ -1,3 +1,8 @@
 {
-    "cmake.sourceDirectory": "E:/my_github/STL_tutorial/STL/01_STL_string/Cmake"
+    "cmake.sourceDirectory": "E:/my_github/STL_tutorial/STL/01_STL_string/Cmake",
+    "files.associations": {
+        "string": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp"
+    }
 }

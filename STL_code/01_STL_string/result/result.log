@@ -1,0 +1,37 @@
+----------------begain------------------
+
+----------------s.c_str()内存 测试------------------
+abcdefg
+abcdefg
+0x7fff5d257c30
+0x7fff5d257c30
+0x7fff5d257c31
+0x7fff5d257c31
+
+----------------s[] 测试------------------
+c
+d
+c
+d
+cdefg
+defg
+cdefg
+defg
+
+----------------s重新赋值 测试------------------
+ab12efg
+12efg
+2efg
+0x7fff5d257c30
+pp12ppppppppp
+12ppppppppp
+2ppppppppp
+0x7fff5d257c30
+qqqqqqqqqqqqqqqqqqqqq
+12
+2
+
+12
+0x7fff5d257c30
+0x649aa0dca2c0
+----------------end------------------
