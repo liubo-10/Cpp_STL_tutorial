@@ -20,5 +20,5 @@ aux_source_directory(${PROJECT_MAIN_PATH}/src  SRC_LIST)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_MAIN_PATH}/bin)
 
 # 生成可执行文件
-add_executable(01_STL_string  ${SRC_LIST})
+add_executable(vector_size  ${SRC_LIST})
 

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/Cmake
+CMAKE_SOURCE_DIR = /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/Cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/build
+CMAKE_BINARY_DIR = /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/build/CMakeFiles /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/build/CMakeFiles /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 01_STL_string
+# Target rules for targets named vector_size
 
 # Build rule for target.
-01_STL_string: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 01_STL_string
-.PHONY : 01_STL_string
+vector_size: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vector_size
+.PHONY : vector_size
 
 # fast build rule for target.
-01_STL_string/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/01_STL_string.dir/build.make CMakeFiles/01_STL_string.dir/build
-.PHONY : 01_STL_string/fast
+vector_size/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_size.dir/build.make CMakeFiles/vector_size.dir/build
+.PHONY : vector_size/fast
 
-home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.o: home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.o
-.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.o
+home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.o: home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.o
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.o
 
 # target to build an object file
-home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/01_STL_string.dir/build.make CMakeFiles/01_STL_string.dir/home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.o
-.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.o
+home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_size.dir/build.make CMakeFiles/vector_size.dir/home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.o
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.o
 
-home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.i: home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.i
-.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.i
+home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.i: home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.i
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.i
 
 # target to preprocess a source file
-home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/01_STL_string.dir/build.make CMakeFiles/01_STL_string.dir/home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.i
-.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.i
+home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_size.dir/build.make CMakeFiles/vector_size.dir/home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.i
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.i
 
-home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.s: home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.s
-.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.s
+home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.s: home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.s
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.s
 
 # target to generate assembly for a file
-home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/01_STL_string.dir/build.make CMakeFiles/01_STL_string.dir/home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.s
-.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.cpp.s
+home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_size.dir/build.make CMakeFiles/vector_size.dir/home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.s
+.PHONY : home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 01_STL_string"
-	@echo "... home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.o"
-	@echo "... home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.i"
-	@echo "... home/liubo/00-liubo/my_github/STL_tutorial/STL_code/08_STL_reserve_resize/src/01_STL_string.s"
+	@echo "... vector_size"
+	@echo "... home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.o"
+	@echo "... home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.i"
+	@echo "... home/liubo/00-liubo/my_github/STL_tutorial/STL_code/02_STL_vector/vector_size/src/vector_size.s"
 .PHONY : help
 
 
