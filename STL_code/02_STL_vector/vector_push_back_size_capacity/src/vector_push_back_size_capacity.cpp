@@ -54,8 +54,8 @@ int main()
     cout << "v_test1.capacity:" << v_test1.capacity() << endl << endl;
 
     // 再次push_back(1)，容器能够提供的空间是2，又不够，需要申请空间
-    // 申请后的空间为原来2倍，2 X 2 = 4，那么size()为3，capacity()为4
-    // size()为3，capacity()为3
+    // 申请后的空间为原来2倍，2 X 2 = 4
+    // size()为3，capacity()为4
     v_test1.push_back(1);
     cout << "3 v_test1.push_back(1)" << endl;
     cout << "v_test1.size:" << v_test1.size() << endl;
@@ -69,44 +69,66 @@ int main()
     cout << "v_test1.capacity:" << v_test1.capacity() << endl << endl;
 
     // 再次push_back(1)，容器能够提供的空间是4，又不够，需要申请空间
-    // 申请后的空间为原来2倍，4 X 2 = 8，那么size()为3，capacity()为4
-    // size()为3，capacity()为3
+    // 申请后的空间为原来2倍，4 X 2 = 8
+    // size()为5，capacity()为8
     v_test1.push_back(1);
     cout << "5 v_test1.push_back(1)" << endl;
     cout << "v_test1.size:" << v_test1.size() << endl;
     cout << "v_test1.capacity:" << v_test1.capacity() << endl << endl;
 
-    cout << "----------------test2------------------" << endl << endl;
-
-    vector<int> v_test2;
-    cout << "capacity: " << v_test2.capacity() << "  size: " << v_test2.size() << endl;
-    // 添加10个元素
-    for (int i = 0; i < 10; ++i) {
-        v_test2.push_back(i);
-        cout << "capacity: " << v_test2.capacity() << "  size: " << v_test2.size() << endl;
+    // 将容量用完
+    // size()为8，capacity()为8
+    while (v_test1.size() != v_test1.capacity()) {
+        v_test1.push_back(0);
     }
+    cout << "v_test1.size() == v_test1.capacity()" << endl;
+    cout << "v_test1.size:" << v_test1.size() << endl;
+    cout << "v_test1.capacity:" << v_test1.capacity() << endl << endl;
+
+    // 再次push_back(1)，容器能够提供的空间是8，又不够，需要申请空间
+    // 申请后的空间为原来2倍，8 X 2 = 16
+    // size()为9，capacity()为16
+    v_test1.push_back(1);
+    cout << "9 v_test1.push_back(1)" << endl;
+    cout << "v_test1.size:" << v_test1.size() << endl;
+    cout << "v_test1.capacity:" << v_test1.capacity() << endl << endl;
+
     // 将容量用完
-    while (v_test2.size() != v_test2.capacity()) v_test2.push_back(0);
-    // 添加1个元素
-    cout << "size = capacity. insert one element\n";
-    v_test2.push_back(0);
-    cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
+    // size()为16，capacity()为16
+    while (v_test1.size() != v_test1.capacity()) {
+        v_test1.push_back(0);
+    }
+    cout << "v_test1.size() == v_test1.capacity()" << endl;
+    cout << "v_test1.size:" << v_test1.size() << endl;
+    cout << "v_test1.capacity:" << v_test1.capacity() << endl << endl;
 
-    v_test2.reserve(100);
-    cout << "reserve capacity 100\n";
-    cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
+    // 再次push_back(1)，容器能够提供的空间是16，又不够，需要申请空间
+    // 申请后的空间为原来2倍，16 X 2 = 32
+    // size()为17，capacity()为32
+    v_test1.push_back(1);
+    cout << "17 v_test1.push_back(1)" << endl;
+    cout << "v_test1.size:" << v_test1.size() << endl;
+    cout << "v_test1.capacity:" << v_test1.capacity() << endl << endl;
 
-    // 将容量用完
-    while (v_test2.size() != v_test2.capacity()) v_test2.push_back(42);
-    // 添加1个元素
-    cout << "size = capacity. insert one element\n";
-    v_test2.push_back(0);
-    cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
 
-    v_test2.resize(50);
-    cout << "resize size 50\n";
-    cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
-    getchar();
+
+
+
+    // v_test2.reserve(100);
+    // cout << "reserve capacity 100\n";
+    // cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
+
+    // // 将容量用完
+    // while (v_test2.size() != v_test2.capacity()) v_test2.push_back(42);
+    // // 添加1个元素
+    // cout << "size = capacity. insert one element\n";
+    // v_test2.push_back(0);
+    // cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
+
+    // v_test2.resize(50);
+    // cout << "resize size 50\n";
+    // cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
+    // getchar();
 
     cout << "----------------end------------------" << endl;
     return EXIT_SUCCESS;
