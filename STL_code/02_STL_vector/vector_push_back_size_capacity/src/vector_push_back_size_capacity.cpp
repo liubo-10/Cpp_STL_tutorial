@@ -28,8 +28,7 @@ using std::vector;
  ******************************************************************************/
 int main()
 {
-    cout << "----------------begain------------------" << endl;
-    cout << "----------------test1------------------" << endl;
+    cout << "----------------begain------------------" << endl << endl;
 
     vector<int> v_test1;
     // 刚声明并且没有初始化的向量
@@ -110,26 +109,7 @@ int main()
     cout << "v_test1.size:" << v_test1.size() << endl;
     cout << "v_test1.capacity:" << v_test1.capacity() << endl << endl;
 
-
-
-
-
-    // v_test2.reserve(100);
-    // cout << "reserve capacity 100\n";
-    // cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
-
-    // // 将容量用完
-    // while (v_test2.size() != v_test2.capacity()) v_test2.push_back(42);
-    // // 添加1个元素
-    // cout << "size = capacity. insert one element\n";
-    // v_test2.push_back(0);
-    // cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
-
-    // v_test2.resize(50);
-    // cout << "resize size 50\n";
-    // cout << "capacity:" << v_test2.capacity() << "  size:" << v_test2.size() << endl;
     // getchar();
-
     cout << "----------------end------------------" << endl;
     return EXIT_SUCCESS;
 }
