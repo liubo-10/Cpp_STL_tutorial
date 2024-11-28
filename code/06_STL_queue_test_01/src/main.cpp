@@ -15,7 +15,6 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-
 /*****************************************************************************
  * | @fn     : XXXX
  * | @param  : - XXX XXX
@@ -31,14 +30,48 @@ int main()
     printf("----------------begain------------------\n");
 
     queue<string> q;
-    q.push("first");
+
+    q.push("first");  // push()在队尾插入一个元素,没有返回值
+    cout << "push first" << endl;
+    cout << "front:" << q.front() << endl;          // front() 返回队列中的第一个元素
+    cout << "back:" << q.back() << endl;            // back() 返回队列中最后一个元素
+    cout << "size:" << q.size() << endl;            // size() 返回队列中元素个数
+    cout << "empty:" << q.empty() << endl << endl;  // empty() 如果队列空则返回true
+
     q.push("second");
-    q.push("thread");
-    cout << q.front() << endl;
+    cout << "push second" << endl;
+    cout << "front:" << q.front() << endl;
+    cout << "back:" << q.back() << endl;
+    cout << "size:" << q.size() << endl;
+    cout << "empty:" << q.empty() << endl << endl;
 
+    q.push("theard");
+    cout << "push theard" << endl;
+    cout << "front:" << q.front() << endl;
+    cout << "back:" << q.back() << endl;
+    cout << "size:" << q.size() << endl;
+    cout << "empty:" << q.empty() << endl << endl;
 
+    q.pop();  // pop() 将队列中最靠前位置的元素删除，没有返回值
+    cout << "pop 1" << endl;
+    cout << "front:" << q.front() << endl;
+    cout << "back:" << q.back() << endl;
+    cout << "size:" << q.size() << endl;
+    cout << "empty:" << q.empty() << endl << endl;
 
+    q.pop();
+    cout << "pop 2" << endl;
+    cout << "front:" << q.front() << endl;
+    cout << "back:" << q.back() << endl;
+    cout << "size:" << q.size() << endl;
+    cout << "empty:" << q.empty() << endl << endl;
 
+    q.pop();
+    cout << "pop 3" << endl;
+    cout << "front:" << q.front() << endl;
+    cout << "back:" << q.back() << endl;
+    cout << "size:" << q.size() << endl;
+    cout << "empty:" << q.empty() << endl << endl;
 
     printf("-----------------end-------------------\n");
     // getchar();
