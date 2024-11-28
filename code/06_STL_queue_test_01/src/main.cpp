@@ -29,7 +29,7 @@ int main()
 {
     printf("----------------begain------------------\n");
 
-    queue<string> q;
+    std::queue<string> q;
 
     q.push("first");  // push()在队尾插入一个元素,没有返回值
     cout << "push first" << endl;
