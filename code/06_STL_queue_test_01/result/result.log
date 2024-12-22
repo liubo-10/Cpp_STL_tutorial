@@ -1,7 +1,38 @@
 ----------------begain------------------
-The ASCII code for M is 77
-Add one to the character code :
-The ASCII code for N is 78
-Displaying char ch using cout.put(ch):N!
-done
-----------------end------------------
+push first
+front:first
+back:first
+size:1
+empty:0
+
+push second
+front:first
+back:second
+size:2
+empty:0
+
+push theard
+front:first
+back:theard
+size:3
+empty:0
+
+pop 1
+front:second
+back:theard
+size:2
+empty:0
+
+pop 2
+front:theard
+back:theard
+size:1
+empty:0
+
+pop 3
+front:
+back:theard
+size:0
+empty:1
+
+-----------------end-------------------
