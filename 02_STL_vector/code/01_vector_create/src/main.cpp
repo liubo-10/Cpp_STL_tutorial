@@ -38,12 +38,23 @@ int main()
     vector<int> forth(third);                          // 将vector third 拷贝给vector forth ，两者元素值完全相同
     vector<int> fifth(third.begin(), third.end() - 5); // 将third [third.begin(),third.end()-5)区间的元素赋给fifth
 
-    int b[7] = {1, 2, 3, 4, 5, 6, 7};
-    vector<int> a(b, b + 7); // 从数组中获得初值
+    int a[7] = {1, 2, 3, 4, 5, 6, 7};
+    vector<int> sixth(a, a + 7); // 从数组中获得初值
 
     cout << "second: ";
     printVector(second);
 
+    cout << "third: ";
+    printVector(third);
+
+    cout << "forth: ";
+    printVector(forth);
+
+    cout << "fifth: ";
+    printVector(fifth);
+
+    cout << "sixth: ";
+    printVector(sixth);
 
 
 
