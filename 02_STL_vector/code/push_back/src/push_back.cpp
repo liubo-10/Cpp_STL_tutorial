@@ -7,7 +7,7 @@
  * | @brief   : vector size test
  * 
  * 
- * https://blog.csdn.net/JIEJINQUANIL/article/details/51166154?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522908BB720-376B-4F29-8B2A-026B70C0B064%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=908BB720-376B-4F29-8B2A-026B70C0B064&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-51166154-null-null.142^v100^pc_search_result_base7&utm_term=capacity&spm=1018.2226.3001.4187
+ * https://blog.csdn.net/JIEJINQUANIL/article/details/51166154  C++中capacity()用法总结
  ******************************************************************************/
 #include <iostream>
 #include <vector>

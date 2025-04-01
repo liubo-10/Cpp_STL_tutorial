@@ -1,0 +1,60 @@
+/*****************************************************************************
+ * | @file    : main.c
+ * | @author  : liubo
+ * | @version : V1.0.0
+ * | @date    : 2025-4-01
+ * --------------
+ * | @brief   : main
+ ******************************************************************************/
+#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
+#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h>  // pause()头文件
+#include <iostream>  // 包含输入和输出操作
+
+#include <vector>
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+
+// vector的遍历
+void printVector(vector<int>& v)
+{	//利用迭代器打印 v
+	for (vector<int>::iterator it = v.begin(); it != v.end(); ++it)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+int main()
+{
+    printf("--------------------begain-------------------\n");
+
+    vector<int> first;                                 // 创建一个值类型为int的空vector
+    vector<int> second(10);                            // 创建一个10个int的vector，且每个元素初值为0
+    vector<int> third(10, 1);                          // 创建一个10个int的vector，且每个元素初值为1
+    vector<int> forth(third);                          // 将vector third 拷贝给vector forth ，两者元素值完全相同
+    vector<int> fifth(third.begin(), third.end() - 5); // 将third [third.begin(),third.end()-5)区间的元素赋给fifth
+
+    int b[7] = {1, 2, 3, 4, 5, 6, 7};
+    vector<int> a(b, b + 7); // 从数组中获得初值
+
+    cout << "second: ";
+    printVector(second);
+
+
+
+
+
+    printf("--------------------end----------------------\n");
+    // cin.get();
+    // getchar();
+    // pause();
+    return EXIT_SUCCESS;
+}
+
+/*****************************************************************************
+ * end of file
+ ******************************************************************************/
