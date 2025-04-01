@@ -56,9 +56,6 @@ int main()
     cout << "sixth: ";
     printVector(sixth);
 
-
-
-
     printf("--------------------end----------------------\n");
     // cin.get();
     // getchar();
