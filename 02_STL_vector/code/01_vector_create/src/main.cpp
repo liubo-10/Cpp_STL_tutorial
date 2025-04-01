@@ -32,14 +32,17 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
+    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
     vector<int> first;                                 // 创建一个值类型为int的空vector
     vector<int> second(10);                            // 创建一个10个int的vector，且每个元素初值为0
     vector<int> third(10, 1);                          // 创建一个10个int的vector，且每个元素初值为1
-    vector<int> forth(third);                          // 将vector third 拷贝给vector forth ，两者元素值完全相同
-    vector<int> fifth(third.begin(), third.end() - 5); // 将third [third.begin(),third.end()-5)区间的元素赋给fifth
+    vector<int> forth(third);                          // third temp 拷贝给vector forth ，两者元素值完全相同
+    vector<int> fifth(a, a + 10);                      // 从数组区间[a[0], a[10])中获得初值,注意左开右闭，a[10]无意义这里助于理解
+    vector<int> sixth(fifth.begin(), fifth.end() - 5); // temp [temp.begin(),temp.end()-5)区间的元素赋给fifth，注意左开右闭
 
-    int a[7] = {1, 2, 3, 4, 5, 6, 7};
-    vector<int> sixth(a, a + 7); // 从数组中获得初值
+    cout << "first: ";
+    printVector(first);
 
     cout << "second: ";
     printVector(second);

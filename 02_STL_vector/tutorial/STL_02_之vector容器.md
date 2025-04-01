@@ -62,6 +62,8 @@ vector<int> a(b,b+7);
 
 ## 1.2 vector的遍历
 
+Vector中的begin和end函数是左闭右开的区间。
+
 ```c++
 void printVector(vector<int>& v)
 {	//利用迭代器打印 v
