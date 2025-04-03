@@ -35,7 +35,7 @@ int main()
     int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     vector<int> first(a, a + 10);
-    
+
     cout << "first: ";
     printVector(first);
 
@@ -47,22 +47,22 @@ int main()
 
     vector<int> third(10, 1);
 
-    cout << "third: ";
+    cout << "third1: ";
     printVector(third);
 
     third.assign(first.begin(), first.end() - 5);
 
-    cout << "third: ";
+    cout << "third2: ";
     printVector(third);
 
     vector<int> forth(10, 1);
 
-    cout << "forth: ";
+    cout << "forth1: ";
     printVector(forth);
 
     forth.assign(5, 9);
 
-    cout << "forth: ";
+    cout << "forth2: ";
     printVector(forth);
 
     printf("--------------------end----------------------\n");
