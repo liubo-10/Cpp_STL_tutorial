@@ -13,9 +13,19 @@
 
 > # STL_02_之vector容器
 
+# 1、vector容器的简介
+
 vector模板是C++标准库中的一个容器类，被设计为动态数组，即它可以根据需要自动分配内存空间来存储元素。vector模板的本质是一个类模板，它使用了C++语言中的模板技术，使其能够适应不同的数据类型，提供了一种通用的容器类实现方法。vector类使用连续的内存来存储元素，它提供了访问和操作元素的方法，还提供其他方法以帮助用户管理容器的大小和分配内存等,可以方便地存储和管理各种类型的数据。
 
-头文件:
+
+
+vector和普通数组的区别：
+1.数组是静态的，长度不可改变，而vector可以动态扩展，增加长度。
+2.数组内数据通常存储在栈上，而vector中数据存储在堆上。
+
+
+
+使用时包含头文件:
 
 ```C++
 #include<vector>
@@ -23,44 +33,109 @@ vector模板是C++标准库中的一个容器类，被设计为动态数组，�
 
 
 
+# 2、vector的相关概念
+
+动态扩展：动态扩展并不是在原空间之后续接新空间，而是找到比原来更大的内存空间，将原数据拷贝到新空间，释放原空间。
 
 
-# 1、vector的使用
 
-## 1.1 vector的构造函数
 
-函数原型
+
+# 3、vector的使用
+
+## 3.1 vector的构造函数
+
+函数原型:
 
 ```C++
 vector<T> v ; //使用模板类，默认构造函数
-vextor(n,elem); //将n个elem拷贝给本身
-vector(const vector &v) ; //拷贝构造函数
-vector(v.begin(),v.end()); //将[v.begin(),v.end())区间中的元素拷贝给本身
+vextor<T> v(n,elem); //将n个elem拷贝给本身
+vector<T> v(const vector &v) ; //拷贝构造函数
+vector<T> v(v.begin(),v.end()); //将[v.begin(),v.end())区间中的元素拷贝给本身，注意左闭右开
 ```
 
-使用示例
+使用示例:
 
 ```c++
-vector<int> first;//创建一个值类型为int的空vector
-vector<int> second(10);//创建一个10个int的vector，且每个元素初值为0
-vector<int> third(10,1);//创建一个10个int的vector，且每个元素初值为1
-vector<int> forth(third);//将vector third 拷贝给vector forth ，两者元素值完全相同
-vector<int> fifth(third.begin(),third.end()-5);//将third [third.begin(),third.end()-5)区间的元素赋给fifth
+#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
+#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h>  // pause()头文件
+#include <iostream>  // 包含输入和输出操作
 
-//从数组中获得初值
-int b[7]={1,2,3,4,5,6,7};
-vector<int> a(b,b+7);
+#include <vector>
 
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
 
+// vector的遍历
+void printVector(vector<int>& v)
+{	//利用迭代器打印 v
+	for (vector<int>::iterator it = v.begin(); it != v.end(); ++it)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
 
+int main()
+{
+    printf("--------------------begain-------------------\n");
 
+    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
+    vector<int> first;                                 // 创建一个值类型为int的空vector
+    vector<int> second(10);                            // 创建一个10个int的vector，且每个元素初值为0
+    vector<int> third(10, 1);                          // 创建一个10个int的vector，且每个元素初值为1
+    vector<int> forth(third);                          // third temp 拷贝给vector forth ，两者元素值完全相同
+    vector<int> fifth(a, a + 10);                      // 从数组区间[a[0], a[10])中获得初值,注意左闭右开，a[10]无意义这里助于理解
+    vector<int> sixth(fifth.begin(), fifth.end() - 5); // temp [temp.begin(),temp.end()-5)区间的元素赋给fifth，注意左闭右开
 
+    cout << "first: ";
+    printVector(first);
+
+    cout << "second: ";
+    printVector(second);
+
+    cout << "third: ";
+    printVector(third);
+
+    cout << "forth: ";
+    printVector(forth);
+
+    cout << "fifth: ";
+    printVector(fifth);
+
+    cout << "sixth: ";
+    printVector(sixth);
+
+    printf("--------------------end----------------------\n");
+    // cin.get();
+    // getchar();
+    // pause();
+    return EXIT_SUCCESS;
+}
 ```
 
 
 
-## 1.2 vector的遍历
+测试结果:
+
+```tex
+--------------------begain-------------------
+first: 
+second: 0 0 0 0 0 0 0 0 0 0 
+third: 1 1 1 1 1 1 1 1 1 1 
+forth: 1 1 1 1 1 1 1 1 1 1 
+fifth: 0 1 2 3 4 5 6 7 8 9 
+sixth: 0 1 2 3 4 
+--------------------end----------------------
+```
+
+
+
+## 3.2 vector的遍历
 
 Vector中的begin和end函数是左闭右开的区间。
 
@@ -77,15 +152,22 @@ void printVector(vector<int>& v)
 
 
 
-## 1.3 vector大小操作
+
+
+
+
+
+
+
+
+## 3.3 vector的赋值操作
+
+函数原型：
 
 ```c++
-size();//返回容器中元素的个数
-empty();//判断容器是否为空
-resize(int num);//重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
-resize(int num, elem);//重新指定容器的长度为num，若容器变长，则以elem值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
-capacity();//容器的容量
-reserve(int len);//容器预留len个元素长度，预留位置不初始化，元素不可访问
+vector& operator=(const vector &v); //重载赋值运算符
+assign(v.begin(),v.end());          //将[v.begin(),v.end())区间中的元素赋值给本身
+assign(n,elem);                     //将n个elem赋值给本身
 ```
 
 
@@ -96,7 +178,35 @@ reserve(int len);//容器预留len个元素长度，预留位置不初始化，�
 
 
 
-## 1.4 vector插入和删除操作
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 1.3 vector插入和删除操作
 
 函数原型：
 
@@ -175,6 +285,49 @@ int main() {
 	return 0;
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 1.3 vector大小操作
+
+```c++
+size();//返回容器中元素的个数
+empty();//判断容器是否为空
+resize(int num);//重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
+resize(int num, elem);//重新指定容器的长度为num，若容器变长，则以elem值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
+capacity();//容器的容量
+reserve(int len);//容器预留len个元素长度，预留位置不初始化，元素不可访问
+```
+
+
+
+
 
 
 
@@ -363,9 +516,12 @@ Vector是动态空间，随着元素的加入，它的内部机制会自动扩�
 # 七、参考资料
 
 版权声明：本文参考了其他资料和CSDN博主的文章，遵循CC 4.0 BY-SA版权协议，现附上原文出处链接及本声明。
-一、 https://blog.csdn.net/as480133937/article/details/123740365
-二、 https://blog.csdn.net/weibo1230123/article/details/80210097
-三、 LwIP应用开发实战指南：基于STM32
+
+1. https://blog.csdn.net/qq_52324409/article/details/121000029
+2. 
+3. 
+4. 
+5. 
 
 ---
 
