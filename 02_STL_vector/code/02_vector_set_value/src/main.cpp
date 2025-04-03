@@ -50,7 +50,7 @@ int main()
     cout << "third1: ";
     printVector(third);
 
-    third.assign(first.begin(), first.end() - 5);
+    third.assign(first.begin(), first.end() - 5); // 只保留前五个值
 
     cout << "third2: ";
     printVector(third);
@@ -60,7 +60,7 @@ int main()
     cout << "forth1: ";
     printVector(forth);
 
-    forth.assign(5, 9);
+    forth.assign(5, 9); // 只保留前五个值
 
     cout << "forth2: ";
     printVector(forth);
