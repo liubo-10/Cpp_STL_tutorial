@@ -35,24 +35,32 @@ int main()
     int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     vector<int> first(a, a + 10);
+    
+    cout << "first: ";
+    printVector(first);
 
     vector<int> second;
     second = first;
 
-    vector<int> third(10,1);
-    third.assign(first.begin(), first.end() - 5);
-
-    vector<int> forth(10,1);
-    forth.assign(5, 9);
-
-    cout << "first: ";
-    printVector(first);
-
     cout << "second: ";
     printVector(second);
 
+    vector<int> third(10, 1);
+
     cout << "third: ";
     printVector(third);
+
+    third.assign(first.begin(), first.end() - 5);
+
+    cout << "third: ";
+    printVector(third);
+
+    vector<int> forth(10, 1);
+
+    cout << "forth: ";
+    printVector(forth);
+
+    forth.assign(5, 9);
 
     cout << "forth: ";
     printVector(forth);
