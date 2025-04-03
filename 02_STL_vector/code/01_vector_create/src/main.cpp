@@ -26,12 +26,6 @@ void printVector(vector<int> &v)
     {
         cout << *it << " ";
     }
-
-    // for (auto n : v)
-    // {
-    //     cout << n << " ";
-    // }
-
     cout << endl;
 }
 

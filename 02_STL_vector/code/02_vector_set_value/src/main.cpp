@@ -20,12 +20,7 @@ using std::vector;
 
 // vector的遍历
 void printVector(vector<int> &v)
-{ // 利用迭代器打印 v
-    // for (vector<int>::iterator it = v.begin(); it != v.end(); ++it)
-    // {
-    //     cout << *it << " ";
-    // }
-
+{
     for (auto n : v)
     {
         cout << n << " ";
@@ -39,12 +34,16 @@ int main()
     printf("--------------------begain-------------------\n");
     int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    vector<int> first;                                 // 创建一个值类型为int的空vector
-    vector<int> second(10);                            // 创建一个10个int的vector，且每个元素初值为0
-    vector<int> third(10, 1);                          // 创建一个10个int的vector，且每个元素初值为1
-    vector<int> forth(third);                          // third temp 拷贝给vector forth ，两者元素值完全相同
-    vector<int> fifth(a, a + 10);                      // 从数组区间[a[0], a[10])中获得初值,注意左开右闭，a[10]无意义这里助于理解
-    vector<int> sixth(fifth.begin(), fifth.end() - 5); // temp [temp.begin(),temp.end()-5)区间的元素赋给fifth，注意左开右闭
+    vector<int> first(a, a + 10);
+
+    vector<int> second;
+    second = first;
+
+    vector<int> third;
+    third.assign(first.begin(), first.end());
+
+    vector<int> forth;
+    forth.assign(5, 9);
 
     cout << "first: ";
     printVector(first);
@@ -57,12 +56,6 @@ int main()
 
     cout << "forth: ";
     printVector(forth);
-
-    cout << "fifth: ";
-    printVector(fifth);
-
-    cout << "sixth: ";
-    printVector(sixth);
 
     printf("--------------------end----------------------\n");
     // cin.get();

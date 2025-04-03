@@ -137,16 +137,33 @@ sixth: 0 1 2 3 4
 
 ## 3.2 vector的遍历
 
-Vector中的begin和end函数是左闭右开的区间。
+方法1：
 
 ```c++
 void printVector(vector<int>& v)
-{	//利用迭代器打印 v
+{
 	for (vector<int>::iterator it = v.begin(); it != v.end(); ++it)
 	{
 		cout << *it << " ";
 	}
 	cout << endl;
+}
+```
+
+迭代器iterator中的begin和end函数是左闭右开的区间。
+
+
+
+方法2：
+
+```c++
+void printVector(vector<int> &v)
+{ 
+    for (auto n : v)
+    {
+        cout << n << " ";
+    }
+    cout << endl;
 }
 ```
 
