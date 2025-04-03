@@ -39,10 +39,10 @@ int main()
     vector<int> second;
     second = first;
 
-    vector<int> third;
-    third.assign(first.begin(), first.end());
+    vector<int> third(10,1);
+    third.assign(first.begin(), first.end() - 5);
 
-    vector<int> forth;
+    vector<int> forth(10,1);
     forth.assign(5, 9);
 
     cout << "first: ";
