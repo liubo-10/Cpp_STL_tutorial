@@ -25,7 +25,6 @@ void printVector(vector<int> &v)
     {
         cout << n << " ";
     }
-
     cout << endl;
 }
 
