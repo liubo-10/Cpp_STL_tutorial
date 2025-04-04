@@ -118,8 +118,6 @@ int main()
 }
 ```
 
-
-
 测试结果:
 
 ```tex
@@ -169,14 +167,6 @@ void printVector(vector<int> &v)
 
 
 
-
-
-
-
-
-
-
-
 ## 3.3 vector的赋值操作
 
 函数原型：
@@ -186,6 +176,204 @@ vector& operator=(const vector &v); //重载赋值运算符
 assign(v.begin(),v.end());          //将[v.begin(),v.end())区间中的元素赋值给本身
 assign(n,elem);                     //将n个elem赋值给本身
 ```
+
+使用示例:
+
+```c++
+#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
+#include <iostream>  // 包含输入和输出操作
+#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h>  // pause()头文件
+#include <vector>
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+
+// vector的遍历
+void printVector(vector<int> &v)
+{
+    for (auto n : v)
+    {
+        cout << n << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    printf("--------------------begain-------------------\n");
+    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    vector<int> first(a, a + 10);
+
+    cout << "first: ";
+    printVector(first);
+
+    vector<int> second;
+    second = first;
+
+    cout << "second: ";
+    printVector(second);
+
+    vector<int> third(10, 1);
+
+    cout << "third1: ";
+    printVector(third);
+
+    third.assign(first.begin(), first.end() - 5); // 只保留前五个值
+
+    cout << "third2: ";
+    printVector(third);
+
+    vector<int> forth(10, 1);
+
+    cout << "forth1: ";
+    printVector(forth);
+
+    forth.assign(5, 9); // 只保留前五个值
+
+    cout << "forth2: ";
+    printVector(forth);
+
+    printf("--------------------end----------------------\n");
+    // cin.get();
+    // getchar();
+    // pause();
+    return EXIT_SUCCESS;
+}
+```
+
+测试结果:
+
+```tex
+--------------------begain-------------------
+first: 0 1 2 3 4 5 6 7 8 9 
+second: 0 1 2 3 4 5 6 7 8 9 
+third1: 1 1 1 1 1 1 1 1 1 1 
+third2: 0 1 2 3 4 
+forth1: 1 1 1 1 1 1 1 1 1 1 
+forth2: 9 9 9 9 9 
+--------------------end----------------------
+```
+
+
+
+
+
+
+
+### vector的元素访问
+
+函数原型：
+
+```c++
+at(int idx); //返回索引idx所指的数据
+operator[]; //返回[]内索引所指的数据
+front(); //返回容器中第一个元素
+back(); //返回容器中最后一个元素
+```
+
+使用示例:
+
+```c++
+
+
+
+
+
+
+
+
+#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
+#include <iostream>  // 包含输入和输出操作
+#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h>  // pause()头文件
+#include <vector>
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+
+// vector的遍历
+void printVector(vector<int> &v)
+{
+    for (auto n : v)
+    {
+        cout << n << " ";
+    }
+
+    cout << endl;
+}
+
+int main()
+{
+    printf("--------------------begain-------------------\n");
+    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    vector<int> first(a, a + 10);
+
+    cout << "first: ";
+    printVector(first);
+
+    vector<int> second;
+    second = first;
+
+    cout << "second: ";
+    printVector(second);
+
+    vector<int> third(10, 1);
+
+    cout << "third1: ";
+    printVector(third);
+
+    third.assign(first.begin(), first.end() - 5); // 只保留前五个值
+
+    cout << "third2: ";
+    printVector(third);
+
+    vector<int> forth(10, 1);
+
+    cout << "forth1: ";
+    printVector(forth);
+
+    forth.assign(5, 9); // 只保留前五个值
+
+    cout << "forth2: ";
+    printVector(forth);
+
+    printf("--------------------end----------------------\n");
+    // cin.get();
+    // getchar();
+    // pause();
+    return EXIT_SUCCESS;
+}
+```
+
+测试结果:
+
+```tex
+--------------------begain-------------------
+first: 0 1 2 3 4 5 6 7 8 9 
+second: 0 1 2 3 4 5 6 7 8 9 
+third1: 1 1 1 1 1 1 1 1 1 1 
+third2: 0 1 2 3 4 
+forth1: 1 1 1 1 1 1 1 1 1 1 
+forth2: 9 9 9 9 9 
+--------------------end----------------------
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
