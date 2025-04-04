@@ -51,7 +51,7 @@ int main()
     printVector(v_test);
 
     v_test.insert(v_test.begin() + 3,30); //在第3位后面插入30
-    cout << "在第3位后面插入20，打印 v_test: ";
+    cout << "在第3位后面插入30，打印 v_test: ";
     printVector(v_test);
 
     v_test.insert(v_test.begin() + 4, 2, 40); //在第4位后面插入2个40
@@ -59,7 +59,7 @@ int main()
     printVector(v_test);
 
     v_test.insert(v_test.end() - 3, 2, 50);//在倒数第3位前面插入2个50
-    cout << "在最后一位前面插入2个30，打印 v_test: ";
+    cout << "在倒数第3位前面插入2个50，打印 v_test: ";
     printVector(v_test);
 
     printf("--------------------end----------------------\n");
