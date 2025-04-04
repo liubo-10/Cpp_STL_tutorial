@@ -58,7 +58,7 @@ int main()
 
     // 使用 erase 删除前三个元素
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    v_test.erase(v_test.begin(), v_test.begin() + 2);
+    v_test.erase(v_test.begin(), v_test.begin() + 3);
     cout << "使用 erase 删除前三个元素，打印v_test: ";
     printVector(v_test);
 
@@ -70,7 +70,7 @@ int main()
 
     // 使用 erase 删除前三个后三个之外的元素
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    v_test.erase(v_test.begin() + 2, v_test.end() - 3);
+    v_test.erase(v_test.begin() + 3, v_test.end() - 3);
     cout << "使用 erase 删除前三个后三个之外的元素，打印v_test: ";
     printVector(v_test);
 
