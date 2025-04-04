@@ -13,17 +13,7 @@
 
 > # STL_vector_01_基本用法
 
-# 1、vector容器的简介
-
-vector模板是C++标准库中的一个容器类，被设计为动态数组，即它可以根据需要自动分配内存空间来存储元素。vector模板的本质是一个类模板，它使用了C++语言中的模板技术，使其能够适应不同的数据类型，提供了一种通用的容器类实现方法。vector类使用连续的内存来存储元素，它提供了访问和操作元素的方法，还提供其他方法以帮助用户管理容器的大小和分配内存等,可以方便地存储和管理各种类型的数据。
-
-
-
-vector和普通数组的区别：
-1.数组是静态的，长度不可改变，而vector可以动态扩展，增加长度。
-2.数组内数据通常存储在栈上，而vector中数据存储在堆上。
-
-
+vector模板是STL(Standard Template Library,标准模板库)中的一个容器类，使用方法类似数组。
 
 使用时包含头文件:
 
@@ -33,17 +23,7 @@ vector和普通数组的区别：
 
 
 
-# 2、vector的相关概念
-
-动态扩展：动态扩展并不是在原空间之后续接新空间，而是找到比原来更大的内存空间，将原数据拷贝到新空间，释放原空间。
-
-
-
-
-
-# 3、vector的使用
-
-## 3.1 vector的构造函数
+# 1、vector的构造函数
 
 函数原型:
 
@@ -138,7 +118,7 @@ seventh: -1 0 3 5 7 9
 
 
 
-## 3.2 vector的遍历
+# 2、vector的遍历
 
 方法1：
 
@@ -172,7 +152,7 @@ void printVector(vector<int> &v)
 
 
 
-## 3.3 vector的赋值操作
+# 3、vector的赋值操作
 
 函数原型：
 
@@ -212,33 +192,30 @@ int main()
     int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     vector<int> first(a, a + 10);
-
     cout << "first: ";
     printVector(first);
 
+    //操作符 = 赋值
     vector<int> second;
     second = first;
-
     cout << "second: ";
     printVector(second);
 
+    // assign 函数赋值，使用迭代器
     vector<int> third(10, 1);
-
     cout << "third1: ";
     printVector(third);
 
-    third.assign(first.begin(), first.end() - 5); // 只保留前五个值
-
+    third.assign(first.begin(), first.end() - 5); // 把first前五个值赋给third前五个值，其余值删除
     cout << "third2: ";
     printVector(third);
 
+    // assign 函数赋值，使用
     vector<int> forth(10, 1);
-
     cout << "forth1: ";
     printVector(forth);
 
-    forth.assign(5, 9); // 只保留前五个值
-
+    forth.assign(5, 9); // 把5个9赋给 forth，其余值删除
     cout << "forth2: ";
     printVector(forth);
 
@@ -263,7 +240,7 @@ forth2: 9 9 9 9 9
 --------------------end----------------------
 ```
 
-### 3.4 vector的元素访问
+# 4、vector的元素访问
 
 函数原型：
 
@@ -333,7 +310,7 @@ int main()
 
 
 
-### 3.5 vector的元素插入
+# 5、vector的元素插入
 
 函数原型：
 
@@ -416,7 +393,7 @@ int main()
 --------------------end----------------------
 ```
 
-### 3.5 vector的元素删除
+# 6、vector的元素删除
 
 函数原型：
 

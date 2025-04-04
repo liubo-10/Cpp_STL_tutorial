@@ -34,33 +34,30 @@ int main()
     int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     vector<int> first(a, a + 10);
-
     cout << "first: ";
     printVector(first);
 
+    //操作符 = 赋值
     vector<int> second;
     second = first;
-
     cout << "second: ";
     printVector(second);
 
+    // assign 函数赋值，使用迭代器
     vector<int> third(10, 1);
-
     cout << "third1: ";
     printVector(third);
 
-    third.assign(first.begin(), first.end() - 5); // 只保留前五个值
-
+    third.assign(first.begin(), first.end() - 5); // 把first前五个值赋给third前五个值，其余值删除
     cout << "third2: ";
     printVector(third);
 
+    // assign 函数赋值，使用
     vector<int> forth(10, 1);
-
     cout << "forth1: ";
     printVector(forth);
 
-    forth.assign(5, 9); // 只保留前五个值
-
+    forth.assign(5, 9); // 把5个9赋给 forth，其余值删除
     cout << "forth2: ";
     printVector(forth);
 
