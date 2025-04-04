@@ -91,6 +91,7 @@ int main()
     vector<int> forth(third);                          // third temp 拷贝给vector forth ，两者元素值完全相同
     vector<int> fifth(a, a + 10);                      // 从数组区间[a[0], a[10])中获得初值,注意左闭右开，a[10]无意义这里助于理解
     vector<int> sixth(fifth.begin(), fifth.end() - 5); // temp [temp.begin(),temp.end()-5)区间的元素赋给fifth，注意左闭右开
+    vector<int> seventh = { -1, 0, 3, 5, 7, 9};        // 列表初始化
 
     cout << "first: ";
     printVector(first);
@@ -109,6 +110,9 @@ int main()
 
     cout << "sixth: ";
     printVector(sixth);
+    
+    cout << "seventh: ";
+    printVector(seventh);
 
     printf("--------------------end----------------------\n");
     // cin.get();
@@ -128,6 +132,7 @@ third: 1 1 1 1 1 1 1 1 1 1
 forth: 1 1 1 1 1 1 1 1 1 1 
 fifth: 0 1 2 3 4 5 6 7 8 9 
 sixth: 0 1 2 3 4 
+seventh: -1 0 3 5 7 9 
 --------------------end----------------------
 ```
 
