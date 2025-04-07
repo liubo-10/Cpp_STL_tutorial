@@ -132,11 +132,18 @@ void push_back_test(){
          << endl;
 
     cout << "添加10个元素: " << endl;
+    int* pStart = nullptr;
+	int count = 0;
     for (int i = 0; i < 10; ++i)
     {
         v_test.push_back(i);
         cout << "capacity: " << v_test.capacity() << "  size: " << v_test.size() << endl;
+		if (pStart != &v_test[0]){
+			pStart = &v_test[0];
+			count++;
+		}
     }
+    cout << "count:" << count << endl;
 
     // 将容量用完
     while (v_test.size() != v_test.capacity())
@@ -174,7 +181,7 @@ void push_back_test(){
 
     v_test.resize(50);
     cout << "resize size 50\n";
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl << endl;
 
 
 
@@ -182,18 +189,16 @@ void push_back_test(){
 	//预先开辟空间
 	v1.reserve(100000);
 
-	int* pStart = nullptr;
-	int count = 0;
-	for (int i = 0; i < 100000;i ++){
+	pStart = nullptr;
+	count = 0;
+	for (int i = 0; i < 100000;i++){
 		v1.push_back(i);
 		if (pStart != &v1[0]){
 			pStart = &v1[0];
 			count++;
 		}
 	}
-
 	cout << "count:" << count << endl;
-
 
 }
 
