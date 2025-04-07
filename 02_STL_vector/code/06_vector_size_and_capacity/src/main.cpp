@@ -18,6 +18,9 @@ using std::cout;
 using std::endl;
 using std::vector;
 
+void resize_test();
+void reserve_test();
+
 // vector的遍历
 void printVector(vector<int> &v)
 {
@@ -32,6 +35,18 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
+    resize_test();
+    reserve_test();
+
+    printf("--------------------end----------------------\n");
+    // cin.get();
+    // getchar();
+    // pause();
+    return EXIT_SUCCESS;
+}
+
+void resize_test(){
+    cout << "resize_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "初始数据: ";
     printVector(v_test);
@@ -48,6 +63,17 @@ int main()
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     v_test.resize(20);
     cout << "resize 20: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl << endl;
+}
+
+
+
+void reserve_test(){
+    cout << "reserve_test: " << endl;
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << "初始数据: ";
     printVector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl << endl;
@@ -76,50 +102,17 @@ int main()
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl << endl;
 
-    printf("--------------------end----------------------\n");
-    // cin.get();
-    // getchar();
-    // pause();
-    return EXIT_SUCCESS;
+
+
+
 }
+
+
+
+
+
+
 
 /*****************************************************************************
  * end of file
  ******************************************************************************/
-
-
-
-/*
- *
-初始数据：
-size = 13
-capacity = 13
-5 6 22 1 4 -5 0 88 6 4 99 8 7
-
-resize 10:
-5 6 22 1 4 -5 0 88 6 4
-size = 10
-capacity = 13
-
-resize 20:
-5 6 22 1 4 -5 0 88 6 4 0 0 0 0 0 0 0 0 0 0
-size = 20
-capacity = 20
-
-reserve 6:
-5 6 22 1 4 -5 0 88 6 4 0 0 0 0 0 0 0 0 0 0
-size = 20
-capacity = 20
-
-reserve 30:
-5 6 22 1 4 -5 0 88 6 4 0 0 0 0 0 0 0 0 0 0
-size = 20
-capacity = 30
-
-clear:
-0
-30
-*/
-
-
-
