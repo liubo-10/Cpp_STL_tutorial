@@ -36,17 +36,18 @@ int main()
 
     printVector(v_test);
     cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "it = " << *it << endl
          << endl;
 
     v_test.push_back(0); // 可能导致容量不足，触发内存重新分配
     cout << "push_back 0: ";
     printVector(v_test);
     cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl
-         << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
 
-    *it = 10; // 错误！it 已失效！
+    cout << "it = " << *it << endl
+         << endl;
 
     printf("--------------------end----------------------\n");
     // cin.get();
