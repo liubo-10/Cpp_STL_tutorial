@@ -56,27 +56,19 @@ void test1()
     cout << "addr of it: " << &*it << endl
          << endl;
 
-    v_test.reserve(1000000);
     // 将容量用完
     while (v_test.size() != v_test.capacity())
     {
         v_test.push_back(0);
     }
-    vector<int> v_test1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    auto it1 = v_test1.begin();
-    cout << "v_test1: " << endl;
-    cout << "size = " << v_test1.size() << endl;
-    cout << "capacity = " << v_test1.capacity() << endl;
-    cout << "addr of it1: " << &*it1 << endl
-         << endl;
-
     v_test.push_back(0);
-    auto it11 = v_test.begin();
+    auto it1 = v_test.begin();
+
     cout << "push_back 0: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of it: " << &*it << endl;
-    cout << "addr of it11: " << &*it11 << endl
+    cout << "addr of it1: " << &*it1 << endl
          << endl;
 
     // 将容量用完
@@ -84,21 +76,33 @@ void test1()
     {
         v_test.push_back(0);
     }
-    vector<int> v_test2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    auto it2 = v_test2.begin();
-    cout << "v_test2: " << endl;
-    cout << "size = " << v_test2.size() << endl;
-    cout << "capacity = " << v_test2.capacity() << endl;
-    cout << "addr of it: " << &*it2 << endl
-         << endl;
-
-
     v_test.push_back(0);
+    auto it2 = v_test.begin();
 
     cout << "push_back 0: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it << endl;
+    cout << "addr of it2: " << &*it1 << endl
+         << endl;
+
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+    auto it3 = v_test.begin();
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it << endl;
+    cout << "addr of it2: " << &*it << endl;
+    cout << "addr of it3: " << &*it1 << endl
          << endl;
 
     // 将容量用完
@@ -106,53 +110,27 @@ void test1()
     {
         v_test.push_back(0);
     }
-
-    vector<int> v_test3 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    auto it3 = v_test3.begin();
-    cout << "v_test3: " << endl;
-    cout << "size = " << v_test3.size() << endl;
-    cout << "capacity = " << v_test3.capacity() << endl;
-    cout << "addr of it: " << &*it3 << endl
-         << endl;
-
     v_test.push_back(0);
+    auto it4 = v_test.begin();
 
     cout << "push_back 0: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
-         << endl;
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-
-    vector<int> v_test4 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    auto it4 = v_test4.begin();
-    cout << "v_test4: " << endl;
-    cout << "size = " << v_test4.size() << endl;
-    cout << "capacity = " << v_test4.capacity() << endl;
-    cout << "addr of it: " << &*it4 << endl
-         << endl;
-
-    v_test.push_back(0);
-
-    cout << "push_back 0: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it << endl;
+    cout << "addr of it2: " << &*it << endl;
+    cout << "addr of it3: " << &*it << endl;
+    cout << "addr of it4: " << &*it1 << endl
          << endl;
 
     v_test.resize(10);
-
     vector<int>(v_test).swap(v_test);
+    auto it5 = v_test.begin();
 
     cout << "swap v_test: ";
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "addr of it5: " << &*it5 << endl
          << endl;
 }
 
