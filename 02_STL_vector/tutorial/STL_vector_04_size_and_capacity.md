@@ -370,7 +370,66 @@ count:0
 
 
 
+# 三、swap对vector数据量和容量的操作
 
+函数原型：
+
+```c++
+swap(v); //容器v和当前容器互换
+```
+
+
+
+使用示例:
+
+```c++
+void swap_test()
+{
+    cout << "swap_test: " << endl;
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << "初始数据: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
+
+    v_test.reserve(30); // 使得capacity=30，里面的元素不会改变
+    cout << "reserve 30: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
+
+    // vector<int>(v_test) 是创建一个匿名对象，并拷贝v_test的数据
+    // 以此匿名对象与v_test交换，交换完后系统自动删除匿名对象
+    vector<int>(v_test).swap(v_test);
+
+    cout << "swap v_test: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
+}
+```
+
+测试结果:
+
+```tex
+swap_test: 
+初始数据: 0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 10
+
+reserve 30: 0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 30
+
+swap v_test: 0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 10
+```
+
+当 swap 能够收缩vestor容量
 
 
 
