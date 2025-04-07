@@ -77,7 +77,6 @@ void resize_test(){
     cout << "capacity = " << v_test3.capacity() << endl << endl;
 }
 
-
 void reserve_test(){
     cout << "reserve_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -87,19 +86,19 @@ void reserve_test(){
     cout << "capacity = " << v_test.capacity() << endl << endl;
 
     // reserve 是保留的意思，reserve的值小于size也不会使元素消失，此时的capacity==size
-    v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    v_test.reserve(6); // capacity == size == 20
-    cout << "reserve 6: ";
-    printVector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl << endl;
+    vector<int> v_test1 = v_test;
+    v_test1.reserve(5); // capacity == size == 10
+    cout << "reserve 5: ";
+    printVector(v_test1);
+    cout << "size = " << v_test1.size() << endl;
+    cout << "capacity = " << v_test1.capacity() << endl << endl;
 
-    v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    v_test.reserve(30); // 使得capacity=30，里面的元素不会改变
+    vector<int> v_test2 = v_test;
+    v_test2.reserve(30); // 使得capacity=30，里面的元素不会改变
     cout << "reserve 30: ";
-    printVector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl << endl;
+    printVector(v_test2);
+    cout << "size = " << v_test2.size() << endl;
+    cout << "capacity = " << v_test2.capacity() << endl << endl;
 
 }
 

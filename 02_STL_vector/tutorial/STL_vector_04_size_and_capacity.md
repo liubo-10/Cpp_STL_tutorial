@@ -16,7 +16,7 @@
 
 
 
-# 一、vector大小的获取
+# 一、vector大小容量的获取
 
 ```c++
 size();     //返回容器中元素的个数
@@ -25,7 +25,7 @@ capacity(); //容器的容量
 
 
 
-## 二、resize对vector
+## 二、resize对vector大小容量的操作
 
 函数原型：
 
@@ -41,37 +41,96 @@ resize(int num, elem);
 
 使用示例:
 
+```c++
+void resize_test(){
+    cout << "resize_test: " << endl;
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << "初始数据: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl << endl;
+
+    vector<int> v_test1 = v_test;
+    v_test1.resize(5);
+    cout << "resize 5: ";
+    printVector(v_test1);
+    cout << "size = " << v_test1.size() << endl;
+    cout << "capacity = " << v_test1.capacity() << endl << endl;
+
+    vector<int> v_test2 = v_test;
+    v_test2.resize(20);
+    cout << "resize 20: ";
+    printVector(v_test2);
+    cout << "size = " << v_test2.size() << endl;
+    cout << "capacity = " << v_test2.capacity() << endl << endl;
+
+    vector<int> v_test3 = v_test;
+    v_test3.resize(20, 9);
+    cout << "resize 20,9: ";
+    printVector(v_test3);
+    cout << "size = " << v_test3.size() << endl;
+    cout << "capacity = " << v_test3.capacity() << endl << endl;
+}
+```
+
+测试结果:
+
+```tex
+resize_test: 
+初始数据: 0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 10
+
+resize 5: 0 1 2 3 4 
+size = 5
+capacity = 10
+
+resize 20: 0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 0 0 0 0 
+size = 20
+capacity = 20
+
+resize 20,9: 0 1 2 3 4 5 6 7 8 9 9 9 9 9 9 9 9 9 9 9 
+size = 20
+capacity = 20
+```
 
 
 
+# 三、reserve对vector大小容量的操作
 
-
-
-
-
-
-
-
-
-
-
-  // resize改变大小，不改变容量
-
-
-
-
-
-
-
-## 1.3 vector大小操作
+函数原型：
 
 ```c++
-
-resize(int num);//重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
-resize(int num, elem);//重新指定容器的长度为num，若容器变长，则以elem值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
-
-reserve(int len);//容器预留len个元素长度，预留位置不初始化，元素不可访问
+reserve(int len); //容器预留len个元素长度，预留位置不初始化，元素不可访问
 ```
+
+
+
+使用示例:
+
+```c++
+===
+```
+
+测试结果:
+
+```tex
+====
+```
+
+reserve 是保留的意思，reserve的值小于size也不会使元素消失，此时的capacity==size
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
