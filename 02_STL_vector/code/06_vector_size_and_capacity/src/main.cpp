@@ -127,7 +127,7 @@ void clear_test(){
 
 
 
-int main()
+int main7()
 {
     cout << "----------------begain------------------" << endl;
 
@@ -172,7 +172,7 @@ int main()
 
 
 
-int main(){
+int main8(){
     cout << "----------------begain------------------" << endl;
     
     cout << "\n----------------大小 容量 测试------------------" << endl;
@@ -250,7 +250,7 @@ count:1
 
 
 
- int main()
+ int main9()
 {
     cout << "----------------begain------------------" << endl << endl;
 
@@ -337,3 +337,7 @@ count:1
     cout << "----------------end------------------" << endl;
     return EXIT_SUCCESS;
 }
+
+
+
+
