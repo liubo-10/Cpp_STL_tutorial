@@ -108,6 +108,16 @@ void test1()
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of it: " << &*it << endl
          << endl;
+
+    v_test.resize(10);
+
+    vector<int>(v_test).swap(v_test);
+
+    cout << "swap v_test: ";
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
 }
 
 void test2()
