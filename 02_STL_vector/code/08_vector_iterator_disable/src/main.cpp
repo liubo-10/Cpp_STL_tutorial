@@ -40,7 +40,7 @@ int main()
          << endl;
 
     v_test.push_back(0); // 可能导致容量不足，触发内存重新分配
-    cout << "push_back 0: ";
+    cout << "push_back 0: "<< endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of iter: " << &*it << endl
@@ -53,7 +53,7 @@ int main()
     }
     v_test.push_back(0);
 
-    cout << "push_back 0: ";
+    cout << "push_back 0: "<< endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of iter: " << &*it << endl
@@ -66,14 +66,63 @@ int main()
     }
     v_test.push_back(0);
 
-    cout << "push_back 0: ";
+    cout << "push_back 0: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of iter: " << &*it << endl
          << endl;
 
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
 
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of iter: " << &*it << endl
+         << endl;
 
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of iter: " << &*it << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of iter: " << &*it << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of iter: " << &*it << endl
+         << endl;
 
     printf("--------------------end----------------------\n");
     // cin.get();
