@@ -131,7 +131,7 @@ void push_back_test(){
     cout << "capacity = " << v_test.capacity() << endl
          << endl;
 
-    cout << "添加10个元素: ";
+    cout << "添加10个元素: " << endl;
     for (int i = 0; i < 10; ++i)
     {
         v_test.push_back(i);
@@ -146,9 +146,12 @@ void push_back_test(){
     cout << endl;
 
     // 添加1个元素
-    cout << "size = capacity. insert one element\n";
-    v_test.push_back(0);
+    cout << "size = capacity\n";
     cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+
+    cout << "insert one element\n";
+    v_test.push_back(0);
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl << endl;
 
     v_test.reserve(100);
     cout << "reserve capacity 100\n";
@@ -165,6 +168,10 @@ void push_back_test(){
     cout << "size = capacity. insert one element\n";
     v_test.push_back(0);
     cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+
+    cout << "insert one element\n";
+    v_test.push_back(0);
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl << endl;
 
     v_test.resize(50);
     cout << "resize size 50\n";
