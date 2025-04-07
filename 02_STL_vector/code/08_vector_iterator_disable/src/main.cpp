@@ -118,7 +118,7 @@ void test2()
 
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "it = : " << *it << endl;
+    cout << "it = " << *it << endl;
     cout << "addr of it: " << &*it << endl
          << endl;
 
@@ -126,7 +126,7 @@ void test2()
 
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "it = : " << *it << endl;
+    cout << "it = " << *it << endl;
     cout << "addr of it: " << &*it << endl
          << endl;
 }
