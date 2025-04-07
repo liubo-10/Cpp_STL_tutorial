@@ -162,6 +162,42 @@ assign(v.begin(),v.end());          //将[v.begin(),v.end())区间中的元素�
 assign(n,elem);                     //将n个elem赋值给本身
 ```
 
+assign: 将新内容赋给vector，替换其当前内容，并相应地修改其大小。
+
+
+
+### 修改函数
+
+
+
+```C++
+std::vector<int> first;
+std::vector<int> second;
+std::vector<int> third;
+ 
+first.assign (7,100);             // 7 ints with a value of 100
+ 
+std::vector<int>::iterator it;
+it=first.begin()+1;
+ 
+second.assign (it,first.end()-1); // the 5 central values of first
+ 
+int myints[] = {1776,7,4};
+third.assign (myints,myints+3);   // assigning from array.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 使用示例:
 
 ```c++
@@ -210,7 +246,7 @@ int main()
     cout << "third2: ";
     printVector(third);
 
-    // assign 函数赋值，使用
+    // assign 函数赋值，使用数值
     vector<int> forth(10, 1);
     cout << "forth1: ";
     printVector(forth);
@@ -245,11 +281,13 @@ forth2: 9 9 9 9 9
 函数原型：
 
 ```c++
-at(int idx); //返回索引idx所指的数据
-operator[]; //返回[]内索引所指的数据
-front(); //返回容器中第一个元素
-back(); //返回容器中最后一个元素
+at(int idx);    //返回索引idx所指的数据，如果idx越界，抛出out_of_range异常。
+operator[idx];  //返回索引idx所指的数据，如果idx越界，运行直接报错
+front();        //返回容器中第一个数据元素
+back();         //返回容器中最后一个数据元素
 ```
+
+
 
 使用示例:
 
@@ -319,6 +357,24 @@ push_back(ele); //尾部插入元素ele
 insert(const_iterator pos,ele); //在迭代器指向的位置pos处插入一个元素ele
 insert(const_iterator pos,int count,ele); //在迭代器指向的位置pos处插入count个元素ele
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 使用示例:
 
@@ -535,85 +591,18 @@ int main()
 
 
 
-## 1.3 vector插入和删除操作
 
-函数原型：
 
-```c++
-insert(const_iterator pos, int count,ele);//迭代器指向位置pos插入count个元素ele.
 
-erase(const_iterator start, const_iterator end);//删除迭代器从start到end之间的元素
-erase(const_iterator pos);//删除迭代器指向的元素
-clear();//删除容器中所有元素
 
 
-push_back(ele); //尾部插入元素ele
-pop_back(); //删除最后一个元素
-insert(const_iterator pos, ele); //迭代器指向位置pos插入元素ele
-insert(const_iterator pos, int count,ele);//迭代器指向位置pos插入count个元素ele
-erase(const_iterator pos); //删除迭代器指向的元素
-erase(const_iterator start, const_iterator end);//删除迭代器从start到end之间的元素
-clear(); //删除容器中所有元素
 
 
 
-```
 
-使用示例
 
 
 
-```c++
-#include <vector>
- 
-void printVector(vector<int>& v) {
- 
-	for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
-		cout << *it << " ";
-	}
-	cout << endl;
-}
- 
-//插入和删除
-void test01()
-{
-	vector<int> v1;
-	//尾插
-	v1.push_back(10);
-	v1.push_back(20);
-	v1.push_back(30);
-	v1.push_back(40);
-	v1.push_back(50);
-	printVector(v1);
-	//尾删
-	v1.pop_back();
-	printVector(v1);
-	//插入
-	v1.insert(v1.begin(), 100);
-	printVector(v1);
- 
-	v1.insert(v1.begin(), 2, 1000);
-	printVector(v1);
- 
-	//删除
-	v1.erase(v1.begin());
-	printVector(v1);
- 
-	//清空
-	v1.erase(v1.begin(), v1.end());
-	v1.clear();
-	printVector(v1);
-}
- 
-int main() {
- 
-	test01();
- 
-	system("pause");
- 
-	return 0;
-}
-```
 
 
 
@@ -643,16 +632,7 @@ int main() {
 
 
 
-## 1.3 vector大小操作
 
-```c++
-size();//返回容器中元素的个数
-empty();//判断容器是否为空
-resize(int num);//重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
-resize(int num, elem);//重新指定容器的长度为num，若容器变长，则以elem值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
-capacity();//容器的容量
-reserve(int len);//容器预留len个元素长度，预留位置不初始化，元素不可访问
-```
 
 
 
@@ -664,56 +644,6 @@ reserve(int len);//容器预留len个元素长度，预留位置不初始化，�
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### vector数据存取操作
-
-```c++
-at(int idx); //返回索引idx所指的数据，如果idx越界，抛出out_of_range异常。
-operator[];//返回索引idx所指的数据，越界时，运行直接报错
-front();//返回容器中第一个数据元素
-back();//返回容器中最后一个数据元素
-```
-
-
-
-### 修改函数
-
-#### assign
-
-作用：将新内容赋给vector，替换其当前内容，并相应地修改其大小。
-
-```C++
-std::vector<int> first;
-std::vector<int> second;
-std::vector<int> third;
- 
-first.assign (7,100);             // 7 ints with a value of 100
- 
-std::vector<int>::iterator it;
-it=first.begin()+1;
- 
-second.assign (it,first.end()-1); // the 5 central values of first
- 
-int myints[] = {1776,7,4};
-third.assign (myints,myints+3);   // assigning from array.
-```
 
 #### push_back
 

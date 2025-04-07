@@ -31,9 +31,8 @@ void printVector(vector<int> &v)
 int main()
 {
     printf("--------------------begain-------------------\n");
-    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    vector<int> first(a, a + 10);
+    vector<int> first = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "first: ";
     printVector(first);
 
@@ -48,17 +47,27 @@ int main()
     cout << "third1: ";
     printVector(third);
 
-    third.assign(first.begin(), first.end() - 5); // 把first前五个值赋给third前五个值，其余值删除
+    third.assign(first.begin(), first.end() - 5); // 把first除后五个值之外值赋给third，其余值删除
     cout << "third2: ";
     printVector(third);
 
-    // assign 函数赋值，使用
+    // assign 函数赋值，使用数值
     vector<int> forth(10, 1);
     cout << "forth1: ";
     printVector(forth);
 
     forth.assign(5, 9); // 把5个9赋给 forth，其余值删除
     cout << "forth2: ";
+    printVector(forth);
+
+    // assign 函数赋值，使用数组
+    vector<int> fifth(10, 1);
+    cout << "fifth1: ";
+    printVector(forth);
+
+    int myints[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    third.assign (myints, myints + 4);
+    cout << "fifth2: ";
     printVector(forth);
 
     printf("--------------------end----------------------\n");

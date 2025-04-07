@@ -38,6 +38,7 @@ int main()
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl << endl;
 
+    // resize改变大小，不改变容量
     v_test.resize(5);
     cout << "resize 5: ";
     printVector(v_test);
