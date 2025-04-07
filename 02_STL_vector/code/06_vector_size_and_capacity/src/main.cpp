@@ -132,7 +132,7 @@ void push_back_test(){
          << endl;
 
     cout << "添加10个元素: " << endl;
-    int* pStart = nullptr;
+    int* pStart = &v_test[0];
 	int count = 0;
     for (int i = 0; i < 10; ++i)
     {
@@ -189,7 +189,7 @@ void push_back_test(){
 	//预先开辟空间
 	v1.reserve(100000);
 
-	pStart = nullptr;
+	pStart = &v1[0];
 	count = 0;
 	for (int i = 0; i < 100000;i++){
 		v1.push_back(i);
