@@ -66,7 +66,7 @@ int main()
     printVector(fifth);
 
     int myints[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    fifth.assign(myints, myints + 5); //左闭右开
+    fifth.assign(myints, myints + 5); //把 myints 前五个值赋给fifth，fifth左闭右开
     cout << "fifth2: ";
     printVector(fifth);
 
