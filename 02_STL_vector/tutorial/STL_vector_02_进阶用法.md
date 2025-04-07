@@ -125,39 +125,145 @@ int main()
 
 当vector插入元素(如 push_back, insert)时，若当前容量不足vector会申请一块更大的内存，将旧元素拷贝到新内存，并释放就内存。此时：所有迭代器，指针和引用都会失效(因为它们指向旧的内存)。
 
+
+
+测试示例:
+
 ```c++
-int main()
+void test1()
 {
-    printf("--------------------begain-------------------\n");
+    cout << "test1: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     auto it = v_test.begin();
 
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of iter: " << &*it << endl
+    cout << "addr of it: " << &*it << endl
          << endl;
 
-    v_test.reserve(1000000);
     // 将容量用完
     while (v_test.size() != v_test.capacity())
     {
         v_test.push_back(0);
     }
-    v_test.push_back(0); // 重新申请内存
+    v_test.push_back(0);
+    auto it1 = v_test.begin();
 
-    cout << "push_back 0: "<< endl;
+    cout << "push_back 0: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl       // it 地址有可能改变
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it1 << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+    auto it2 = v_test.begin();
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl
+         << endl;
+
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+    auto it3 = v_test.begin();
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl;
+    cout << "addr of it3: " << &*it3 << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+    auto it4 = v_test.begin();
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl;
+    cout << "addr of it3: " << &*it3 << endl;
+    cout << "addr of it4: " << &*it4 << endl
+         << endl;
+
+    v_test.resize(10);
+    vector<int>(v_test).swap(v_test);
+    auto it5 = v_test.begin();
+
+    cout << "swap v_test: ";
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it5: " << &*it5 << endl
          << endl;
 }
 ```
 
 
 
+测试结果:
 
+```tex
+test1: 
+size = 10
+capacity = 10
+addr of it: 0x55fe3e0552c0
 
+push_back 0: 
+size = 11
+capacity = 20
+addr of it: 0x55fe3e0552c0
+addr of it1: 0x55fe3e0552f0
 
+push_back 0: 
+size = 21
+capacity = 40
+addr of it: 0x55fe3e0552c0
+addr of it1: 0x55fe3e0552f0
+addr of it2: 0x55fe3e055350
+
+push_back 0: 
+size = 41
+capacity = 80
+addr of it: 0x55fe3e0552c0
+addr of it1: 0x55fe3e0552f0
+addr of it2: 0x55fe3e055350
+addr of it3: 0x55fe3e055400
+
+push_back 0: 
+size = 81
+capacity = 160
+addr of it: 0x55fe3e0552c0
+addr of it1: 0x55fe3e0552f0
+addr of it2: 0x55fe3e055350
+addr of it3: 0x55fe3e055400
+addr of it4: 0x55fe3e055550
+
+swap v_test: size = 10
+capacity = 10
+addr of it5: 0x55fe3e0552c0
+```
 
 
 

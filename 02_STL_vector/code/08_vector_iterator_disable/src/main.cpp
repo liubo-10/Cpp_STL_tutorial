@@ -132,6 +132,18 @@ void test1()
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of it5: " << &*it5 << endl
          << endl;
+
+    v_test.reserve(20);
+    auto it6 = v_test.begin();
+
+    cout << "addr of it6: " << &*it6 << endl
+         << endl;
+
+    v_test.reserve(30);
+    auto it7 = v_test.begin();
+
+    cout << "addr of it7: " << &*it7 << endl
+         << endl;
 }
 
 void test2()
