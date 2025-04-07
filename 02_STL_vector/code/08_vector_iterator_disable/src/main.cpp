@@ -37,7 +37,8 @@ int main()
     printVector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "it = " << *it << endl
+    cout << "it = " << *it << endl;
+    cout << "addr of iter: " << &*it << endl
          << endl;
 
     v_test.push_back(0); // 可能导致容量不足，触发内存重新分配
@@ -45,10 +46,10 @@ int main()
     printVector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-
-    cout << "it = " << *it << endl
+    cout << "it = " << *it << endl;
+    cout << "addr of iter: " << &*it << endl
          << endl;
-
+         
     printf("--------------------end----------------------\n");
     // cin.get();
     // getchar();
