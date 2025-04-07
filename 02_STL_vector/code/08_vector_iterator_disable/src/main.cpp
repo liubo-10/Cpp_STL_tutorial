@@ -31,16 +31,22 @@ void printVector(vector<int> &v)
 int main()
 {
     printf("--------------------begain-------------------\n");
-    vector<int> v_test1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    vector<int> v_test2 = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it = v_test.begin();
 
-    cout << "交换前：" << endl;
-    printVector(v_test1);
-    printVector(v_test2);
-    cout << "交换后：" << endl;
-    v_test1.swap(v_test2); // 调用互换函数
-    printVector(v_test1);
-    printVector(v_test2);
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
+
+    v_test.push_back(0); // 可能导致容量不足，触发内存重新分配
+    cout << "push_back 0: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
+
+    *it = 10; // 错误！it 已失效！
 
     printf("--------------------end----------------------\n");
     // cin.get();
