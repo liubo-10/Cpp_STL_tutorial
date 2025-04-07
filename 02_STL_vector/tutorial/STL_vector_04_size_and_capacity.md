@@ -38,7 +38,7 @@ empty();    //判断容器是否为空
 
 
 
-## 二、resize对vector大小容量的操作
+## 二、resize对vector数据量和容量的操作
 
 函数原型：
 
@@ -109,7 +109,7 @@ capacity = 20
 
 
 
-# 三、reserve对vector大小容量的操作
+# 三、reserve对vector数据量和容量的操作
 
 函数原型：
 
@@ -169,7 +169,7 @@ reserve 是保留的意思，reserve的值小于size也不会使元素消失，�
 
 
 
-# 三、clear对vector大小容量的操作
+# 三、clear对vector数据量和容量的操作
 
 函数原型：
 
@@ -218,13 +218,113 @@ clear 只清零大小，不改变容量
 
 
 
+# 三、push_back对vector数据量和容量的操作
+
+函数原型：
+
+```c++
+push_back(ele); //尾部插入元素ele
+```
 
 
 
+使用示例:
 
+```c++
+void push_back_test(){
+    cout << "push_back_test: " << endl;
+    vector<int> v_test;
+    cout << "未初始化vector: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
 
+    cout << "添加10个元素: " << endl;
+    for (int i = 0; i < 10; ++i)
+    {
+        v_test.push_back(i);
+        cout << "capacity: " << v_test.capacity() << "  size: " << v_test.size() << endl;
+    }
 
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    cout << endl;
 
+    // 添加1个元素
+    cout << "size = capacity\n";
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+
+    cout << "insert one element\n";
+    v_test.push_back(0);
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl << endl;
+
+    v_test.reserve(100);
+    cout << "reserve capacity 100\n";
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    cout << endl;
+
+   // 添加1个元素
+   cout << "size = capacity\n";
+   cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+
+   cout << "insert one element\n";
+   v_test.push_back(0);
+   cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl << endl;
+
+    v_test.resize(50);
+    cout << "resize size 50\n";
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+}
+```
+
+测试结果:
+
+```tex
+push_back_test: 
+未初始化vector: 
+size = 0
+capacity = 0
+
+添加10个元素: 
+capacity: 1  size: 1
+capacity: 2  size: 2
+capacity: 4  size: 3
+capacity: 4  size: 4
+capacity: 8  size: 5
+capacity: 8  size: 6
+capacity: 8  size: 7
+capacity: 8  size: 8
+capacity: 16  size: 9
+capacity: 16  size: 10
+
+size = capacity
+capacity:16  size:16
+insert one element
+capacity:32  size:17
+
+reserve capacity 100
+capacity:100  size:17
+
+size = capacity
+capacity:100  size:100
+insert one element
+capacity:200  size:101
+
+resize size 50
+capacity:200  size:50
+```
+
+当 capacity 不够用时扩容当前值的2倍
 
 
 

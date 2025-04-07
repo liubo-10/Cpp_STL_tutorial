@@ -175,6 +175,26 @@ void push_back_test(){
     v_test.resize(50);
     cout << "resize size 50\n";
     cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+
+
+
+	vector<int> v1;
+	//预先开辟空间
+	v1.reserve(100000);
+
+	int* pStart = nullptr;
+	int count = 0;
+	for (int i = 0; i < 100000;i ++){
+		v1.push_back(i);
+		if (pStart != &v1[0]){
+			pStart = &v1[0];
+			count++;
+		}
+	}
+
+	cout << "count:" << count << endl;
+
+
 }
 
 
@@ -209,22 +229,9 @@ int main8(){
     cout << "size:" << v.size() << endl;         // size:10
 
     cout << "\n----------------reserve 测试------------------" << endl;
-	vector<int> v1;
 
-	//预先开辟空间
-	v1.reserve(100000);
 
-	int* pStart = nullptr;
-	int count = 0;
-	for (int i = 0; i < 100000;i ++){
-		v1.push_back(i);
-		if (pStart != &v1[0]){
-			pStart = &v1[0];
-			count++;
-		}
-	}
 
-	cout << "count:" << count << endl;
 
     cout << "----------------end------------------" << endl;
     return EXIT_SUCCESS;
