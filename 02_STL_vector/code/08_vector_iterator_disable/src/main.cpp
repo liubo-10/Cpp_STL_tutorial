@@ -83,8 +83,8 @@ void test1()
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of it: " << &*it << endl;
-    cout << "addr of it1: " << &*it << endl;
-    cout << "addr of it2: " << &*it1 << endl
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl
          << endl;
 
 
@@ -100,9 +100,9 @@ void test1()
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of it: " << &*it << endl;
-    cout << "addr of it1: " << &*it << endl;
-    cout << "addr of it2: " << &*it << endl;
-    cout << "addr of it3: " << &*it1 << endl
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl;
+    cout << "addr of it3: " << &*it3 << endl
          << endl;
 
     // 将容量用完
@@ -117,10 +117,10 @@ void test1()
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of it: " << &*it << endl;
-    cout << "addr of it1: " << &*it << endl;
-    cout << "addr of it2: " << &*it << endl;
-    cout << "addr of it3: " << &*it << endl;
-    cout << "addr of it4: " << &*it1 << endl
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl;
+    cout << "addr of it3: " << &*it3 << endl;
+    cout << "addr of it4: " << &*it4 << endl
          << endl;
 
     v_test.resize(10);
