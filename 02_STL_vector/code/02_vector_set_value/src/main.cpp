@@ -47,7 +47,7 @@ int main()
     cout << "third1: ";
     printVector(third);
 
-    third.assign(first.begin(), first.end() - 5); // 把first除后五个值之外值赋给third，其余值删除
+    third.assign(first.begin(), first.end() - 5); // 把first除后五个值之外值赋给third，其余值删除,左闭右开
     cout << "third2: ";
     printVector(third);
 
@@ -66,7 +66,7 @@ int main()
     printVector(fifth);
 
     int myints[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    fifth.assign(myints, myints + 4);
+    fifth.assign(myints, myints + 5); //左闭右开
     cout << "fifth2: ";
     printVector(fifth);
 
