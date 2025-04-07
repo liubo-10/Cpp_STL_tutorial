@@ -53,7 +53,8 @@ void resize_test(){
     cout << "初始数据: ";
     printVector(v_test);
     cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "max_size = " << v_test.max_size() << endl << endl;
 
     vector<int> v_test1 = v_test;
     v_test1.resize(5);

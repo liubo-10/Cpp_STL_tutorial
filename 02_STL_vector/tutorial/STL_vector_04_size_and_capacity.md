@@ -26,6 +26,43 @@ empty();    //判断容器是否为空
 
 
 
+#### size
+
+作用：返回vector中元素的个数。
+
+【注意】vector中保存的实际对象的数量，不一定等于它的存储空间大小（容量）。
+
+#### capacity
+
+作用：返回当前为vector分配的存储空间大小（容量），以元素个数表示。
+
+【注意】这个容量不一定等于向量的大小。它可以相等或更大，额外的空间允许容纳增长，而不需要在每次插入时重新分配。这个容量并没有假设向量的大小有限制。当此容量耗尽并且需要更多容量时，容器会自动对其进行扩展(重新分配其存储空间)。vector的大小的理论极限由成员max_size给出。可以通过调用vector::reserve成员显式地改变vector的容量。
+
+```C++
+std::vector<int> myvector;
+ 
+// set some content in the vector:
+for (int i=0; i<100; i++) myvector.push_back(i);
+
+std::cout << "size: " << myvector.size() << "\n";            //100
+std::cout << "capacity: " << myvector.capacity() << "\n";    //128
+std::cout << "max_size: " << myvector.max_size() << "\n";    //1073741823
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 二、resize对vector大小容量的操作
 
 函数原型：
@@ -157,7 +194,9 @@ reserve 是保留的意思，reserve的值小于size也不会使元素消失，�
 
 
 
-# clear
+# 三、clear对vector大小容量的操作
+
+函数原型：
 
 ```c++
 clear(); //删除容器中所有元素
@@ -165,81 +204,78 @@ clear(); //删除容器中所有元素
 
 
 
+使用示例:
 
+```c++
+void clear_test(){
+    cout << "clear_test: " << endl;
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << "初始数据: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl << endl;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### 容量
-
-#### size
-
-作用：返回vector中元素的个数。
-
-【注意】vector中保存的实际对象的数量，不一定等于它的存储空间大小（容量）。
-
-```C++
-std::vector<int> myints;
-std::cout  << myints.size() << std::endl;  //0
- 
-for (int i=0; i<10; i++) 
-    myints.push_back(i);
-std::cout << myints.size() << std::endl;  //10
- 
-myints.insert (myints.end(),10,100);
-std::cout  << myints.size() << std::endl; //20
- 
-myints.pop_back();
-std::cout <<  myints.size() << std::endl; //19
+    // clear是清空，不是置零，清空所有元素，所以size为0，但是capacity不变，
+    v_test.clear();
+    cout << "clear: ";
+    printVector(v_test);
+    cout << "empty = " << v_test.empty() << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl << endl;
+}
 ```
 
-#### capacity
+测试结果:
 
-作用：返回当前为vector分配的存储空间大小（容量），以元素个数表示。
+```tex
+clear_test: 
+初始数据: 0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 10
 
-【注意】这个容量不一定等于向量的大小。它可以相等或更大，额外的空间允许容纳增长，而不需要在每次插入时重新分配。这个容量并没有假设向量的大小有限制。当此容量耗尽并且需要更多容量时，容器会自动对其进行扩展(重新分配其存储空间)。vector的大小的理论极限由成员max_size给出。可以通过调用vector::reserve成员显式地改变vector的容量。
-
-```C++
-std::vector<int> myvector;
- 
-// set some content in the vector:
-for (int i=0; i<100; i++) myvector.push_back(i);
-
-std::cout << "size: " << myvector.size() << "\n";            //100
-std::cout << "capacity: " << myvector.capacity() << "\n";    //128
-std::cout << "max_size: " << myvector.max_size() << "\n";    //1073741823
+clear: 
+empty = 1
+size = 0
+capacity = 10
 ```
+
+clear 只清零大小，不改变容量
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
