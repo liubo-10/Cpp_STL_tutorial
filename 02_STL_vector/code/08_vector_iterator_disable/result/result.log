@@ -36,3 +36,48 @@ it = 6
 addr of it: 0x55fb64cc62d4
 
 --------------------end----------------------
+
+
+
+test1: 
+size = 10
+capacity = 10
+addr of it: 0x55fe3e0552c0
+
+push_back 0: 
+size = 11
+capacity = 20
+addr of it: 0x55fe3e0552c0
+addr of it1: 0x55fe3e0552f0
+
+push_back 0: 
+size = 21
+capacity = 40
+addr of it: 0x55fe3e0552c0
+addr of it1: 0x55fe3e0552f0
+addr of it2: 0x55fe3e055350
+
+push_back 0: 
+size = 41
+capacity = 80
+addr of it: 0x55fe3e0552c0
+addr of it1: 0x55fe3e0552f0
+addr of it2: 0x55fe3e055350
+addr of it3: 0x55fe3e055400
+
+push_back 0: 
+size = 81
+capacity = 160
+addr of it: 0x55fe3e0552c0
+addr of it1: 0x55fe3e0552f0
+addr of it2: 0x55fe3e055350
+addr of it3: 0x55fe3e055400
+addr of it4: 0x55fe3e055550
+
+swap v_test: size = 10
+capacity = 10
+addr of it5: 0x55fe3e0552c0
+
+addr of it6: 0x5637910e02f0
+
+addr of it7: 0x5637910e07e0

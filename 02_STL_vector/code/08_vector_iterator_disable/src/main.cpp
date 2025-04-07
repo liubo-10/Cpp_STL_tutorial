@@ -150,20 +150,22 @@ void test2()
 {
     cout << "test2: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    auto it = v_test.begin() + 5; // 指向 5
+    auto it1 = v_test.begin() + 5; // 指向 5
 
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "it = " << *it << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "it1 = " << *it1 << endl;
+    cout << "addr of it1: " << &*it1 << endl
          << endl;
 
     v_test.erase(v_test.begin() + 1); // 删除 1
-
+    auto it2 = v_test.begin() + 5;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "it = " << *it << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "it1 = " << *it1 << endl;
+    cout << "it2 = " << *it2 << endl;
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl
          << endl;
 }
 

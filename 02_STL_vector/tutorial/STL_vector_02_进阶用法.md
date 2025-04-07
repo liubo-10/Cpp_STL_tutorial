@@ -217,6 +217,18 @@ void test1()
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of it5: " << &*it5 << endl
          << endl;
+    
+    v_test.reserve(20);
+    auto it6 = v_test.begin();
+
+    cout << "addr of it6: " << &*it6 << endl
+         << endl;
+
+    v_test.reserve(30);
+    auto it7 = v_test.begin();
+
+    cout << "addr of it7: " << &*it7 << endl
+         << endl;
 }
 ```
 
@@ -263,7 +275,17 @@ addr of it4: 0x55fe3e055550
 swap v_test: size = 10
 capacity = 10
 addr of it5: 0x55fe3e0552c0
+
+addr of it6: 0x5637910e02f0
+
+addr of it7: 0x5637910e07e0
 ```
+
+从测试结果可以看出，每次扩容都会导致 v_test.begin() 的地址发生变化，同事说明，原地址失效。
+
+
+
+
 
 
 
