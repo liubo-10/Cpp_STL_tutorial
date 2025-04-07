@@ -231,7 +231,8 @@ push_back(ele); //尾部插入元素ele
 使用示例:
 
 ```c++
-void push_back_test(){
+void push_back_test()
+{
     cout << "push_back_test: " << endl;
     vector<int> v_test;
     cout << "未初始化vector: ";
@@ -241,11 +242,19 @@ void push_back_test(){
          << endl;
 
     cout << "添加10个元素: " << endl;
+    int *pStart = &v_test[0];
+    int count = 0;
     for (int i = 0; i < 10; ++i)
     {
         v_test.push_back(i);
         cout << "capacity: " << v_test.capacity() << "  size: " << v_test.size() << endl;
+        if (pStart != &v_test[0])
+        {
+            pStart = &v_test[0];
+            count++;
+        }
     }
+    cout << "count:" << count << endl;
 
     // 将容量用完
     while (v_test.size() != v_test.capacity())
@@ -260,7 +269,8 @@ void push_back_test(){
 
     cout << "insert one element\n";
     v_test.push_back(0);
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl << endl;
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl
+         << endl;
 
     v_test.reserve(100);
     cout << "reserve capacity 100\n";
@@ -273,17 +283,36 @@ void push_back_test(){
     }
     cout << endl;
 
-   // 添加1个元素
-   cout << "size = capacity\n";
-   cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+    // 添加1个元素
+    cout << "size = capacity\n";
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
 
-   cout << "insert one element\n";
-   v_test.push_back(0);
-   cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl << endl;
+    cout << "insert one element\n";
+    v_test.push_back(0);
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl
+         << endl;
 
     v_test.resize(50);
     cout << "resize size 50\n";
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl
+         << endl;
+
+    vector<int> v1;
+    // 预先开辟空间
+    v1.reserve(100000);
+
+    pStart = &v1[0];
+    count = 0;
+    for (int i = 0; i < 100000; i++)
+    {
+        v1.push_back(i);
+        if (pStart != &v1[0])
+        {
+            pStart = &v1[0];
+            count++;
+        }
+    }
+    cout << "count:" << count << endl;
 }
 ```
 
@@ -306,6 +335,7 @@ capacity: 8  size: 7
 capacity: 8  size: 8
 capacity: 16  size: 9
 capacity: 16  size: 10
+count:5
 
 size = capacity
 capacity:16  size:16
@@ -322,6 +352,8 @@ capacity:200  size:101
 
 resize size 50
 capacity:200  size:50
+
+count:0
 ```
 
 当 capacity 不够用时扩容当前值的2倍

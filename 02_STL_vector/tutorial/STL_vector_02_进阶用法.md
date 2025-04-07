@@ -28,11 +28,53 @@ sdfgsgfg
 
 
 
+6.vector互换容器
+函数原型：
+
+测试案例1：基本使用
+
+void text06_1()
+{
+	vector<int> v1,v2;
+	for (int i = 0; i < 10; ++i)
+	{
+		v1.push_back(i);
+		v2.push_back(9 - i);
+	}
+	cout << "交换前：" << endl;
+	printVector(v1);
+	printVector(v2);
+	cout << "交换后：" << endl;
+	v1.swap(v2);   //调用互换函数
+	printVector(v1);
+	printVector(v2);
+}
 
 
 
 
 
+
+# 一、vector的构造函数
+
+函数原型:
+
+```C++
+swap(v); //容器v和当前容器互换
+```
+
+使用示例:
+
+```c++
+=                               // 创建一个值类型为int的空vector
+
+```
+
+测试结果:
+
+```tex
+=
+```
 
 
 
@@ -55,9 +97,11 @@ sdfgsgfg
 # 七、参考资料
 
 版权声明：本文参考了其他资料和CSDN博主的文章，遵循CC 4.0 BY-SA版权协议，现附上原文出处链接及本声明。
-一、 https://blog.csdn.net/as480133937/article/details/123740365
-二、 https://blog.csdn.net/weibo1230123/article/details/80210097
-三、 LwIP应用开发实战指南：基于STM32
+
+1. https://blog.csdn.net/qq_52324409/article/details/121000029
+2. 
+
+
 
 
 
