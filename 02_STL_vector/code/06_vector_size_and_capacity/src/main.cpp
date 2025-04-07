@@ -23,6 +23,7 @@ void resize_test();
 void reserve_test();
 void clear_test();
 void push_back_test();
+void swap_test();
 
 // vector的遍历
 void printVector(vector<int> &v)
@@ -42,6 +43,7 @@ int main()
     reserve_test();
     clear_test();
     push_back_test();
+    swap_test();
 
     printf("--------------------end----------------------\n");
     // cin.get();
@@ -50,7 +52,8 @@ int main()
     return EXIT_SUCCESS;
 }
 
-void resize_test(){
+void resize_test()
+{
     cout << "resize_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "初始数据: ";
@@ -210,38 +213,29 @@ void push_back_test()
     cout << "count:" << count << endl;
 }
 
-int main8(){
-    cout << "----------------begain------------------" << endl;
-    
-    cout << "\n----------------大小 容量 测试------------------" << endl;
-    vector<int> v;
-    for (int i = 0; i < 100000;i ++) {
-        v.push_back(i);
-    }
-    cout << "capacity:" << v.capacity() << endl; // capacity:131072
-    cout << "size:" << v.size() << endl;         // size:100000
+void swap_test()
+{
+    cout << "clear_test: " << endl;
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << "初始数据: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
 
-    // resize改变大小，不改变容量
-    cout << "\n----------------resize 测试------------------" << endl;
-    v.resize(10);
-    cout << "capacity:" << v.capacity() << endl; // capacity:131072
-    cout << "size:" << v.size() << endl;         // size:10
-    
+    v_test.reserve(30); // 使得capacity=30，里面的元素不会改变
+    cout << "reserve 30: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
 
-    // 巧用swap,收缩内存空间
-    cout << "\n----------------swap 测试------------------" << endl;
-
-    vector<int>(v).swap(v);
-    cout << "capacity:" << v.capacity() << endl; // capacity:10
-    cout << "size:" << v.size() << endl;         // size:10
-
-    cout << "\n----------------reserve 测试------------------" << endl;
-
-
-
-
-    cout << "----------------end------------------" << endl;
-    return EXIT_SUCCESS;
+    v_test.swap(v_test);
+    cout << "swap v_test: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
 }
 
 /**

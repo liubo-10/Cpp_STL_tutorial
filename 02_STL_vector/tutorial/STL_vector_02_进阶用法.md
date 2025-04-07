@@ -14,48 +14,11 @@
 
 > # STL_vector_02_进阶用法
 
-# title
-hfghgh
-
-## fdfdf
-sdfgsgfg
 
 
 
 
-
-
-
-
-
-6.vector互换容器
-函数原型：
-
-测试案例1：基本使用
-
-void text06_1()
-{
-	vector<int> v1,v2;
-	for (int i = 0; i < 10; ++i)
-	{
-		v1.push_back(i);
-		v2.push_back(9 - i);
-	}
-	cout << "交换前：" << endl;
-	printVector(v1);
-	printVector(v2);
-	cout << "交换后：" << endl;
-	v1.swap(v2);   //调用互换函数
-	printVector(v1);
-	printVector(v2);
-}
-
-
-
-
-
-
-# 一、vector的构造函数
+# 一、swap函数
 
 函数原型:
 
@@ -66,14 +29,60 @@ swap(v); //容器v和当前容器互换
 使用示例:
 
 ```c++
-=                               // 创建一个值类型为int的空vector
+#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
+#include <iostream>  // 包含输入和输出操作
+#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h>  // pause()头文件
+#include <vector>
 
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+
+// vector的遍历
+void printVector(vector<int> &v)
+{
+    for (auto n : v)
+    {
+        cout << n << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    printf("--------------------begain-------------------\n");
+    vector<int> v_test1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<int> v_test2 = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+
+    cout << "交换前：" << endl;
+    printVector(v_test1);
+    printVector(v_test2);
+    cout << "交换后：" << endl;
+    v_test1.swap(v_test2); // 调用互换函数
+    printVector(v_test1);
+    printVector(v_test2);
+
+    printf("--------------------end----------------------\n");
+    // cin.get();
+    // getchar();
+    // pause();
+    return EXIT_SUCCESS;
+}
 ```
 
 测试结果:
 
 ```tex
-=
+--------------------begain-------------------
+交换前：
+0 1 2 3 4 5 6 7 8 9 
+9 8 7 6 5 4 3 2 1 0 
+交换后：
+9 8 7 6 5 4 3 2 1 0 
+0 1 2 3 4 5 6 7 8 9 
+--------------------end----------------------
 ```
 
 
