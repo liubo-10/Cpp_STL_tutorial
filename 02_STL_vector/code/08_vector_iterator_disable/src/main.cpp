@@ -33,7 +33,7 @@ int main()
     printf("--------------------begain-------------------\n");
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     auto it = v_test.begin();
-    v_test.reserve(100);
+    v_test.reserve(10000);
 
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
