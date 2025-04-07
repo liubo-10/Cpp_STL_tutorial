@@ -71,11 +71,12 @@ void test1()
          << endl;
 
     v_test.push_back(0);
-
+    auto it11 = v_test.begin();
     cout << "push_back 0: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it11: " << &*it11 << endl
          << endl;
 
     // 将容量用完
