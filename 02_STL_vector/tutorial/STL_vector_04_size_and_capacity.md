@@ -16,7 +16,7 @@
 
 
 
-# 一、vector大小容量的获取
+# 一、vector数据量和容量的获取
 
 ```c++
 size();     //返回容器中元素的个数
@@ -24,42 +24,17 @@ capacity(); //容器的容量
 empty();    //判断容器是否为空
 ```
 
-
-
-#### size
+## size
 
 作用：返回vector中元素的个数。
 
 【注意】vector中保存的实际对象的数量，不一定等于它的存储空间大小（容量）。
 
-#### capacity
+## capacity
 
 作用：返回当前为vector分配的存储空间大小（容量），以元素个数表示。
 
 【注意】这个容量不一定等于向量的大小。它可以相等或更大，额外的空间允许容纳增长，而不需要在每次插入时重新分配。这个容量并没有假设向量的大小有限制。当此容量耗尽并且需要更多容量时，容器会自动对其进行扩展(重新分配其存储空间)。vector的大小的理论极限由成员max_size给出。可以通过调用vector::reserve成员显式地改变vector的容量。
-
-```C++
-std::vector<int> myvector;
- 
-// set some content in the vector:
-for (int i=0; i<100; i++) myvector.push_back(i);
-
-std::cout << "size: " << myvector.size() << "\n";            //100
-std::cout << "capacity: " << myvector.capacity() << "\n";    //128
-std::cout << "max_size: " << myvector.max_size() << "\n";    //1073741823
-```
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

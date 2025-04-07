@@ -21,6 +21,7 @@ using std::vector;
 void resize_test();
 void reserve_test();
 void clear_test();
+void push_back_test();
 
 // vector的遍历
 void printVector(vector<int> &v)
@@ -39,6 +40,7 @@ int main()
     resize_test();
     reserve_test();
     clear_test();
+    push_back_test();
 
     printf("--------------------end----------------------\n");
     // cin.get();
@@ -120,52 +122,56 @@ void clear_test(){
     cout << "capacity = " << v_test.capacity() << endl << endl;
 }
 
+void push_back_test(){
+    cout << "push_back_test: " << endl;
+    vector<int> v_test;
+    cout << "未初始化vector: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl
+         << endl;
 
+    cout << "添加10个元素: ";
+    for (int i = 0; i < 10; ++i)
+    {
+        v_test.push_back(i);
+        cout << "capacity: " << v_test.capacity() << "  size: " << v_test.size() << endl;
+    }
 
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    cout << endl;
 
+    // 添加1个元素
+    cout << "size = capacity. insert one element\n";
+    v_test.push_back(0);
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
 
+    v_test.reserve(100);
+    cout << "reserve capacity 100\n";
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
 
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    cout << endl;
 
-int main7()
-{
-    cout << "----------------begain------------------" << endl;
+    // 添加1个元素
+    cout << "size = capacity. insert one element\n";
+    v_test.push_back(0);
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
 
-	vector<int> ivec;
-	cout << "capacity: " << ivec.capacity() << "  size: "  << ivec.size() << endl;
-	//添加10个元素
-	for (int i = 0; i < 10; ++i)
-	{
-		ivec.push_back(i);
-		cout << "capacity: " << ivec.capacity() << "  size: " << ivec.size() << endl;
-	}
-	//将容量用完
-	while (ivec.size() != ivec.capacity())
-		ivec.push_back(0);
-	//添加1个元素
-	cout << "size = capacity. insert one element\n";
-	ivec.push_back(0);
-	cout << "capacity:" << ivec.capacity() << "  size:" << ivec.size() << endl;
-
-	ivec.reserve(100);
-	cout << "reserve capacity 100\n";
-	cout << "capacity:" << ivec.capacity() << "  size:" << ivec.size() << endl;
-
-	//将容量用完
-	while (ivec.size() != ivec.capacity())
-		ivec.push_back(42);
-	//添加1个元素
-	cout << "size = capacity. insert one element\n";
-	ivec.push_back(0);
-	cout << "capacity:" << ivec.capacity() << "  size:" << ivec.size() << endl;
-
-	ivec.resize(50);
-	cout << "resize size 50\n";
-	cout << "capacity:" << ivec.capacity() << "  size:" << ivec.size() << endl;
-	getchar();
-
-    cout << "----------------end------------------" << endl;
-    return EXIT_SUCCESS;
+    v_test.resize(50);
+    cout << "resize size 50\n";
+    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
 }
+
+
 
 
 
