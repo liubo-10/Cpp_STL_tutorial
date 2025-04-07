@@ -18,6 +18,8 @@ using std::cout;
 using std::endl;
 using std::vector;
 
+void test1();
+
 // vector的遍历
 void printVector(vector<int> &v)
 {
@@ -31,99 +33,125 @@ void printVector(vector<int> &v)
 int main()
 {
     printf("--------------------begain-------------------\n");
-    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    auto it = v_test.begin();
-    v_test.reserve(1000000);
 
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of iter: " << &*it << endl
-         << endl;
-
-    v_test.reserve(100);
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    v_test.push_back(0);
-
-    cout << "push_back 0: "<< endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of iter: " << &*it << endl
-         << endl;
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    v_test.push_back(0);
-
-    cout << "push_back 0: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of iter: " << &*it << endl
-         << endl;
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    v_test.push_back(0);
-
-    cout << "push_back 0: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of iter: " << &*it << endl
-         << endl;
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    v_test.push_back(0);
-
-    cout << "push_back 0: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of iter: " << &*it << endl
-         << endl;
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    v_test.push_back(0);
-
-    cout << "push_back 0: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of iter: " << &*it << endl
-         << endl;
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    v_test.push_back(0);
-
-    cout << "push_back 0: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of iter: " << &*it << endl
-         << endl;
-
+    test1();
     printf("--------------------end----------------------\n");
     // cin.get();
     // getchar();
     // pause();
     return EXIT_SUCCESS;
+}
+
+void test1()
+{
+    cout << "test1: " << endl;
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it = v_test.begin();
+
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
+
+    v_test.reserve(1000000);
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
+}
+
+void test2()
+{
+    cout << "test2: " << endl;
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it = v_test.begin() + 5; // 指向 5
+
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "it = : " << *it << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
+
+    v_test.erase(v_test.begin() + 1); // 删除 1
+
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "it = : " << *it << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
 }
 
 /*****************************************************************************

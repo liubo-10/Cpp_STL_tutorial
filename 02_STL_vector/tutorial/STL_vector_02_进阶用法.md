@@ -126,15 +126,31 @@ int main()
 当vector插入元素(如 push_back, insert)时，若当前容量不足vector会申请一块更大的内存，将旧元素拷贝到新内存，并释放就内存。此时：所有迭代器，指针和引用都会失效(因为它们指向旧的内存)。
 
 ```c++
-std::vector<int> v = {1, 2, 3};
-auto it = v.begin();
-v.push_back(4); // 可能导致容量不足，触发内存重新分配
-*it = 10;       // 错误！it 已失效！
+int main()
+{
+    printf("--------------------begain-------------------\n");
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it = v_test.begin();
 
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of iter: " << &*it << endl
+         << endl;
 
+    v_test.reserve(1000000);
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0); // 重新申请内存
 
-
-
+    cout << "push_back 0: "<< endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl       // it 地址有可能改变
+         << endl;
+}
 ```
 
 
@@ -151,21 +167,32 @@ v.push_back(4); // 可能导致容量不足，触发内存重新分配
 
 
 
-2.元素位置变动(导致部分迭代器失效)
+## 2.元素位置变动
 
 当删除元素(如erase，pop_back)或在中间插入元素时，元素的位置可能发生移动：
 
 被删除元素之后的迭代器会失效（因为后续元素会向前移动）
 
+
+
+
+
+
+
+
+
+
+
 std::vector<int> v = {1, 2, 3, 4};
 auto it = v.begin() + 2; // 指向 3
 v.erase(v.begin() + 1);  // 删除 2，元素变为 {1, 3, 4}
 *it = 10;                // 错误！it 指向原位置（现在是 4），可能未定义行为
-————————————————
 
-                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
 
-原文链接：https://blog.csdn.net/HH_KZ1314/article/details/145585503
+
+
+
+
 
 
 
