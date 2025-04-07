@@ -164,14 +164,13 @@ void push_back_test(){
     }
     cout << endl;
 
-    // 添加1个元素
-    cout << "size = capacity. insert one element\n";
-    v_test.push_back(0);
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
+   // 添加1个元素
+   cout << "size = capacity\n";
+   cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
 
-    cout << "insert one element\n";
-    v_test.push_back(0);
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl << endl;
+   cout << "insert one element\n";
+   v_test.push_back(0);
+   cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl << endl;
 
     v_test.resize(50);
     cout << "resize size 50\n";
