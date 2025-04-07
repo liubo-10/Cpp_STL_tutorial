@@ -21,6 +21,7 @@
 ```c++
 size();     //返回容器中元素的个数
 capacity(); //容器的容量
+empty();    //判断容器是否为空
 ```
 
 
@@ -109,58 +110,92 @@ reserve(int len); //容器预留len个元素长度，预留位置不初始化，
 使用示例:
 
 ```c++
-===
+void reserve_test(){
+    cout << "reserve_test: " << endl;
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << "初始数据: ";
+    printVector(v_test);
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl << endl;
+
+    // reserve 是保留的意思，reserve的值小于size也不会使元素消失，此时的capacity==size
+    vector<int> v_test1 = v_test;
+    v_test1.reserve(5); // capacity == size == 10
+    cout << "reserve 5: ";
+    printVector(v_test1);
+    cout << "size = " << v_test1.size() << endl;
+    cout << "capacity = " << v_test1.capacity() << endl << endl;
+
+    vector<int> v_test2 = v_test;
+    v_test2.reserve(30); // 使得capacity=30，里面的元素不会改变
+    cout << "reserve 30: ";
+    printVector(v_test2);
+    cout << "size = " << v_test2.size() << endl;
+    cout << "capacity = " << v_test2.capacity() << endl << endl;
+
+}
 ```
 
 测试结果:
 
 ```tex
-====
+reserve_test: 
+初始数据: 0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 10
+
+reserve 5: 0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 10
+
+reserve 30: 0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 30
 ```
 
 reserve 是保留的意思，reserve的值小于size也不会使元素消失，此时的capacity==size
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # clear
 
-
-
-
-
-
-
-
-
-
-
 ```c++
-
-empty();//判断容器是否为空
-
+clear(); //删除容器中所有元素
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -114,10 +114,9 @@ void clear_test(){
     v_test.clear();
     cout << "clear: ";
     printVector(v_test);
-
+    cout << "empty = " << v_test.empty() << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl << endl;
-
 }
 
 
