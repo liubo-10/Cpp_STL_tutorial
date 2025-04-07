@@ -303,18 +303,53 @@ addr of it7: 0x5637910e07e0
 
 
 
+测试示例:
+
+```c++
+void test2()
+{
+    cout << "test2: " << endl;
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it1 = v_test.begin() + 5; // 指向 5
+
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "it1 = " << *it1 << endl;
+    cout << "addr of it1: " << &*it1 << endl
+         << endl;
+
+    v_test.erase(v_test.begin() + 1); // 删除 1
+    auto it2 = v_test.begin() + 5;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "it1 = " << *it1 << endl;
+    cout << "it2 = " << *it2 << endl;
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl
+         << endl;
+}
+```
 
 
 
+测试结果:
 
+```tex
+test2: 
+size = 10
+capacity = 10
+it1 = 5
+addr of it1: 0x56396b34a2d4
 
+size = 9
+capacity = 10
+it1 = 6
+it2 = 6
+addr of it1: 0x56396b34a2d4
+addr of it2: 0x56396b34a2d4
+```
 
-
-
-std::vector<int> v = {1, 2, 3, 4};
-auto it = v.begin() + 2; // 指向 3
-v.erase(v.begin() + 1);  // 删除 2，元素变为 {1, 3, 4}
-*it = 10;                // 错误！it 指向原位置（现在是 4），可能未定义行为
+删除数据后，后面的数据补齐删除的数据，迭代器保存的地址不变，然而迭代器指向的值已经改变。
 
 
 
