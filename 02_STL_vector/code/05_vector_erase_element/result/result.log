@@ -1,7 +1,10 @@
-----------------begain------------------
-The ASCII code for M is 77
-Add one to the character code :
-The ASCII code for N is 78
-Displaying char ch using cout.put(ch):N!
-done
-----------------end------------------
+--------------------begain-------------------
+使用 pop_back 删除最后一个元素后，打印v_test: 0 1 2 3 4 5 6 7 8 
+使用 erase 删除首个元素，打印v_test: 1 2 3 4 5 6 7 8 9 
+使用 erase 删除第二个元素，打印v_test: 0 2 3 4 5 6 7 8 9 
+使用 erase 删除全部元素，打印v_test: 
+使用 erase 删除前三个元素，打印v_test: 3 4 5 6 7 8 9 
+使用 erase 删除后三个元素，打印v_test: 0 1 2 3 4 5 6 
+使用 erase 删除前三个后三个之外的元素，打印v_test: 0 1 2 7 8 9 
+使用 clear 删除全部元素，打印v_test: 
+--------------------end----------------------
