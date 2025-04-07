@@ -63,10 +63,11 @@ void test1()
         v_test.push_back(0);
     }
     vector<int> v_test1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it1 = v_test1.begin();
     cout << "v_test1: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "size = " << v_test1.size() << endl;
+    cout << "capacity = " << v_test1.capacity() << endl;
+    cout << "addr of it1: " << &*it1 << endl
          << endl;
 
     v_test.push_back(0);
@@ -83,10 +84,11 @@ void test1()
         v_test.push_back(0);
     }
     vector<int> v_test2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it2 = v_test2.begin();
     cout << "v_test2: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "size = " << v_test2.size() << endl;
+    cout << "capacity = " << v_test2.capacity() << endl;
+    cout << "addr of it: " << &*it2 << endl
          << endl;
 
 
@@ -105,10 +107,11 @@ void test1()
     }
 
     vector<int> v_test3 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it3 = v_test3.begin();
     cout << "v_test3: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "size = " << v_test3.size() << endl;
+    cout << "capacity = " << v_test3.capacity() << endl;
+    cout << "addr of it: " << &*it3 << endl
          << endl;
 
     v_test.push_back(0);
@@ -126,10 +129,11 @@ void test1()
     }
 
     vector<int> v_test4 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it4 = v_test4.begin();
     cout << "v_test4: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
+    cout << "size = " << v_test4.size() << endl;
+    cout << "capacity = " << v_test4.capacity() << endl;
+    cout << "addr of it: " << &*it4 << endl
          << endl;
 
     v_test.push_back(0);
