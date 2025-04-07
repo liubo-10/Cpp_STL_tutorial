@@ -88,6 +88,8 @@ void test1()
     {
         v_test.push_back(0);
     }
+    
+    vector<int> v_test2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     v_test.push_back(0);
 
     cout << "push_back 0: " << endl;
