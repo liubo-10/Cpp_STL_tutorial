@@ -63,12 +63,12 @@ int main()
     // assign 函数赋值，使用数组
     vector<int> fifth(10, 1);
     cout << "fifth1: ";
-    printVector(forth);
+    printVector(fifth);
 
     int myints[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     third.assign (myints, myints + 4);
     cout << "fifth2: ";
-    printVector(forth);
+    printVector(fifth);
 
     printf("--------------------end----------------------\n");
     // cin.get();
