@@ -19,6 +19,7 @@ using std::endl;
 using std::vector;
 
 void test1();
+void test2();
 
 // vector的遍历
 void printVector(vector<int> &v)
@@ -35,6 +36,8 @@ int main()
     printf("--------------------begain-------------------\n");
 
     test1();
+    test2();
+
     printf("--------------------end----------------------\n");
     // cin.get();
     // getchar();
@@ -54,32 +57,6 @@ void test1()
          << endl;
 
     v_test.reserve(1000000);
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    v_test.push_back(0);
-
-    cout << "push_back 0: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
-         << endl;
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    v_test.push_back(0);
-
-    cout << "push_back 0: " << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
-         << endl;
-
     // 将容量用完
     while (v_test.size() != v_test.capacity())
     {
