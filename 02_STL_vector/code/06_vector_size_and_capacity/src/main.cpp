@@ -215,7 +215,7 @@ void push_back_test()
 
 void swap_test()
 {
-    cout << "clear_test: " << endl;
+    cout << "swap_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "初始数据: ";
     printVector(v_test);
@@ -230,7 +230,10 @@ void swap_test()
     cout << "capacity = " << v_test.capacity() << endl
          << endl;
 
-    v_test.swap(v_test);
+    // vector<int>(v_test) 是创建一个匿名对象，并拷贝v_test的数据
+    // 以此匿名对象与v_test交换，交换完后系统自动删除匿名对象
+    vector<int>(v_test).swap(v_test);
+
     cout << "swap v_test: ";
     printVector(v_test);
     cout << "size = " << v_test.size() << endl;
@@ -259,9 +262,6 @@ count:1
 ----------------end------------------
 
  */
-
-
-
 
 /*****************************************************************************
  * end of file
