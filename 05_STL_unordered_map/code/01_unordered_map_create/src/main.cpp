@@ -45,7 +45,7 @@ int main()
 
     unordered_map<int, string> first; // 构造一个空容器
 
-    first = {{1, "apple"}, {2, "banana"}, {3, "orange"}};
+    first = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
 
     unordered_map<int, string> second(first);                     // 拷贝构造一个容器
     unordered_map<int, string> third(first.begin(), first.end()); // 使用迭代器区间构造一个容器
