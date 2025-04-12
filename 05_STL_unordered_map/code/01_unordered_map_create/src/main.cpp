@@ -21,23 +21,23 @@ using std::string;
 using std::unordered_map;
 
 // unordered_map 的遍历
-void print_unordered_map(unordered_map<int, string> &mp)
-{
-    for (unordered_map<int, string>::iterator it = mp.begin(); it != mp.end(); ++it)
-    {
-        cout << it->first << ":" << it->second << " ";
-    }
-    cout << endl;
-}
-
 // void print_unordered_map(unordered_map<int, string> &mp)
 // {
-//     for (auto e : mp)
+//     for (unordered_map<int, string>::iterator it = mp.begin(); it != mp.end(); ++it)
 //     {
-//         cout << e.first << ":" << e.second << " ";
+//         cout << it->first << ":" << it->second << " ";
 //     }
 //     cout << endl;
 // }
+
+void print_unordered_map(unordered_map<int, string> &mp)
+{
+    for (auto e : mp)
+    {
+        cout << e.first << ":" << e.second << " ";
+    }
+    cout << endl;
+}
 
 int main()
 {
