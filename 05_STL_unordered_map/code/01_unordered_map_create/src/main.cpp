@@ -5,7 +5,7 @@
  * | @version  @date
  * |  V1.0.0    2025-04-12
  * ---------------------------------------
- * | @brief   : 创建 vector 测试
+ * | @brief   : 创建 unordered_map 测试
  ******************************************************************************/
 #include <stdio.h>  // C语言的标准库，包含C语言流操作 printf等
 #include <string.h> // C语言的标准库，包含字符串处理操作 strcpy等
@@ -47,8 +47,9 @@ int main()
 
     first = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
 
-    unordered_map<int, string> second(first);                     // 拷贝构造一个容器
-    unordered_map<int, string> third(first.begin(), first.end()); // 使用迭代器区间构造一个容器
+    unordered_map<int, string> second(5);                         // / 初始桶数量为 5
+    unordered_map<int, string> third(first);                      // 拷贝构造一个容器
+    unordered_map<int, string> forth(first.begin(), first.end()); // 使用迭代器区间构造一个容器
 
     cout << "first: " << endl;
     print_unordered_map(first);
@@ -58,6 +59,11 @@ int main()
 
     cout << "third: " << endl;
     print_unordered_map(third);
+
+    cout << "forth: " << endl;
+    print_unordered_map(forth);
+
+
 
     printf("--------------------end----------------------\n");
     // cin.get();

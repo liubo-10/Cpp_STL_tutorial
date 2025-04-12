@@ -14,6 +14,14 @@
 
 > # STL_unordered_map_01_基本用法
 
+unordered_map是存储<key, value>键值对的关联式容器，其允许通过keys快速的索引到与其对应的value。
+
+使用时包含头文件:
+
+```C++
+#include <unordered_map>
+```
+
 
 
 # 一、unordered_map的构造函数
@@ -22,6 +30,7 @@
 
 ```C++
 unordered_map<T1, T2> mp; // 构造一个空容器
+unordered_map<T1, T2> mp(n); // 初始桶数量为 n
 unordered_map<T1, T2> mp2(const unordered_map &mp1); // 拷贝构造一个容器
 unordered_map<T1, T2> mp2(mp1.begin(), mp1.end()); // 使用迭代器区间构造一个容器，注意左闭右开
 ```
@@ -29,6 +38,106 @@ unordered_map<T1, T2> mp2(mp1.begin(), mp1.end()); // 使用迭代器区间构�
 使用示例:
 
 ```c++
+#include <stdio.h>  // C语言的标准库，包含C语言流操作 printf等
+#include <string.h> // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h> // pause()头文件
+#include <iostream> // 包含输入和输出操作
+#include <string>
+#include <unordered_map>
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
+using std::unordered_map;
+
+// unordered_map 的遍历
+void print_unordered_map(unordered_map<int, string> &mp)
+{
+    for (auto e : mp)
+    {
+        cout << e.first << ":" << e.second << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    printf("--------------------begain-------------------\n");
+
+    unordered_map<int, string> first; // 构造一个空容器
+
+    first = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
+
+    unordered_map<int, string> second(first);                     // 拷贝构造一个容器
+    unordered_map<int, string> third(first.begin(), first.end()); // 使用迭代器区间构造一个容器
+
+    cout << "first: " << endl;
+    print_unordered_map(first);
+
+    cout << "second: " << endl;
+    print_unordered_map(second);
+
+    cout << "third: " << endl;
+    print_unordered_map(third);
+
+    printf("--------------------end----------------------\n");
+    // cin.get();
+    // getchar();
+    // pause();
+    return EXIT_SUCCESS;
+}
+
+```
+
+测试结果:
+
+```log
+--------------------begain-------------------
+first: 
+4:pear 3:orange 2:banana 1:apple 
+second: 
+4:pear 3:orange 2:banana 1:apple 
+third: 
+1:apple 2:banana 3:orange 4:pear 
+--------------------end----------------------
+```
+
+从结果看打印输出是无序的，同时证明了，在内部,unordered_map没有对<kye, value>按照任何特定的顺序排序。
+
+
+
+# 二、unordered_map的遍历
+
+方法1：
+
+```c++
+void print_unordered_map(unordered_map<int, string> &mp)
+{
+    for (unordered_map<int, string>::iterator it = mp.begin(); it != mp.end(); ++it)
+    {
+        cout << it->first << ":" << it->second << " ";
+    }
+    cout << endl;
+}
+```
+
+迭代器iterator中的begin和end函数是左闭右开的区间。
+
+
+
+方法2：
+
+```c++
+void print_unordered_map(unordered_map<int, string> &mp)
+{
+    for (auto e : mp)
+    {
+        cout << e.first << ":" << e.second << " ";
+    }
+    cout << endl;
+}
+```
 
 
 
@@ -37,14 +146,62 @@ unordered_map<T1, T2> mp2(mp1.begin(), mp1.end()); // 使用迭代器区间构�
 
 
 
+
+
+
+
+
+
+
+
+
+# 三、unordered_map的赋值操作
+
+函数原型：
+
+```c++
+=
+```
+
+assign: 将新内容赋给vector，替换其当前内容，并相应地修改其大小。
+
+
+
+使用示例:
+
+```c++
 =
 ```
 
 测试结果:
 
-```tex
-====
+```log
+=
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
