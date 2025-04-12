@@ -50,13 +50,13 @@ int main()
     unordered_map<int, string> second(first);                     // 拷贝构造一个容器
     unordered_map<int, string> third(first.begin(), first.end()); // 使用迭代器区间构造一个容器
 
-    cout << "first: ";
+    cout << "first: " << endl;
     print_unordered_map(first);
 
-    cout << "second: ";
+    cout << "second: " << endl;
     print_unordered_map(second);
 
-    cout << "third: ";
+    cout << "third: " << endl;
     print_unordered_map(third);
 
     printf("--------------------end----------------------\n");
