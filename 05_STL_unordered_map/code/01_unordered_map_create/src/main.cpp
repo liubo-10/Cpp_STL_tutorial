@@ -50,6 +50,7 @@ int main()
     unordered_map<int, string> third = {{1, "apple"}, {2, "banana"}}; // 列表构造函数
     unordered_map<int, string> forth(first);                          // 拷贝构造一个容器
     unordered_map<int, string> fifth(first.begin(), first.end());     // 使用迭代器区间构造一个容器
+    unordered_map<int, string> sixth = move(first);                   // 移动构造函数
 
     cout << "first: " << endl;
     print_unordered_map(first);
@@ -66,6 +67,11 @@ int main()
     cout << "fifth: " << endl;
     print_unordered_map(fifth);
 
+    cout << "sixth: " << endl;
+    print_unordered_map(sixth);
+
+    cout << "first: " << endl;
+    print_unordered_map(first);
     printf("--------------------end----------------------\n");
     // cin.get();
     // getchar();
