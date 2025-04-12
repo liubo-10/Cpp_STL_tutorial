@@ -43,13 +43,11 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
-    unordered_map<int, string> first; // 构造一个空容器
-
-    first = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
-
-    unordered_map<int, string> second(5);                         // / 初始桶数量为 5
-    unordered_map<int, string> third(first);                      // 拷贝构造一个容器
-    unordered_map<int, string> forth(first.begin(), first.end()); // 使用迭代器区间构造一个容器
+    unordered_map<int, string> first;                                                             // 构造一个空容器
+    unordered_map<int, string> second(5);                                                         // 初始桶数量为 5
+    unordered_map<int, string> third = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}}; // 列表构造函数
+    unordered_map<int, string> forth(third);                                                      // 拷贝构造一个容器
+    unordered_map<int, string> fifth(third.begin(), third.end());                                 // 使用迭代器区间构造一个容器
 
     cout << "first: " << endl;
     print_unordered_map(first);
@@ -63,7 +61,8 @@ int main()
     cout << "forth: " << endl;
     print_unordered_map(forth);
 
-
+    cout << "fifth: " << endl;
+    print_unordered_map(fifth);
 
     printf("--------------------end----------------------\n");
     // cin.get();

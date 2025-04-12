@@ -14,7 +14,7 @@
 
 > # STL_unordered_map_01_基本用法
 
-unordered_map是存储<key, value>键值对的关联式容器，其允许通过keys快速的索引到与其对应的value。
+unordered_map是存储<key, value>键值对的关联式容器，其允许通过keys快速的索引到与其对应的value。其存储结构为哈希；元素的存储并未按照特定的顺序，而是被组织到桶中，在哪个桶中取决于其散列值。
 
 使用时包含头文件:
 
@@ -31,6 +31,7 @@ unordered_map是存储<key, value>键值对的关联式容器，其允许通过k
 ```C++
 unordered_map<T1, T2> mp; // 构造一个空容器
 unordered_map<T1, T2> mp(n); // 初始桶数量为 n
+unordered_map<T1, T2> mp = {{n1, m1},{n2, m2}}; // 列表构造函数
 unordered_map<T1, T2> mp2(const unordered_map &mp1); // 拷贝构造一个容器
 unordered_map<T1, T2> mp2(mp1.begin(), mp1.end()); // 使用迭代器区间构造一个容器，注意左闭右开
 ```
@@ -69,8 +70,9 @@ int main()
 
     first = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
 
-    unordered_map<int, string> second(first);                     // 拷贝构造一个容器
-    unordered_map<int, string> third(first.begin(), first.end()); // 使用迭代器区间构造一个容器
+    unordered_map<int, string> second(5);                         // 初始桶数量为 5
+    unordered_map<int, string> third(first);                      // 拷贝构造一个容器
+    unordered_map<int, string> forth(first.begin(), first.end()); // 使用迭代器区间构造一个容器
 
     cout << "first: " << endl;
     print_unordered_map(first);
@@ -80,6 +82,10 @@ int main()
 
     cout << "third: " << endl;
     print_unordered_map(third);
+
+    cout << "forth: " << endl;
+    print_unordered_map(forth);
+
 
     printf("--------------------end----------------------\n");
     // cin.get();
@@ -97,8 +103,10 @@ int main()
 first: 
 4:pear 3:orange 2:banana 1:apple 
 second: 
-4:pear 3:orange 2:banana 1:apple 
+
 third: 
+4:pear 3:orange 2:banana 1:apple 
+forth: 
 1:apple 2:banana 3:orange 4:pear 
 --------------------end----------------------
 ```
