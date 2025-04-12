@@ -30,8 +30,8 @@ vector模板是STL(Standard Template Library,标准模板库)中的一个容器�
 ```C++
 vector<T> v ; //使用模板类，默认构造函数
 vextor<T> v(n,elem); //将n个elem拷贝给本身
-vector<T> v(const vector &v) ; //拷贝构造函数
-vector<T> v(v.begin(),v.end()); //将[v.begin(),v.end())区间中的元素拷贝给本身，注意左闭右开
+vector<T> v2(const vector &v1) ; //拷贝构造函数
+vector<T> v2(v1.begin(), v1.end()); //将[v.begin(),v.end())区间中的元素拷贝给本身，注意左闭右开
 ```
 
 使用示例:
