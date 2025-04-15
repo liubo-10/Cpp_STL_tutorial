@@ -73,6 +73,7 @@ int main()
     unordered_map<int, string> third = {{1, "apple"}, {2, "banana"}}; // 列表构造函数
     unordered_map<int, string> forth(first);                          // 拷贝构造一个容器
     unordered_map<int, string> fifth(first.begin(), first.end());     // 使用迭代器区间构造一个容器
+    unordered_map<int, string> sixth = move(first);                   // 移动构造函数
 
     cout << "first: " << endl;
     print_unordered_map(first);
@@ -88,6 +89,12 @@ int main()
 
     cout << "fifth: " << endl;
     print_unordered_map(fifth);
+
+    cout << "sixth: " << endl;
+    print_unordered_map(sixth);
+
+    cout << "first: " << endl;
+    print_unordered_map(first);
 
     printf("--------------------end----------------------\n");
     // cin.get();
@@ -112,10 +119,16 @@ forth:
 4:pear 3:orange 2:banana 1:apple 
 fifth: 
 1:apple 2:banana 3:orange 4:pear 
+sixth: 
+4:pear 3:orange 2:banana 1:apple 
+first: 
+
 --------------------end----------------------
 ```
 
 从结果看打印输出是无序的，同时证明了，在内部,unordered_map没有对<kye, value>按照任何特定的顺序排序。
+
+使用移动构造函数会把原数据清空。
 
 
 
@@ -204,6 +217,159 @@ assign: 将新内容赋给vector，替换其当前内容，并相应地修改其
 
 
 
+
+# unordered_map的容量
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| bool empty() const  | 检测是否为空     |
+| ------------------- | ---------------- |
+| size_t size() const | 获取有效元素个数 |
+
+
+
+
+
+
+
+
+
+
+
+# unordered_map的元素访问
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| operator[ ] | 返回与key对应的value，没有一个默认值 |
+| ----------- | ------------------------------------ |
+|             |                                      |
+
+
+
+
+
+
+
+
+
+注意：针对于[ ]的重载，该函数实际调用哈希桶的插入操作，用参数key与V()构造一个默认值往底层哈希桶中插入，针对插入成功与否，有如下说明：
+
+如果key不在哈希桶中，插入成功，返回V()。
+若key已经在哈希桶中，插入失败，将key对应的value返回。
+其实和map的[ ]运算符重载的规则没有啥区别。
+
+
+
+
+
+
+
+
+
+# unordered_map的查询
+
+
+
+
+
+
+
+
+
+| iterator find(const K& key) | 返回key在哈希桶中的位置               |
+| --------------------------- | ------------------------------------- |
+| size_t count(const K& key)  | 返回哈希桶中关键码为key的键值对的个数 |
+
+
+
+
+
+
+
+注意：unordered_map中key是不能重复的，因此count函数的返回值最大为1。
+
+
+
+
+
+
+
+
+
+
+
+
+
+# unordered_map的修改操作
+
+
+
+
+
+| insert                    | 向容器中插入键值对       |
+| ------------------------- | ------------------------ |
+| erase                     | 删除容器中的键值对       |
+| void clear                | 清空容器中的有效元素个数 |
+| void swap(unordered map&) | 交换两个容器中的元素     |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# unordered_map的桶操作
+
+
+
+
+
+
+
+| size_t bucket_count() const        | 返回哈希桶中桶的总个数      |
+| ---------------------------------- | --------------------------- |
+| size_t bucket_size(size_t n) const | 返回n号桶中有效元素的总个数 |
+| size_t bucket(const K& key)        | 返回元素key所在的桶号       |
 
 
 

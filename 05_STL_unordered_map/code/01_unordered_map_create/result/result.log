@@ -4,9 +4,13 @@ first:
 second: 
 
 third: 
-4:pear 3:orange 2:banana 1:apple 
+2:banana 1:apple 
 forth: 
 4:pear 3:orange 2:banana 1:apple 
 fifth: 
 1:apple 2:banana 3:orange 4:pear 
+sixth: 
+4:pear 3:orange 2:banana 1:apple 
+first: 
+
 --------------------end----------------------
