@@ -53,19 +53,18 @@ void get_element_test()
     unordered_map<int, string> mp;
     mp = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
 
-    cout << 1 << ":" << mp[1] << " ";
-    cout << 2 << ":" << mp[2] << " ";
+    cout << 1 << ":" << mp[1] << " " << endl;
+    cout << 2 << ":" << mp[2] << " " << endl;
 
     unordered_map<int, string>::iterator it;
 
     it = mp.begin();
-    cout << it->first << ":" << it->second << " ";
+    cout << it->first << ":" << it->second << " " << endl;
     it++;
-    cout << it->first << ":" << it->second << " ";
+    cout << it->first << ":" << it->second << " " << endl;
     it++;
-    cout << it->first << ":" << it->second << " ";
-    
-    cout << endl;
+    cout << it->first << ":" << it->second << " " << endl;
+
     // it = it - 1; // 报错没有减法
 }
 
