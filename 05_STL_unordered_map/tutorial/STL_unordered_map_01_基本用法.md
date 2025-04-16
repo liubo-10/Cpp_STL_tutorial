@@ -166,62 +166,6 @@ void print_unordered_map(unordered_map<int, string> &mp)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 三、unordered_map的赋值操作
-
-函数原型：
-
-```c++
-=
-```
-
-assign: 将新内容赋给vector，替换其当前内容，并相应地修改其大小。
-
-
-
-使用示例:
-
-```c++
-=
-```
-
-测试结果:
-
-```log
-=
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # unordered_map的元素访问
 
 函数原型：
@@ -235,48 +179,47 @@ back();         //返回容器中最后一个数据元素
 使用示例:
 
 ```c++
-=
+void get_element_test()
+{
+    cout << "get_element_test: " << endl;
+
+    unordered_map<int, string> mp;
+    mp = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
+
+    cout << 1 << ":" << mp[1] << " " << endl;
+    cout << 2 << ":" << mp[2] << " " << endl;
+
+    unordered_map<int, string>::iterator it;
+
+    it = mp.begin();
+    cout << it->first << ":" << it->second << " " << endl;
+    it++;
+    cout << it->first << ":" << it->second << " " << endl;
+    it++;
+    cout << it->first << ":" << it->second << " " << endl;
+
+    // it = it - 1; // 报错没有减法
+}
 ```
 
 测试结果:
 
 ```log
-=
+--------------------begain-------------------
+get_element_test: 
+1:apple 
+2:banana 
+4:pear 
+3:orange 
+2:banana 
+--------------------end----------------------
 ```
 
+需要注意的是 mp.begin()打印的是 4:pear 并不是 1:apple。 unordered_map<int, string>::iterator it，迭代器并没有减法运算。
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-| operator[ ] | 返回与key对应的value，没有一个默认值 |
-| ----------- | ------------------------------------ |
-|             |                                      |
-
-
-
-
-
-
-
-
-
-注意：针对于[ ]的重载，该函数实际调用哈希桶的插入操作，用参数key与V()构造一个默认值往底层哈希桶中插入，针对插入成功与否，有如下说明：
-
-如果key不在哈希桶中，插入成功，返回V()。
-若key已经在哈希桶中，插入失败，将key对应的value返回。
-其实和map的[ ]运算符重载的规则没有啥区别。
 
 
 
@@ -404,6 +347,22 @@ insert_test:
 5:lemon 4:pear 3:orange 2:banana 1:apple 
 --------------------end----------------------
 ```
+
+注意：针对于[ ]的重载，该函数实际调用哈希桶的插入操作，用参数key与V()构造一个默认值往底层哈希桶中插入，针对插入成功与否，有如下说明：
+
+如果key不在哈希桶中，插入成功，返回V()。
+若key已经在哈希桶中，插入失败，将key对应的value返回。
+其实和map的[ ]运算符重载的规则没有啥区别。
+
+
+
+
+
+
+
+
+
+
 
 # 六、vector的元素删除
 
