@@ -166,7 +166,7 @@ void print_unordered_map(unordered_map<int, string> &mp)
 
 
 
-# unordered_map的元素访问
+# 三、unordered_map的元素访问
 
 函数原型：
 
@@ -217,90 +217,19 @@ get_element_test:
 
 需要注意的是 mp.begin()打印的是 4:pear 并不是 1:apple。 unordered_map<int, string>::iterator it，迭代器并没有减法运算。
 
-
-
-
-
-
-
-
-
-
-
-
-
-# unordered_map的查询
-
-
-
-
-
-
-
-
-
-| iterator find(const K& key) | 返回key在哈希桶中的位置               |
-| --------------------------- | ------------------------------------- |
-| size_t count(const K& key)  | 返回哈希桶中关键码为key的键值对的个数 |
-
-
-
-
-
-
-
-注意：unordered_map中key是不能重复的，因此count函数的返回值最大为1。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 五、unordered_map的元素插入
+# 四、unordered_map的元素插入
 
 函数原型：
 
 ```c++
 unordered_map<T1, T2> mp;
-
 pair<T1, T2> p(m, n);
-mp.insert(p);  // 1.借助 pair 插入元素
-
+mp.insert(p);                  // 1.借助 pair 插入元素
 mp.insert(pair<T1, T2>(m, n)); // 2.借助 pair 插入元素
-
-mp.insert(make_pair(m, n)); //3.用make_pair函数模板插入
-
-mp[m] = n; // 4.使用[]运算符重载函数进行插入
-
-mp.insert({ m, n}); // 5.使用 {} 插入元素
+mp.insert(make_pair(m, n));    // 3.用make_pair函数模板插入
+mp[m] = n;                     // 4.使用[]运算符重载函数进行插入
+mp.insert({m, n});             // 5.使用 {} 插入元素
 ```
-
-
 
 
 
@@ -312,25 +241,25 @@ void insert_test()
     cout << "insert_test: " << endl;
     unordered_map<int, string> mp; // 构造一个空容器
 
-	//1：借助pair构造函数
-	pair<int, string> pr(1, "apple");
-	mp.insert(pr);
+    // 1：借助 pair 构造对象插入元素
+    pair<int, string> pr(1, "apple");
+    mp.insert(pr);
     print_unordered_map(mp);
 
-	//2：借助pair构造匿名对象插入
-	mp.insert(pair<int, string>(2, "banana"));
+    // 2：借助 pair 构造匿名对象插入元素
+    mp.insert(pair<int, string>(2, "banana"));
     print_unordered_map(mp);
 
-	//3：调用make_pair函数模板插入
-	mp.insert(std::make_pair(3, "orange"));
+    // 3：调用make_pair函数模板插入元素
+    mp.insert(std::make_pair(3, "orange"));
     print_unordered_map(mp);
 
-	//4：使用[]运算符重载函数进行插入
-	mp[4] = "pear";
+    // 4：使用[]运算符重载函数插入元素
+    mp[4] = "pear";
     print_unordered_map(mp);
 
-	//5：使用{}
-	mp.insert({ 5, "lemon" });
+    // 5：使用{}插入元素
+    mp.insert({5, "lemon"});
     print_unordered_map(mp);
 }
 ```
@@ -348,13 +277,35 @@ insert_test:
 --------------------end----------------------
 ```
 
-注意：针对于[ ]的重载，该函数实际调用哈希桶的插入操作，用参数key与V()构造一个默认值往底层哈希桶中插入，针对插入成功与否，有如下说明：
-
-如果key不在哈希桶中，插入成功，返回V()。
-若key已经在哈希桶中，插入失败，将key对应的value返回。
-其实和map的[ ]运算符重载的规则没有啥区别。
 
 
+# 五、vector的元素删除
+
+函数原型：
+
+```c++
+unordered_map<T1, T2> mp;
+mp.erase(key); // 1：根据 key 删除
+unordered_map<int, string>::iterator it;
+mp.erase(it); // 2：根据迭代器位置删除
+```
+
+使用示例:
+
+```c++
+void get_element_test()
+-
+}
+```
+
+测试结果:
+
+```log
+--------------------begain-------------------
+get_el--end----------------------
+```
+
+-
 
 
 
@@ -364,7 +315,25 @@ insert_test:
 
 
 
-# 六、vector的元素删除
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -466,6 +435,34 @@ insert_test:
 
 
 
+
+
+
+
+
+
+
+# unordered_map的查询
+
+
+
+
+
+
+
+
+
+| iterator find(const K& key) | 返回key在哈希桶中的位置               |
+| --------------------------- | ------------------------------------- |
+| size_t count(const K& key)  | 返回哈希桶中关键码为key的键值对的个数 |
+
+
+
+
+
+
+
+注意：unordered_map中key是不能重复的，因此count函数的返回值最大为1。
 
 
 

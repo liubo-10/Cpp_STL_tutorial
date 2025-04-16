@@ -51,28 +51,25 @@ void insert_test()
     cout << "insert_test: " << endl;
     unordered_map<int, string> mp; // 构造一个空容器
 
-    // 1：借助pair构造函数
+    // 1：借助 pair 构造对象插入元素
     pair<int, string> pr(1, "apple");
     mp.insert(pr);
     print_unordered_map(mp);
 
-    // 2：借助pair构造匿名对象插入
+    // 2：借助 pair 构造匿名对象插入元素
     mp.insert(pair<int, string>(2, "banana"));
     print_unordered_map(mp);
 
-    // 3：调用make_pair函数模板插入
+    // 3：调用make_pair函数模板插入元素
     mp.insert(std::make_pair(3, "orange"));
     print_unordered_map(mp);
 
-    // 4：使用[]运算符重载函数进行插入
+    // 4：使用[]运算符重载函数插入元素
     mp[4] = "pear";
     print_unordered_map(mp);
 
-    // 5：使用{}
+    // 5：使用{}插入元素
     mp.insert({5, "lemon"});
-    print_unordered_map(mp);
-
-    mp[5] = "pear";
     print_unordered_map(mp);
 }
 
