@@ -62,9 +62,9 @@ void get_element_test()
     cout << it->first << ":" << it->second << " ";
     it++;
     cout << it->first << ":" << it->second << " ";
-
-    it = mp.end();
+    it++;
     cout << it->first << ":" << it->second << " ";
+
     // it = it - 1; // 报错没有减法
 }
 
