@@ -1,7 +1,8 @@
-----------------begain------------------
-The ASCII code for M is 77
-Add one to the character code :
-The ASCII code for N is 78
-Displaying char ch using cout.put(ch):N!
-done
-----------------end------------------
+--------------------begain-------------------
+insert_test: 
+1:apple 
+2:banana 1:apple 
+3:orange 2:banana 1:apple 
+4:pear 3:orange 2:banana 1:apple 
+5:lemon 4:pear 3:orange 2:banana 1:apple 
+--------------------end----------------------
