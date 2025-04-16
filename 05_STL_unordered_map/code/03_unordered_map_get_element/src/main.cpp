@@ -65,8 +65,7 @@ void get_element_test()
 
     it = mp.end();
     cout << it->first << ":" << it->second << " ";
-    it = it - 1;
-    cout << it->first << ":" << it->second << " ";
+    // it = it - 1; // 报错没有减法
 }
 
 /*****************************************************************************
