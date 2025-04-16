@@ -293,8 +293,22 @@ mp.erase(it); // 2：根据迭代器位置删除
 使用示例:
 
 ```c++
-void get_element_test()
--
+void erase_test()
+{
+    cout << "erase_test: " << endl;
+    unordered_map<int, string> mp; // 构造一个空容器
+    mp = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
+
+    mp.erase(2); // 1：根据 key 删除
+    print_unordered_map(mp);
+
+    unordered_map<int, string>::iterator it;
+    it = mp.begin();
+    it++;
+    it++; // 迭代器没有 +2 操作
+    cout << it->first << ":" << it->second << " " << endl;
+    mp.erase(it); // 2：根据迭代器位置删除
+    print_unordered_map(mp);
 }
 ```
 
@@ -302,10 +316,13 @@ void get_element_test()
 
 ```log
 --------------------begain-------------------
-get_el--end----------------------
+erase_test: 
+4:pear 3:orange 1:apple 
+1:apple 
+4:pear 3:orange 
+--------------------end----------------------
 ```
 
--
 
 
 
@@ -341,7 +358,6 @@ get_el--end----------------------
 
 
 
-# unordered_map的容量
 
 
 
@@ -356,195 +372,6 @@ get_el--end----------------------
 
 
 
-
-
-
-| bool empty() const  | 检测是否为空     |
-| ------------------- | ---------------- |
-| size_t size() const | 获取有效元素个数 |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# unordered_map的修改操作
-
-
-
-
-
-| insert                    | 向容器中插入键值对       |
-| ------------------------- | ------------------------ |
-| erase                     | 删除容器中的键值对       |
-| void clear                | 清空容器中的有效元素个数 |
-| void swap(unordered map&) | 交换两个容器中的元素     |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# unordered_map 的桶操作
-
-
-
-
-
-
-
-| size_t bucket_count() const        | 返回哈希桶中桶的总个数      |
-| ---------------------------------- | --------------------------- |
-| size_t bucket_size(size_t n) const | 返回n号桶中有效元素的总个数 |
-| size_t bucket(const K& key)        | 返回元素key所在的桶号       |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# unordered_map的查询
-
-
-
-
-
-
-
-
-
-| iterator find(const K& key) | 返回key在哈希桶中的位置               |
-| --------------------------- | ------------------------------------- |
-| size_t count(const K& key)  | 返回哈希桶中关键码为key的键值对的个数 |
-
-
-
-
-
-
-
-注意：unordered_map中key是不能重复的，因此count函数的返回值最大为1。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-unordered_map是存储<key, value>键值对的关联式容器，其允许通过keys快速的索引到与其对应的value。
-在unordered_map中，键值通常用于惟一地标识元素，而映射值是一个对象，其内容与此键关联。键和映射值的类型可能不同。
-在内部,unordered_map没有对<kye, value>按照任何特定的顺序排序, 为了能在常数范围内找到key所对应的value，unordered_map将相同哈希值的键值对放在相同的桶中。
-unordered_map容器通过key访问单个元素要比map快，但它通常在遍历元素子集的范围迭代方面效率较低。
-unordered_maps实现了直接访问操作符(operator[])，它允许使用key作为参数直接访问value。
-它的迭代器至少是前向迭代器。
-————————————————
-
-                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
-
-原文链接：https://blog.csdn.net/2301_78029441/article/details/143855839
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-unordered_map的接口说明
-
-在使用unordered_map之前，需要包含<unordered_map>头文件
-
-定义空的unordered_map：
-可以简单地定义一个指定类型的unordered_map。例如，定义一个存储int类型元素的unordered_map：
-
-使用insert方法插入单个元素：
-insert方法返回一个pair类型的值。其中pair的first是一个迭代器，指向插入后的键 - 值对（如果键已经存在，则指向已存在的键 - 值对）；second是一个bool值，表示插入是否成功。
-使用[]运算符插入或更新键 - 值对如果键不存在，[]运算符会插入一个新的键 - 值对，并返回对应的值的引用；如果键已经存在，则返回该键对应的值的引用，并且可以通过这个引用修改值
-
-使用find方法查找元素：
-find方法返回一个迭代器，如果找到元素，则指向该元素；如果未找到，则返回end()迭代器。
-
-使用erase方法删除单个元素：
-可以通过指定元素的值或者迭代器来删除元素。如果通过值删除，会删除第一个匹配的元素。
-
-可以使用迭代器来遍历unordered_map中的元素。由于unordered_map中的元素是无序的，所以遍历的顺序是不确定的。
-————————————————
-
-                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
-
-原文链接：
 
 
 
