@@ -57,7 +57,8 @@ void erase_test()
 
     unordered_map<int, string>::iterator it;
     it = mp.begin();
-    it = it + 2;
+    it++;
+    it++;
     cout << it->first << ":" << it->second << " " << endl;
     mp.erase(it); // 2：根据迭代器位置删除
     print_unordered_map(mp);
