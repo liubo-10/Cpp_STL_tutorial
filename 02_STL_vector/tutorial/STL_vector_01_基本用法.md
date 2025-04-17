@@ -28,24 +28,27 @@ vector模板是STL(Standard Template Library,标准模板库)中的一个容器�
 函数原型:
 
 ```C++
-//构造一个空容器，没有元素。
+// 1.构造一个空容器，没有元素。
 vector<T> vectorname;
 
-//构造一个包含size个元素的容器。每个元素都是0。
+// 2.构造一个包含size个元素的容器。每个元素都是0。
 vector<T> vectorname(size);
 
+// 3.构造一个包含size个元素的容器。每个元素都是val。
+vector<T> vectorname(size,value);
 
+// 4.拷贝构造
+vector<T> vectorname2(vectorname1);
 
-vextor<T> v(n,elem); //将n个elem拷贝给本身
-vector<T> v2(const vector &v1) ; //拷贝构造函数
-vector<T> v2(v1.begin(), v1.end()); //将[v.begin(),v.end())区间中的元素拷贝给本身，注意左闭右开
+// 5.利用数组构造容器
+T m[] = {a,b,c,.....};
+vector<T> vectorname(m, m + sizeof(m) / sizeof(T));
 
+// 6.将[v.begin(),v.end())区间中的元素拷贝给本身，注意左闭右开
+vector<T> vectorname2(vectorname1.begin(), vectorname1.end()); 
 
-
-
-
-
-
+// 7.列表初始化构造容器
+vector<T> vectorname{a,b,c,.....};
 ```
 
 使用示例:
