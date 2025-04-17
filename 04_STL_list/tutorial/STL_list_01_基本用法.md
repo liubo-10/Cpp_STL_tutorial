@@ -238,13 +238,25 @@ back();         //返回容器中最后一个数据元素
 使用示例:
 
 ```c++
-=
+void get_element_test()
+{
+    cout << "get_element_test: " << endl;
+
+    list<int> l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    cout << "容器中第一个元素是：" << l_test.front() << endl;
+    cout << "容器中最后一个元素是：" << l_test.back() << endl;
+}
 ```
 
 测试结果:
 
 ```tex
-=
+--------------------begain-------------------
+get_element_test: 
+容器中第一个元素是：0
+容器中最后一个元素是：9
+--------------------end----------------------
 ```
 
 
@@ -254,14 +266,11 @@ back();         //返回容器中最后一个数据元素
 函数原型：
 
 ```c++
-=
+push_back(ele);  //尾部插入元素ele
+push_front(ele); //首部插入元素ele
+insert(const_iterator pos,ele); //在迭代器指向的位置pos处插入一个元素ele
+insert(const_iterator pos,int count,ele); //在迭代器指向的位置pos处插入count个元素ele
 ```
-
-push_back: 在vector当前最后一个元素的末尾添加一个新元素。val的内容被复制(或移动)到新元素中。
-
-将容器大小增加了1，当且仅当新vector大小 > 当前vector容量时，会自动重新分配存储空间。
-
-
 
 使用示例:
 
