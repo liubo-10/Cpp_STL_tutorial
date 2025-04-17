@@ -49,15 +49,15 @@ void insert_element_test()
 
     list<int> l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    l_test.push_back(10);//尾部插入10
+    l_test.push_back(10); // 尾部插入10
     cout << "在尾部插入10: " << endl;
     print_list(l_test);
 
-    l_test.push_front(20);//首部插入20
+    l_test.push_front(20); // 首部插入20
     cout << "在首部插入20: " << endl;
     print_list(l_test);
 
-    l_test.insert(l_test.begin(), 30); //在首位插入10
+    l_test.insert(l_test.begin(), 30); // 在首位插入10
     cout << "在首部插入30: " << endl;
     print_list(l_test);
 
@@ -80,8 +80,8 @@ void insert_element_test()
     it--;
     it--;
     it--;
-    
-    l_test.insert(it, 2, 60);//在倒数第3位前面插入2个60
+
+    l_test.insert(it, 2, 60); // 在倒数第3位前面插入2个60
     cout << "在倒数第3位前面插入2个60: " << endl;
     print_list(l_test);
 }
