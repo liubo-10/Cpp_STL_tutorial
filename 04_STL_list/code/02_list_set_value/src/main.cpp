@@ -7,10 +7,10 @@
  * ---------------------------------------
  * | @brief   : 赋值 list 测试
  ******************************************************************************/
-#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
-#include <iostream>  // 包含输入和输出操作
-#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
-#include <unistd.h>  // pause()头文件
+#include <stdio.h>  // C语言的标准库，包含C语言流操作 printf等
+#include <iostream> // 包含输入和输出操作
+#include <string.h> // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h> // pause()头文件
 #include <list>
 
 using std::cin;
@@ -30,7 +30,6 @@ void print_list(list<int> &li)
     cout << endl;
 }
 
-
 int main()
 {
     printf("--------------------begain-------------------\n");
@@ -44,7 +43,6 @@ int main()
     return EXIT_SUCCESS;
 }
 
-
 void set_value_test()
 {
     cout << "create_test: " << endl;
@@ -53,7 +51,7 @@ void set_value_test()
     cout << "first: ";
     print_list(first);
 
-    //操作符 = 赋值
+    // 操作符 = 赋值
     list<int> second;
     second = first;
     cout << "second: ";
@@ -83,15 +81,9 @@ void set_value_test()
     print_list(fifth);
 
     int myints[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    fifth.assign(myints, myints + 5); //把 myints 前五个值赋给fifth，fifth左闭右开
+    fifth.assign(myints, myints + 5); // 把 myints 前五个值赋给fifth，fifth左闭右开
     cout << "fifth2: ";
     print_list(fifth);
-
-
-
-
-
-
 }
 
 /*****************************************************************************
