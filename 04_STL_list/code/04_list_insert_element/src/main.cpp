@@ -76,7 +76,7 @@ void insert_element_test()
     it = l_test.end();
     it = it - 3;
     l_test.insert(it, 2, 60);//在倒数第3位前面插入2个60
-    cout << "在倒数第3位前面插入2个60: "
+    cout << "在倒数第3位前面插入2个60: " << endl;
     print_list(l_test);
 }
 
