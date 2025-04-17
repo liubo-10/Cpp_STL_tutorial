@@ -164,16 +164,67 @@ assign: 将新内容赋给vector，替换其当前内容，并相应地修改其
 使用示例:
 
 ```c++
-=
+void set_value_test()
+{
+    cout << "set_value_test: " << endl;
+
+    list<int> first = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << "first: ";
+    print_list(first);
+
+    // 操作符 = 赋值
+    list<int> second;
+    second = first;
+    cout << "second: ";
+    print_list(second);
+
+    // assign 函数赋值，使用迭代器
+    list<int> third(10, 1);
+    cout << "third1: ";
+    print_list(third);
+
+    third.assign(first.begin(), first.end()); // 把first赋给third，其余值删除,左闭右开
+    cout << "third2: ";
+    print_list(third);
+
+    // assign 函数赋值，使用数值
+    list<int> forth(10, 1);
+    cout << "forth1: ";
+    print_list(forth);
+
+    forth.assign(5, 9); // 把5个9赋给 forth，其余值删除
+    cout << "forth2: ";
+    print_list(forth);
+
+    // assign 函数赋值，使用数组
+    list<int> fifth(10, 1);
+    cout << "fifth1: ";
+    print_list(fifth);
+
+    int myints[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    fifth.assign(myints, myints + 5); // 把 myints 前五个值赋给fifth，fifth左闭右开
+    cout << "fifth2: ";
+    print_list(fifth);
+}
 ```
 
 测试结果:
 
 ```log
-=
+--------------------begain-------------------
+set_value_test: 
+first: 0 1 2 3 4 5 6 7 8 9 
+second: 0 1 2 3 4 5 6 7 8 9 
+third1: 1 1 1 1 1 1 1 1 1 1 
+third2: 0 1 2 3 4 5 6 7 8 9 
+forth1: 1 1 1 1 1 1 1 1 1 1 
+forth2: 9 9 9 9 9 
+fifth1: 1 1 1 1 1 1 1 1 1 1 
+fifth2: 0 1 2 3 4 
+--------------------end----------------------
 ```
 
-# 四、vector的元素访问
+# 四、list的元素访问
 
 函数原型：
 
