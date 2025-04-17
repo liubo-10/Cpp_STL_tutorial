@@ -45,7 +45,7 @@ int main()
 
 void insert_element_test()
 {
-    cout << "get_element_test: " << endl;
+    cout << "insert_element_test: " << endl;
 
     list<int> l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -72,7 +72,7 @@ void insert_element_test()
     it++;
     it++;
     l_test.insert(it, 50); // 在第3位后面插入30
-    cout << "在第3位后面插入30: " << endl;
+    cout << "在第3位后面插入50: " << endl;
     print_list(l_test);
 
     it = l_test.end();
