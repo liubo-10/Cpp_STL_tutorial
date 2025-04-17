@@ -125,7 +125,7 @@ void print_list(std::list<int> &li)
 }
 ```
 
-迭代器iterator中的begin和end函数是左闭右开的区间。list 的迭代器没有减法运算。
+迭代器iterator中的begin和end函数是左闭右开的区间。list 的迭代器没有减法运算。迭代器只有自加自减没，没有加减法。
 
 
 
@@ -229,8 +229,8 @@ fifth2: 0 1 2 3 4
 函数原型：
 
 ```c++
-front();        //返回容器中第一个数据元素
-back();         //返回容器中最后一个数据元素
+front(); //返回容器中第一个数据的引用
+back();  //返回容器中最后一个数据的引用
 ```
 
 
@@ -275,13 +275,68 @@ insert(const_iterator pos,int count,ele); //在迭代器指向的位置pos处插
 使用示例:
 
 ```c++
-=
+void insert_element_test()
+{
+    cout << "insert_element_test: " << endl;
+
+    list<int> l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    l_test.push_back(10); // 尾部插入10
+    cout << "在尾部插入10: " << endl;
+    print_list(l_test);
+
+    l_test.push_front(20); // 首部插入20
+    cout << "在首部插入20: " << endl;
+    print_list(l_test);
+
+    l_test.insert(l_test.begin(), 30); // 在首位插入10
+    cout << "在首部插入30: " << endl;
+    print_list(l_test);
+
+    l_test.insert(l_test.begin(), 2, 40); // 在首位插入2个40
+    cout << "在首部插入2个40: " << endl;
+    print_list(l_test);
+
+    list<int>::iterator it;
+    it = l_test.begin();
+    // it = it + 3; // 报错 没有加法
+    it++;
+    it++;
+    it++;
+    l_test.insert(it, 50); // 在第3位后面插入30
+    cout << "在第3位后面插入50: " << endl;
+    print_list(l_test);
+
+    it = l_test.end();
+    // it = it - 3; //  报错 没有减法
+    it--;
+    it--;
+    it--;
+
+    l_test.insert(it, 2, 60); // 在倒数第3位前面插入2个60
+    cout << "在倒数第3位前面插入2个60: " << endl;
+    print_list(l_test);
+}
 ```
 
 测试结果:
 
 ```log
-=
+--------------------begain-------------------
+insert_element_test: 
+在尾部插入10: 
+0 1 2 3 4 5 6 7 8 9 10 
+在首部插入20: 
+20 0 1 2 3 4 5 6 7 8 9 10 
+在首部插入30: 
+30 20 0 1 2 3 4 5 6 7 8 9 10 
+在首部插入2个40: 
+40 40 30 20 0 1 2 3 4 5 6 7 8 9 10 
+在第3位后面插入50: 
+40 40 30 50 20 0 1 2 3 4 5 6 7 8 9 10 
+在倒数第3位前面插入2个60: 
+40 40 30 50 20 0 1 2 3 4 5 6 7 60 60 8 9 10 
+--------------------end----------------------
 ```
 
 # 六、vector的元素删除
@@ -289,7 +344,11 @@ insert(const_iterator pos,int count,ele); //在迭代器指向的位置pos处插
 函数原型：
 
 ```c++
-=
+pop_back();  //删除最后一个元素
+pop_front(); //删除第一个元素
+erase(const_iterator pos); //删除迭代器指向的元素
+erase(const_iterator begin,const_iterator end); //删除迭代器从begin到end之间的元素
+clear(); //删除容器中所有元素
 ```
 
 使用示例:
@@ -318,46 +377,9 @@ insert(const_iterator pos,int count,ele); //在迭代器指向的位置pos处插
 
 
 
-## 访问
-
-### front
-
-返回第一个元素的引用
-
-```C++
-int nRet = list1.front() // nRet = 1
-```
 
 
 
-### back
-
-返回最后一个元素的引用
-
-```C++
-int nRet = list1.back() // nRet = 3
-```
-
-
-
-### begin
-
-返回第一个元素的指针(iterator)
-
-```C++
-it = list1.begin(); // *it = 1
-```
-
-
-
-### end
-
-返回最后一个元素的下一位置的指针(list为空时end()=begin())
-
-```C++
-it = list1.end();
---it; // *it = 3
-```
 
 
 ## 元素移除
