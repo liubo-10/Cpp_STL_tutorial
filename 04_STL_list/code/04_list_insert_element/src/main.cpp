@@ -61,20 +61,26 @@ void insert_element_test()
     cout << "在首部插入30: " << endl;
     print_list(l_test);
 
-    l_test.insert(l_test.begin(), 2, 40);//在首位插入2个40
+    l_test.insert(l_test.begin(), 2, 40); // 在首位插入2个40
     cout << "在首部插入2个40: " << endl;
     print_list(l_test);
 
     list<int>::iterator it;
     it = l_test.begin();
-    it = it + 3;
-
-    l_test.insert(it ,50); //在第3位后面插入30
+    // it = it + 3; // 报错 没有加法
+    it++;
+    it++;
+    it++;
+    l_test.insert(it, 50); // 在第3位后面插入30
     cout << "在第3位后面插入30: " << endl;
     print_list(l_test);
 
     it = l_test.end();
-    it = it - 3;
+    // it = it - 3; //  报错 没有减法
+    it--;
+    it--;
+    it--;
+    
     l_test.insert(it, 2, 60);//在倒数第3位前面插入2个60
     cout << "在倒数第3位前面插入2个60: " << endl;
     print_list(l_test);
