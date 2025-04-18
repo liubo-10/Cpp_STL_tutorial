@@ -1,6 +1,5 @@
 --------------------begain-------------------
-erase_test: 
-4:pear 3:orange 1:apple 
-1:apple 
-4:pear 3:orange 
+find_test: 
+2:banana 
+not found
 --------------------end----------------------

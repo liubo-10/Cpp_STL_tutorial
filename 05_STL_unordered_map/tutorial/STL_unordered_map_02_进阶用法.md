@@ -127,25 +127,72 @@
 
 # unordered_map的查询
 
+函数原型：
 
-
-
-
-
-
-
-
-| iterator find(const K& key) | 返回key在哈希桶中的位置               |
-| --------------------------- | ------------------------------------- |
-| size_t count(const K& key)  | 返回哈希桶中关键码为key的键值对的个数 |
-
-
-
-
-
-
+```c++
+iterator find(const K& key)  //返回key在哈希桶中的位置
+size_t count(const K& key)   //返回哈希桶中关键码为key的键值对的个数
+```
 
 注意：unordered_map中key是不能重复的，因此count函数的返回值最大为1。
+
+
+
+使用示例:
+
+```c++
+void find_test()
+{
+    cout << "find_test: " << endl;
+
+    unordered_map<int, string> mp; // 构造一个空容器
+    mp = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
+
+    auto pos = mp.find(2);
+    if (pos != mp.end())
+    {
+        cout << pos->first << ":" << pos->second << " " << endl;
+    }
+    else
+    {
+        cout << "not found" << endl;
+    }
+
+    pos = mp.find(5);
+    if (pos != mp.end())
+    {
+        cout << pos->first << ":" << pos->second << " " << endl;
+    }
+    else
+    {
+        cout << "not found" << endl;
+    }
+}
+```
+
+测试结果:
+
+```log
+--------------------begain-------------------
+find_test: 
+2:banana 
+not found
+--------------------end----------------------
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
