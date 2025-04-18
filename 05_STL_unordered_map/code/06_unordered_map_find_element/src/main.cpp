@@ -66,7 +66,7 @@ void find_test()
     cout << "num: " << num << endl;
 
     pos = mp.find(5);
-    auto num = mp.count(5);
+    num = mp.count(5);
 
     if (pos != mp.end())
     {
