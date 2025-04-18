@@ -354,83 +354,85 @@ clear(); //删除容器中所有元素
 使用示例:
 
 ```c++
-=
+void erase_element_test()
+{
+    cout << "erase_element_test: " << endl;
+
+    list<int> l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    // 使用 pop_back 删除最后一个元素
+    l_test.pop_back();
+    cout << "使用 pop_back 删除最后一个元素: " << endl;
+    print_list(l_test);
+
+    // 使用 pop_front 删除第一个元素
+    l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    l_test.pop_front();
+    cout << "使用 pop_front 删除第一个元素: " << endl;
+    print_list(l_test);
+
+    // 使用 erase 删除首个元素
+    l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    l_test.erase(l_test.begin());
+    cout << "使用 erase 删除首个元素: " << endl;
+    print_list(l_test);
+
+    // 使用 erase 删除第二个元素
+    l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    l_test.erase(l_test.begin()++);
+    cout << "使用 erase 删除第二个元素: " << endl;
+    print_list(l_test);
+
+    // 使用 erase 删除全部元素
+    l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    l_test.erase(l_test.begin(), l_test.end());
+    cout << "使用 erase 删除全部元素: " << endl;
+    print_list(l_test);
+
+    // 使用 erase 删除前三个后三个之外的元素
+    list<int>::iterator it1, it2;
+    it1 = l_test.begin();
+    it1++;
+    it1++;
+    it1++;
+    it2 = l_test.end();
+    it2--;
+    it2--;
+    it2--;
+
+    l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    l_test.erase(it1, it2);
+    cout << "使用 erase 删除前三个后三个之外的元素: " << endl;
+    print_list(l_test);
+
+    // 使用 clear 删除全部元素
+    l_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    l_test.clear(); // 调用7，清空所有元素
+    cout << "使用 clear 删除全部元素: ";
+    print_list(l_test);
+}
 ```
 
 测试结果:
 
 ```log
-=
+--------------------begain-------------------
+erase_element_test: 
+使用 pop_back 删除最后一个元素: 
+0 1 2 3 4 5 6 7 8 
+使用 pop_front 删除第一个元素: 
+1 2 3 4 5 6 7 8 9 
+使用 erase 删除首个元素: 
+1 2 3 4 5 6 7 8 9 
+使用 erase 删除第二个元素: 
+1 2 3 4 5 6 7 8 9 
+使用 erase 删除全部元素: 
+
+使用 erase 删除前三个后三个之外的元素: 
+0 1 2 3 4 5 6 7 8 9 
+使用 clear 删除全部元素: 
+--------------------end----------------------
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 元素移除
-
-### clear
-
-移除所有元素，容器清空
-
-```C++
-mylist.clear()
-```
-
-
-
-
-
-
-
-### erase
-
-移除iterator位置pos上的元素，返回下一个元素的位置
-
-mylist.size()会减1
-
-```C++
-mylist.erase(pos)
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -443,7 +445,6 @@ mylist.erase(pos)
 版权声明：本文参考了其他资料和CSDN博主的文章，遵循CC 4.0 BY-SA版权协议，现附上原文出处链接及本声明。
 
 1. https://blog.csdn.net/m0_46655373/article/details/122289492
-4. 
 5. 
 
 ---
