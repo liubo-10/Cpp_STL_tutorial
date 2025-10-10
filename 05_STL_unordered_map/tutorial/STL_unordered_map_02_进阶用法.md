@@ -149,6 +149,8 @@ void find_test()
     mp = {{1, "apple"}, {2, "banana"}, {3, "orange"}, {4, "pear"}};
 
     auto pos = mp.find(2);
+    auto num = mp.count(2);
+    
     if (pos != mp.end())
     {
         cout << pos->first << ":" << pos->second << " " << endl;
@@ -157,8 +159,11 @@ void find_test()
     {
         cout << "not found" << endl;
     }
+    cout << "num: " << num << endl;
 
     pos = mp.find(5);
+    num = mp.count(5);
+
     if (pos != mp.end())
     {
         cout << pos->first << ":" << pos->second << " " << endl;
@@ -167,6 +172,7 @@ void find_test()
     {
         cout << "not found" << endl;
     }
+    cout << "num: " << num << endl;
 }
 ```
 
@@ -176,7 +182,9 @@ void find_test()
 --------------------begain-------------------
 find_test: 
 2:banana 
+num: 1
 not found
+num: 0
 --------------------end----------------------
 ```
 

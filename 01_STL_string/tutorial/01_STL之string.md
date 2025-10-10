@@ -6,7 +6,7 @@
 
 
 
-# string容器
+# string简介
 
 C风格字符串(以空字符结尾的字符数组)太过复杂难于掌握，不适合大程序的开发，所以C++标准库定义了一种string类，定义在头文件\<string\>。
 
@@ -20,32 +20,34 @@ C风格字符串(以空字符结尾的字符数组)太过复杂难于掌握，�
 
 
 
-## String和c风格字符串对比
+# String和c风格字符串对比
 
 - Char\*是一个指针，String是一个类
-
 - string封装了char\*，管理这个字符串，是一个char*型的容器。
-
 - String封装了很多实用的成员方法
-
   查找find，拷贝copy，删除delete 替换replace，插入insert等
-
 - 不用考虑内存释放和越界
 
   string管理char所分配的内存。每一次string的复制，取值都由string类负责维护，不用担心复制越界和取值越界等。
 
 
 
-## string容器常用操作
 
-string 构造函数
+string容器常用操作
 
+# string 的构造
+
+
+
+常见构造方式
 ```c++
 string();//创建一个空的字符串 例如: string str;      
 string(const string& str);//使用一个string对象初始化另一个string对象
 string(const char* s);//使用字符串s初始化
 string(int n, char c);//使用n个字符c初始化 
 ```
+
+
 
 
 
@@ -154,23 +156,6 @@ string str(s);
 在c++中存在一个从const char*到string的隐式类型转换，却不存在从一个string对象到C_string的自动类型转换。对于string类型的字符串，可以通过c_str()函数返回string对象对应的C_string.
 
 通常，程序员在整个程序中应坚持使用string类对象，直到必须将内容转化为char*时才将其转换为C_string.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
