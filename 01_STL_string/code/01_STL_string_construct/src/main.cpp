@@ -66,7 +66,7 @@ int main()
     string s8(s1, 1, 3);
     cout << "s8:" << s8 << endl;
 
-    string s9(s1, 1, 3);
+    string s9(s1, 2, 3);
     cout << "s9:" << s9 << endl;
 
     cout << "--------------------end----------------------" << endl;
