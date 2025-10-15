@@ -188,20 +188,22 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "c3a5c6acbd12e8a8",
+  "active": "a30bd033f2d98237",
   "lastOpenFiles": [
+    "01_STL_string/code/09_STL_string_imp/src/01_STL_string_imp.cpp",
+    "01_STL_string/code/09_STL_string_imp/Cmake/CMakeLists.txt",
+    "01_STL_string/code/09_STL_string_imp/src",
+    "01_STL_string/code/09_STL_string_imp/Cmake",
+    "01_STL_string/code/09_STL_string_imp",
+    "01_STL_string/code/01_STL_string_construct/src/main.cpp",
+    "01_STL_string/code/01_STL_string_construct/result/result.log",
+    "01_STL_string/code/01_STL_string_construct/readme/readme.md",
+    "01_STL_string/code/01_STL_string_construct/Cmake/CMakeLists.txt",
+    "01_STL_string/code/01_STL_string_construct/build/Makefile",
+    "01_STL_string/code/01_STL_string_construct/bin/myname",
+    "01_STL_string/code/01_STL_string_construct/src",
     "01_STL_string/tutorial/01_STL之string.md",
-    "01_STL_string/01_STL_string_construct/build/Makefile",
-    "01_STL_string/01_STL_string_construct/Cmake/CMakeLists.txt",
-    "01_STL_string/01_STL_string_construct/src/XXX.cpp",
-    "01_STL_string/01_STL_string_construct/src/XXX.hpp",
     "01_STL_string/01_STL_string_construct/readme/readme.md",
-    "01_STL_string/01_STL_string_construct/src/main.cpp",
-    "01_STL_string/01_STL_string_construct/result/result.log",
-    "01_STL_string/01_STL_string_construct/bin/myname",
-    "01_STL_string/01_STL_string_construct/src",
-    "01_STL_string/01_STL_string_construct/readme",
-    "01_STL_string/01_STL_string_construct/result",
     "01_STL_string/code_project_template/readme/readme.md",
     "00_overview/00_STL.md"
   ]
