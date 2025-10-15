@@ -27,7 +27,7 @@ int main()
     // 创建一个空的字符串
     // string();
     string s1;
-    string s1 = "123456789";
+    s1 = "123456789";
     cout << "s1:" << s1 << endl;
 
     // 2.拷贝构造
