@@ -40,56 +40,61 @@ C风格字符串(以空字符结尾的字符数组)太过复杂难于掌握，�
 # ✨string的使用
 
 # ✨string 的构造
-
-
-
-常见构造方式
+---
 ```cpp
-// 1.无参默认构造
-//创建一个空的字符串
-string();
-// 例如:
-string s1;
+ cout << "--------------------begain-------------------" << endl;
 
-// 2.拷贝构造
-//使用一个string对象初始化另一个string对象
-string(const string& str);
-// 例如:
-string s2(s1);
+ // 1.无参默认构造
+ // 创建一个空的字符串
+ // string();
+ string s1;
+ s1 = "123456789";
+ cout << "s1:" << s1 << endl;
 
-//3.使用c字符串初始化
-string(const char* s);
-// 例如:
-const char* s
-string s3(s);
+ // 2.拷贝构造
+ // 使用一个string对象初始化另一个string对象
+ // string(const string& str);
+ string s2(s1);
+ cout << "s2:" << s2 << endl;
 
-// 4、通过字符串常量初始化
-string (const char* s);
-// 例如:
-string s4("hello world");
+ // 3.使用c字符串初始化
+ // string(const char* s);
+ const char* s = "Hello, world!";
+ string      s3(s);
+ cout << "s3:" << s3 << endl;
 
-//5.使用n个字符c初始化 
-string(size_t n, char c);
-// 例如:
-char c
-string s5(10, 'x');
+ // 4、通过字符串常量初始化
+ // string(const char* s);
+ string s4("hello world");
+ cout << "s4:" << s4 << endl;
 
-// 6.通过字符串前n个字符初始化
-string (const char* s, size_t n);
-// 例如:
-string s6("hello wrold", 6);
+ // 5.使用n个字符c初始化
+ // string(size_t n, char c);
+ string s5(10, 'x');
+ cout << "s5:" << s5 << endl;
 
-// 7.通过string子串初始化
-// 将一个字符串对象的第pos位置之后的len个字符初始化给对应的字符串对象
-string (const string& str, size_t pos, size_t len = npos);
-// 例如:
-string s7(s, 5, 5);
+ // 6.通过字符串前n个字符初始化
+ // string(const char* s, size_t n);
+ string s6("123456789", 6);
+ cout << "s6:" << s6 << endl;
+
+ // 7.通过string子串初始化
+ // 将一个字符串对象的第pos位置之后的len个字符初始化给对应的字符串对象
+ // string(const string& str, size_t pos, size_t len = npos);
+ string s7(s1, 0, 3);
+ cout << "s7:" << s7 << endl;
+
+ string s8(s1, 1, 3);
+ cout << "s8:" << s8 << endl;
+
+ string s9(s1, 2, 3);
+ cout << "s9:" << s9 << endl;
+
+ cout << "--------------------end----------------------" << endl;
+
 ```
 
-
-
-
-
+执行结果
 ```log
 --------------------begain-------------------
 s1:123456789
@@ -100,20 +105,14 @@ s5:xxxxxxxxxx
 s6:123456
 s7:123
 s8:234
-s9:234
+s9:345
 --------------------end----------------------
 ```
 
 
-
-
-
-
-
-
-string基本赋值操作
-
-```c++
+# ✨string 的赋值操作
+---
+```cpp
 string& operator=(const char* s);//char*类型字符串 赋值给当前的字符串
 string& operator=(const string &s);//把字符串s赋给当前的字符串
 string& operator=(char c);//字符赋值给当前的字符串
@@ -122,6 +121,15 @@ string& assign(const char *s, int n);//把字符串s的前n个字符赋给当前
 string& assign(const string &s);//把字符串s赋给当前字符串
 string& assign(int n, char c);//用n个字符c赋给当前字符串
 string& assign(const string &s, int start, int n);//将s从start开始n个字符赋值给字符串
+
+
+
+
+
+
+
+
+
 ```
 
 
