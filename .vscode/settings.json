@@ -60,7 +60,12 @@
         "ratio": "cpp",
         "mutex": "cpp",
         "semaphore": "cpp",
-        "stop_token": "cpp"
+        "stop_token": "cpp",
+        "strstream": "cpp",
+        "bitset": "cpp",
+        "iomanip": "cpp",
+        "cfenv": "cpp",
+        "typeindex": "cpp"
     },
     "window.zoomLevel": 1.5, //设置窗口缩放级别 左边栏字体靠这个调，1.5-3.0之间试，大了界面会挤
     "editor.fontSize": 16, // 写代码的字体大小，16-20之间一般都舒服
