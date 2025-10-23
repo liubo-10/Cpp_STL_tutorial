@@ -29,7 +29,7 @@ int main()
     // string();
     string s1;
     s1 = "123456789";
-    cout << "s1:" << s1 << endl;
+    cout << "s1 :" << s1 << endl;
 
     cout << " -------------------------------------------------------------------------------- " << endl;
     //--------------------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ int main()
     // 2.1使用一个string对象初始化另一个string对象
     // string(const string& str);
     string s2(s1);
-    cout << "s2:" << s2 << endl;
+    cout << "s2 :" << s2 << endl;
 
     // 2.2选取 string 字符的拷贝构造
     // 将一个字符串对象的第pos位置之后的len个字符初始化给对应的字符串对象
@@ -60,7 +60,7 @@ int main()
     // string(const char* s);
     const char *s = "Hello, world!";
     string s3(s);
-    cout << "s3:" << s3 << endl;
+    cout << "s3 :" << s3 << endl;
 
     // 3.2通过字符串常量构造
     // string(const char* s);
@@ -77,8 +77,11 @@ int main()
 
     // 4.使用n个字符c构造 string
     // string(size_t n, char c);
-    string s4(10, 'x');
-    cout << "s4:" << s4 << endl;
+    string s4(10, 'A');
+    cout << "s4 :" << s4 << endl;
+
+    string s5(10, 'Z');
+    cout << "s5 :" << s5 << endl;
 
     cout << " ----------------------------------------end---------------------------------------- " << endl;
 
