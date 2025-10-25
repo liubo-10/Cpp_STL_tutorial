@@ -58,7 +58,7 @@ int main()
     // string(const char* s);
     const char *s3 = "Hello, world!";
     string s31(s3);
-    cout << "s31 :" << s31 << endl;
+    cout << "s31:" << s31 << endl;
 
     // 3.2通过字符串常量构造
     // string(const char* s);
@@ -75,10 +75,10 @@ int main()
     // 4.使用n个字符c构造 string
     // string(size_t n, char c);
     string s41_1(10, 'A');
-    cout << "s41_1 :" << s41_1 << endl;
+    cout << "s41_1:" << s41_1 << endl;
 
     string s41_2(10, 'Z');
-    cout << "s41_2 :" << s41_2 << endl;
+    cout << "s41_2:" << s41_2 << endl;
 
     cout << " -------------------- end -------------------- " << endl;
     
