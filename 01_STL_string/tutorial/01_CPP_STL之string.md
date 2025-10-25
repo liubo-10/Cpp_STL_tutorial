@@ -53,85 +53,84 @@ C风格字符串(以空字符结尾的字符数组)太过复杂难于掌握，�
 # 💞️ string 的构造
 ---
 ```cpp
-cout << " --------------------begain-------------------- " << endl;
+cout << " -------------------- begain -------------------- " << endl;
 
 // 1.无参默认构造 string
 // 创建一个空的字符串
 // string();
-string s1;
-s1 = "123456789";
-cout << "s1 :" << s1 << endl;
+string s11;
+s11 = "123456789";
+cout << "s11 :" << s11 << endl;
 
 cout << " ---------------------------------------- " << endl;
 
 // 2.拷贝构造 string
 // 2.1使用一个string对象初始化另一个string对象
 // string(const string& str);
-string s2(s1);
-cout << "s2 :" << s2 << endl;
+string s21(s11);
+cout << "s21 :" << s21 << endl;
 
 // 2.2选取 string 字符的拷贝构造
 // 将一个字符串对象的第pos位置之后的len个字符初始化给对应的字符串对象
 // string(const string& str, size_t pos, size_t len = npos);
-string s21(s1, 0, 3);
-cout << "s21:" << s21 << endl;
+string s22_1(s11, 0, 3);
+cout << "s22_1:" << s22_1 << endl;
 
-string s22(s1, 1, 3);
-cout << "s22:" << s22 << endl;
+string s22_2(s11, 1, 3);
+cout << "s22_2:" << s22_2 << endl;
 
-string s23(s1, 2, 3);
-cout << "s23:" << s23 << endl;
+string s22_3(s11, 2, 3);
+cout << "s22_3:" << s22_3 << endl;
 
 cout << " ---------------------------------------- " << endl;
 
 // 3.使用c类型字符串构造 string
 // 3.1使用长变量构造
 // string(const char* s);
-const char *s = "Hello, world!";
-string s3(s);
-cout << "s3 :" << s3 << endl;
+const char *s3 = "Hello, world!";
+string s31(s3);
+cout << "s31:" << s31 << endl;
 
 // 3.2通过字符串常量构造
 // string(const char* s);
-string s31("hello, world!");
-cout << "s31:" << s31 << endl;
+string s32("hello, world");
+cout << "s32:" << s32 << endl;
 
 // 3.3通过字符串前n个字符构造
 // string(const char* s, size_t n);
-string s32("123456789", 6);
-cout << "s32:" << s32 << endl;
+string s33("123456789", 6);
+cout << "s33:" << s33 << endl;
 
 cout << " ---------------------------------------- " << endl;
 
 // 4.使用n个字符c构造 string
 // string(size_t n, char c);
-string s4(10, 'A');
-cout << "s4 :" << s4 << endl;
+string s41_1(10, 'A');
+cout << "s41_1:" << s41_1 << endl;
 
-string s5(10, 'Z');
-cout << "s5 :" << s5 << endl;
+string s41_2(10, 'Z');
+cout << "s41_2:" << s41_2 << endl;
 
-cout << " --------------------end-------------------- " << endl;
-
+cout << " -------------------- end -------------------- " << endl;
 ```
 
 执行结果
 ```log
- --------------------begain-------------------- 
-s1 :123456789
+ -------------------- begain -------------------- 
+s11 :123456789
  ---------------------------------------- 
-s2 :123456789
-s21:123
-s22:234
-s23:345
+s21 :123456789
+s22_1:123
+s22_2:234
+s22_3:345
  ---------------------------------------- 
-s3 :Hello, world!
-s31:hello, world!
-s32:123456
+s31:Hello, world!
+s32:hello, world
+s33:123456
  ---------------------------------------- 
-s4 :AAAAAAAAAA
-s5 :ZZZZZZZZZZ
- --------------------end-------------------- 
+s41_1:AAAAAAAAAA
+s41_2:ZZZZZZZZZZ
+ -------------------- end -------------------- 
 ```
 
 

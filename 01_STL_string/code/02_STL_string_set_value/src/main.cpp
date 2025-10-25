@@ -31,9 +31,9 @@ int main()
     // string &operator=(const char *s)
 
     // 1.1 通过变量赋值
-    const char *s = "Hello, world!";
+    const char *s1 = "Hello, world!";
     string s11;
-    s11 = s;
+    s11 = s1;
     cout << "s11:" << s11 << endl;
 
     // 1.2直接赋值
@@ -45,7 +45,7 @@ int main()
     // string &operator=(const string &s);
     string s21;
     s21 = s11;
-    cout << "s21:" << s2 << endl;
+    cout << "s21:" << s21 << endl;
 
     // 3. 字符赋值给当前的字符串
     // string &operator=(char c);
