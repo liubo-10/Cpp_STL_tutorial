@@ -36,19 +36,19 @@ int main()
     // 2.拷贝构造 string
     // 2.1使用一个string对象初始化另一个string对象
     // string(const string& str);
-    string s21(s1);
+    string s21(s11);
     cout << "s21 :" << s21 << endl;
 
     // 2.2选取 string 字符的拷贝构造
     // 将一个字符串对象的第pos位置之后的len个字符初始化给对应的字符串对象
     // string(const string& str, size_t pos, size_t len = npos);
-    string s22_1(s1, 0, 3);
+    string s22_1(s11, 0, 3);
     cout << "s22_1:" << s22_1 << endl;
 
-    string s22_2(s1, 1, 3);
+    string s22_2(s11, 1, 3);
     cout << "s22_2:" << s22_2 << endl;
 
-    string s22_3(s1, 2, 3);
+    string s22_3(s11, 2, 3);
     cout << "s22_3:" << s22_3 << endl;
 
     cout << " ---------------------------------------- " << endl;
