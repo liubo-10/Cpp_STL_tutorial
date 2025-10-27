@@ -36,7 +36,7 @@ int main()
     s11 = s1;
     cout << "s11:" << s11 << endl;
 
-    // 1.2直接赋值
+    // 1.2 字符串常量赋值
     string s12;
     s12 = "123456789";
     cout << "s12:" << s12 << endl;
@@ -49,7 +49,6 @@ int main()
 
     // 3. 字符赋值给当前的字符串
     // string &operator=(char c);
-
     string s31;
     s31 = 'A';
     cout << "s31:" << s31 << endl;
@@ -57,18 +56,61 @@ int main()
     cout << " ---------------------------------------- " << endl;
 
     // 赋值方式2: assign 函数
-    // string &assign(const char *s);                     // 把字符串s赋给当前的字符串
-    // string &assign(const char *s, int n);              // 把字符串s的前n个字符赋给当前的字符串
-    // string &assign(const string &s);                   // 把字符串s赋给当前字符串
-    // string &assign(int n, char c);                     // 用n个字符c赋给当前字符串
-    // string &assign(const string &s, int start, int n); // 将s从start开始n个字符赋值给字符串
 
+    // 4. assign 参数为 char*类型字符串
+    // string &assign(const char *s);
 
+    // 4.1 参数为字符串变量
+    string s41;
+    const char *s4 = "123456789";
+    s41.assign(s4);
+    cout << "s41:" << s41 << endl;
 
+    // 4.2 参数为字符串常量
+    string s42;
+    s42.assign("Hello, world!");
+    cout << "s42:" << s42 << endl;
 
+    // 4.3 把字符串s的前n个字符赋给当前的字符串
+    // string &assign(const char *s, int n);            
+    s431.assign(s4,1);
+    cout << "s431:" << s431 << endl;
 
+    s432.assign(s4, 2);
+    cout << "s432:" << s432 << endl;
 
+    s433.assign(s4, 3);
+    cout << "s433:" << s433 << endl;
 
+    // 5. assign 参数为 string 类型字符串
+    // string &assign(const string &s);
+
+    // 5.1 把字符串s赋给当前字符串
+    string s51;
+    s51.assign(s42);
+    cout << "s51:" << s51 << endl;
+
+    // 5.2 将s从start开始n个字符赋值给字符串
+    // string &assign(const string &s, int start, int n);
+    string s521;
+    s521.assign(s41, 0, 3);
+    cout << "s521:" << s521 << endl;
+
+    string s522;
+    s522.assign(s41, 1, 3);
+    cout << "s522:" << s522 << endl;
+
+    string s523;
+    s523.assign(s41, 0, 3);
+    cout << "s523:" << s523 << endl;
+
+    // 6. assign 参数为 n个字符c
+
+    // string &assign(int n, char c);
+
+    string s6;
+    s6.assign(5, 'Z');
+    cout << "s6:" << s6 << endl;
 
     cout << " -------------------- end -------------------- " << endl;
 
