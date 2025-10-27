@@ -72,13 +72,16 @@ int main()
     cout << "s42:" << s42 << endl;
 
     // 4.3 把字符串s的前n个字符赋给当前的字符串
-    // string &assign(const char *s, int n);            
-    s431.assign(s4,1);
+    // string &assign(const char *s, int n);
+    string s431;
+    s431.assign(s4, 1);
     cout << "s431:" << s431 << endl;
 
+    string s432;
     s432.assign(s4, 2);
     cout << "s432:" << s432 << endl;
 
+    string s433;
     s433.assign(s4, 3);
     cout << "s433:" << s433 << endl;
 
