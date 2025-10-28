@@ -104,7 +104,7 @@ int main()
     cout << "s522:" << s522 << endl;
 
     string s523;
-    s523.assign(s41, 0, 3);
+    s523.assign(s41, 2, 3);
     cout << "s523:" << s523 << endl;
 
     // 6. assign 参数为 n个字符c
