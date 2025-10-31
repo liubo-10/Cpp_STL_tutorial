@@ -25,6 +25,8 @@ int main()
     // 1. 重载[]运算符，n是下标
     // char &operator[](int n);
     string s1("hello, world");
+    cout << "s1:" << s1 << endl;
+
     s1[0] = 'H'; //将字符串第1个元素改为H
     cout << "s1:" << s1 << endl;
 
@@ -37,6 +39,8 @@ int main()
     // char &at(int n);
 
     string s2("hello, world");
+    cout << "s2:" << s2 << endl;
+
     s2.at(0) = 'H'; //将字符串第1个元素改为H
     cout << "s2:" << s2 << endl;
 
