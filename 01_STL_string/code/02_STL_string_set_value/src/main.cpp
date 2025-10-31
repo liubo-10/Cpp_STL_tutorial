@@ -108,7 +108,6 @@ int main()
     cout << "s523:" << s523 << endl;
 
     // 6. assign 参数为 n个字符c
-
     // string &assign(int n, char c);
 
     string s6;
