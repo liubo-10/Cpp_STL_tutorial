@@ -11,8 +11,7 @@
 #include <iostream> // 包含输入和输出操作
 #include <string.h> // C语言的标准库，包含字符串处理操作 strcpy等
 #include <unistd.h> // pause()头文件
-
-// #include "XXX.hpp"
+#include <exception>  // 引入 exception 头文件
 
 using std::cin;
 using std::cout;
@@ -54,17 +53,16 @@ int main()
 
     // 使用重载operator[]运算符方法，下标越界不会抛出异常
     try {
-        str1[100000] = 'H'; //数组下标访问越界，使用operator[]方法不会抛出异常
-    } catch (exception &str) {
+        s1[100000] = 'H'; //数组下标访问越界，使用operator[]方法不会抛出异常
+    } catch (std::exception &str) {
         cout << str.what() << endl; //接收来自try的异常
     }
     printf("hello,string [] 测试\n"); //测试
 
     // 使用at方法，下标越界会抛出异常
     try {
-        //str1[100000]='H';//数组下标访问越界，使用operator[]方法不会抛出异常
-        str1.at(100000) = 'H'; //抛出异常，程序不会终止
-    } catch (exception &str) {
+        s2.at(100000) = 'H'; //抛出异常，程序不会终止
+    } catch (std::exception &str) {
         cout << str.what() << endl; //接收来自try的异常
     }
     printf("hello,string at 测试\n"); //测试
