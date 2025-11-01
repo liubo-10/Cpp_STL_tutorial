@@ -53,9 +53,10 @@ int main()
 
     // 使用重载operator[]运算符方法，下标越界不会抛出异常
     try {
-        s1[100000] = 'H'; //数组下标访问越界，使用operator[]方法不会抛出异常
+        s1[100000] = 'H';                   //数组下标访问越界，使用operator[]方法不会抛出异常
+        cout << "s1[100000] = 'H'" << endl; //测试
     } catch (std::exception &str) {
-        cout << str.what() << endl; //接收来自try的异常
+        cout << "hello,string [] 测试" << str.what() << endl; //接收来自try的异常
     }
 
     cout << "hello,string [] 测试" << endl; //测试
