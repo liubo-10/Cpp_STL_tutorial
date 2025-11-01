@@ -22,6 +22,7 @@ using std::string;
 int main()
 {
     cout << " -------------------- begain -------------------- " << endl;
+
     // 1. 重载[]运算符，n是下标
     // char &operator[](int n);
     string s1("hello, world");
@@ -46,6 +47,27 @@ int main()
 
     s2.at(7) = 'W'; //将字符串第8个元素改为H
     cout << "s2:" << s2 << endl;
+
+    cout << " ---------------------------------------- " << endl;
+
+    // 字符串的取值和修改操作之at方法和重载operator[]方法的区别
+
+    // 使用重载operator[]运算符方法，下标越界不会抛出异常
+    try {
+        str1[100000] = 'H'; //数组下标访问越界，使用operator[]方法不会抛出异常
+    } catch (exception &str) {
+        cout << str.what() << endl; //接收来自try的异常
+    }
+    printf("hello,string [] 测试\n"); //测试
+
+    // 使用at方法，下标越界会抛出异常
+    try {
+        //str1[100000]='H';//数组下标访问越界，使用operator[]方法不会抛出异常
+        str1.at(100000) = 'H'; //抛出异常，程序不会终止
+    } catch (exception &str) {
+        cout << str.what() << endl; //接收来自try的异常
+    }
+    printf("hello,string at 测试\n"); //测试
 
     cout << " -------------------- end -------------------- " << endl;
     // cin.get();
