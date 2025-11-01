@@ -57,7 +57,8 @@ int main()
     } catch (std::exception &str) {
         cout << str.what() << endl; //接收来自try的异常
     }
-    printf("hello,string [] 测试\n"); //测试
+
+    cout << "hello,string [] 测试" << endl; //测试
 
     // 使用at方法，下标越界会抛出异常
     try {
@@ -65,7 +66,8 @@ int main()
     } catch (std::exception &str) {
         cout << str.what() << endl; //接收来自try的异常
     }
-    printf("hello,string at 测试\n"); //测试
+
+    cout << "hello,string at() 测试" << endl; //测试
 
     cout << " -------------------- end -------------------- " << endl;
     // cin.get();
