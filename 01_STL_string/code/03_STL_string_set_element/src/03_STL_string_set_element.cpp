@@ -7,11 +7,11 @@
  * ---------------------------------------
  * | @brief   : main template
  ******************************************************************************/
-#include <stdio.h>  // C语言的标准库，包含C语言流操作 printf等
-#include <iostream> // 包含输入和输出操作
-#include <string.h> // C语言的标准库，包含字符串处理操作 strcpy等
-#include <unistd.h> // pause()头文件
-#include <exception>  // 引入 exception 头文件
+#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
+#include <iostream>  // 包含输入和输出操作
+#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h>  // pause()头文件
+#include <exception> // 引入 exception 头文件
 
 using std::cin;
 using std::cout;
@@ -53,9 +53,9 @@ int main()
 
     // 使用重载operator[]运算符方法，下标越界不会抛出异常
     try {
-        s1[100] = 'H';                    //数组下标访问越界，使用operator[]方法不会抛出异常
-    } catch (std::exception &str) {       //接收来自try的异常
-        cout << "string [] 测试" << endl; // 不会打印
+        s1[100] = 'H';                    // 数组下标访问越界，使用operator[]方法不会抛出异常
+    } catch (std::exception &str) {       // 接收来自try的异常
+        cout << "string [] test" << endl; // 不会打印
         cout << str.what() << endl;       // 不会打印
     }
 
@@ -63,10 +63,10 @@ int main()
 
     // 使用at方法，下标越界会抛出异常
     try {
-        s2.at(100) = 'H';                   //抛出异常，程序不会终止
-    } catch (std::exception &str) {         //接收来自try的异常
-        cout << "string at() 测试" << endl; //会打印
-        cout << str.what() << endl;         //会打印
+        s2.at(100) = 'H';                   // 抛出异常，程序不会终止
+    } catch (std::exception &str) {         // 接收来自try的异常
+        cout << "string at() test" << endl; // 会打印
+        cout << str.what() << endl;         // 会打印
     }
 
     cout << " -------------------- end -------------------- " << endl;

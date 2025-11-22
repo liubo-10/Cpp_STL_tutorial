@@ -282,7 +282,30 @@ cout << "s2:" << s2 << endl;
 s2.at(7) = 'W'; //将字符串第8个元素改为H
 cout << "s2:" << s2 << endl;
 
+cout << " ---------------------------------------- " << endl;
+
+// 字符串的取值和修改操作之at方法和重载operator[]方法的区别
+
+// 使用重载operator[]运算符方法，下标越界不会抛出异常
+try {
+    s1[100] = 'H';                    //数组下标访问越界，使用operator[]方法不会抛出异常
+} catch (std::exception &str) {       //接收来自try的异常
+    cout << "string [] 测试" << endl; // 不会打印
+    cout << str.what() << endl;       // 不会打印
+}
+
+cout << " ---------------------------------------- " << endl;
+
+// 使用at方法，下标越界会抛出异常
+try {
+    s2.at(100) = 'H';                   //抛出异常，程序不会终止
+} catch (std::exception &str) {         //接收来自try的异常
+    cout << "string at() 测试" << endl; //会打印
+    cout << str.what() << endl;         //会打印
+}
+
 cout << " -------------------- end -------------------- " << endl;
+
 ```
 
 
@@ -297,6 +320,10 @@ s1:Hello, World
 s2:hello, world
 s2:Hello, world
 s2:Hello, World
+ ---------------------------------------- 
+ ---------------------------------------- 
+string at() 测试
+basic_string::at: __n (which is 100) >= this->size() (which is 12)
  -------------------- end -------------------- 
 ```
 
