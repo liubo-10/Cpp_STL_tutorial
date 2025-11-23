@@ -1,5 +1,5 @@
 /*****************************************************************************
- * | @file    : 02_STL_string_set_value.c
+ * | @file    : 02_STL_string_set_value.cpp
  * | @author  : liubo
  * --------------------------------------
  * | @version  @date
@@ -116,9 +116,6 @@ int main()
 
     cout << " -------------------- end -------------------- " << endl;
 
-    // cin.get();
-    // getchar();
-    // pause();
     return EXIT_SUCCESS;
 }
 

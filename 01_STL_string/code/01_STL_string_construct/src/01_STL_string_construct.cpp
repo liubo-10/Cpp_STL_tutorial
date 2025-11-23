@@ -1,5 +1,5 @@
 /*****************************************************************************
- * | @file    : 01_STL_string_construct.c
+ * | @file    : 01_STL_string_construct.cpp
  * | @author  : liubo
  * --------------------------------------
  * | @version  @date
@@ -82,9 +82,6 @@ int main()
 
     cout << " -------------------- end -------------------- " << endl;
 
-    // cin.get();
-    // getchar();
-    // pause();
     return EXIT_SUCCESS;
 }
 

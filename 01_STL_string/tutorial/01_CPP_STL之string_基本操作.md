@@ -128,33 +128,33 @@ str41_2:ZZZZZZZZZZ
 ```cpp
 cout << " -------------------- begain -------------------- " << endl;
 
-// 赋值方式一: 运算符 = 重载
+// 赋值方式1: 运算符 = 重载
 
 // 1. char*类型字符串 赋值给当前的字符串
 // string &operator=(const char *s)
 
-// 1.1 通过变量赋值
+// 1.1 通过定义变量赋值
 const char *s1 = "Hello, world!";
-string s11;
-s11 = s1;
-cout << "s11:" << s11 << endl;
+string str11;
+str11 = s1;
+cout << "str11:" << str11 << endl;
 
-// 1.2 字符串常量赋值
-string s12;
-s12 = "123456789";
-cout << "s12:" << s12 << endl;
+// 1.2 字符串常量直接赋值
+string str12;
+str12 = "123456789";
+cout << "str12:" << str12 << endl;
 
 // 2. 把字符串s赋给当前的字符串
 // string &operator=(const string &s);
-string s21;
-s21 = s11;
-cout << "s21:" << s21 << endl;
+string str21;
+str21 = str11;
+cout << "str21:" << str21 << endl;
 
 // 3. 字符赋值给当前的字符串
 // string &operator=(char c);
-string s31;
-s31 = 'A';
-cout << "s31:" << s31 << endl;
+string str31;
+str31 = 'A';
+cout << "str31:" << str31 << endl;
 
 cout << " ---------------------------------------- " << endl;
 
@@ -164,83 +164,83 @@ cout << " ---------------------------------------- " << endl;
 // string &assign(const char *s);
 
 // 4.1 参数为字符串变量
-string s41;
+string str41;
 const char *s4 = "123456789";
-s41.assign(s4);
-cout << "s41:" << s41 << endl;
+str41.assign(s4);
+cout << "str41:" << str41 << endl;
 
 // 4.2 参数为字符串常量
-string s42;
-s42.assign("Hello, world!");
-cout << "s42:" << s42 << endl;
+string str42;
+str42.assign("Hello, world!");
+cout << "str42:" << str42 << endl;
 
 // 4.3 把字符串s的前n个字符赋给当前的字符串
 // string &assign(const char *s, int n);
-string s431;
-s431.assign(s4, 1);
-cout << "s431:" << s431 << endl;
+string str43_1;
+str43_1.assign(s4, 1);
+cout << "str43_1:" << str43_1 << endl;
 
-string s432;
-s432.assign(s4, 2);
-cout << "s432:" << s432 << endl;
+string str43_2;
+str43_2.assign(s4, 2);
+cout << "str43_2:" << str43_2 << endl;
 
-string s433;
-s433.assign(s4, 3);
-cout << "s433:" << s433 << endl;
+string str43_3;
+str43_3.assign(s4, 3);
+cout << "str43_3:" << str43_3 << endl;
 
 // 5. assign 参数为 string 类型字符串
 // string &assign(const string &s);
 
-// 5.1 把字符串s赋给当前字符串
-string s51;
-s51.assign(s42);
-cout << "s51:" << s51 << endl;
+// 5.1 把string字符串s赋给当前字符串
+string str51;
+str51.assign(str42);
+cout << "str51:" << str51 << endl;
 
-// 5.2 将s从start开始n个字符赋值给字符串
+// 5.2 将string字符串s从start开始n个字符赋值给字符串
 // string &assign(const string &s, int start, int n);
-string s521;
-s521.assign(s41, 0, 3);
-cout << "s521:" << s521 << endl;
+string str52_1;
+str52_1.assign(str41, 0, 3);
+cout << "str52_1:" << str52_1 << endl;
 
-string s522;
-s522.assign(s41, 1, 3);
-cout << "s522:" << s522 << endl;
+string str52_2;
+str52_2.assign(str41, 1, 3);
+cout << "str52_2:" << str52_2 << endl;
 
-string s523;
-s523.assign(s41, 2, 3);
-cout << "s523:" << s523 << endl;
+string str52_3;
+str52_3.assign(str41, 2, 3);
+cout << "str52_3:" << str52_3 << endl;
 
 // 6. assign 参数为 n个字符c
 // string &assign(int n, char c);
 
-string s6;
-s6.assign(5, 'Z');
-cout << "s6:" << s6 << endl;
+string str6;
+str6.assign(5, 'Z');
+cout << "str6 :" << str6 << endl;
 
 cout << " -------------------- end -------------------- " << endl;
 
 ```
 
-
 执行结果
 
 ```log
  -------------------- begain -------------------- 
-s11:Hello, world!
-s12:123456789
-s21:Hello, world!
-s31:A
+str11:Hello, world!
+str12:123456789
+str21:Hello, world!
+str31:A
  ---------------------------------------- 
-s41:123456789
-s42:Hello, world!
-s431:1
-s432:12
-s433:123
-s51:Hello, world!
-s521:123
-s522:234
-s523:345
-s6:ZZZZZ
+str41:123456789
+str42:Hello, world!
+str43_1:1
+str43_2:12
+str43_3:123
+str51:Hello, world!
+str52_1:123
+str52_2:234
+str52_3:345
+str6 :ZZZZZ
+ -------------------- end -------------------- 
  -------------------- end -------------------- 
 ```
 
