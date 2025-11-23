@@ -35,9 +35,9 @@ int main()
     // string &operator +=(const char *str);//c风格
 
     // 2.1 通过定义变量拼接
-    const char *str2_1 = "67890";
+    const char *s2 = "67890";
     string str21("12345");
-    str21 += str2_1;
+    str21 += s2;
     cout << "str21:" << str21 << endl;
 
     // 2.2 字符串常量直接拼接
@@ -49,8 +49,8 @@ int main()
     // string &operator +=(const char c);
     string str31("abcde");
     str31 += "f";
-    const char c3_1 = 'g';
-    str31 += c3_1;
+    const char c3 = 'g';
+    str31 += c3;
     cout << "str31:" << str31 << endl;
 
     cout << " ---------------------------------------- " << endl;
@@ -70,25 +70,25 @@ int main()
     // string &append(const string &s, int start, int n);
     string str4_2("1234567890");
 
-    string str420("hello");
-    str420.append(str4_2, 0, 3);
-    cout << "str420:" << str420 << endl;
+    string str42_0("hello");
+    str42_0.append(str4_2, 0, 3);
+    cout << "str42_0:" << str42_0 << endl;
 
-    string str421("hello");
-    str421.append(str4_2, 1, 3);
-    cout << "str421:" << str421 << endl;
+    string str42_1("hello");
+    str42_1.append(str4_2, 1, 3);
+    cout << "str42_1:" << str42_1 << endl;
 
-    string str422("hello");
-    str422.append(str4_2, 2, 3);
-    cout << "str422:" << str422 << endl;
+    string str42_2("hello");
+    str42_2.append(str4_2, 2, 3);
+    cout << "str42_2:" << str42_2 << endl;
 
     // 5.参数是 const char *s 类型
     // string &append(const char *s);//append追加方法
 
     // 5.1 通过定义变量拼接
-    const char *str5_1 = "12345";
+    const char *s5_1 = "12345";
     string str51("god");
-    str51.append(str5_1);
+    str51.append(s5_1);
     cout << "str51:" << str51 << endl;
 
     // 5.2 字符串常量直接拼接
@@ -98,40 +98,28 @@ int main()
 
     // 5.3 把字符串 const char *s 的前n个字符追加到当前的字符串之后
     // string &append(const char *s, int n);
-    const char *str5_3 = "1234567890";
+    const char *s5_3 = "1234567890";
 
-    string str530("study");
-    str530.append(str5_3, 0); //前0个追加给str6对象
-    cout << "str530:" << str530 << endl;
+    string str53_0("study");
+    str53_0.append(s5_3, 0); //前0个追加给 str53_0 对象
+    cout << "str53_0:" << str53_0 << endl;
 
-    string str531("study");
-    str531.append(str5_3, 2); //前2个追加给str6对象
-    cout << "str531:" << str531 << endl;
+    string str53_1("study");
+    str53_1.append(s5_3, 2); //前2个追加给 str53_1 对象
+    cout << "str53_1:" << str53_1 << endl;
 
-    string str532("study");
-    str532.append(str5_3, 4); //前4个追加给str6对象
-    cout << "str532:" << str532 << endl;
+    string str53_2("study");
+    str53_2.append(s5_3, 4); //前4个追加给 str53_2 对象
+    cout << "str53_2:" << str53_2 << endl;
 
     // 6.参数是 const char c 类型
     // string &append(int n,char c);
 
     string str6("AAA");
     str6.append(3, 'B');
-    cout << "str6:" << str6 << endl;
+    cout << "str6 :" << str6 << endl;
 
     cout << " -------------------- end -------------------- " << endl;
-    // cin.get();
-    // getchar();
-    // pause();
-
-    // 20
-    // --------------------
-
-    // 40
-    // ----------------------------------------
-
-    // 80
-    // --------------------------------------------------------------------------------
 
     return EXIT_SUCCESS;
 }

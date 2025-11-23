@@ -1,3 +1,5 @@
+# 02_CPP_STL之string_进阶操作
+
 * 👋 Hi, I’m liubo
 * 👀 I’m interested in
 * 🌱 I’m currently learning
@@ -11,75 +13,95 @@
 * 🍰 dazdsxasxsaxsaasdsa
 * 🚨 gdfgdshdfhfhygjtyu
 
-
-
-
-# 💞️ 标题一
-
----
-
-
-## ✨ 标题二
-
-
-
-### 🌱 标题三
+## 💞️ string 的进阶操作
 
 ---
 
 
 
+### ✨ string 的构造
 
+```cpp
+cout << " -------------------- begain -------------------- " << endl;
 
+// 1.无参默认构造 string
+// 创建一个空的字符串
+// string();
+string str11;
+str11 = "123456789";
+cout << "str11 :" << str11 << endl;
 
- 4.2、字符串的取值和修改操作之at方法和重载operator[]方法的区别
+cout << " ---------------------------------------- " << endl;
 
-使用重载operator[]运算符方法，下标越界不会抛出异常
+// 2.拷贝构造 string
+// 2.1使用一个string对象初始化另一个string对象
+// string(const string& str);
+string str21(str11);
+cout << "str21 :" << str21 << endl;
 
+// 2.2选取 string 字符的拷贝构造
+// 将一个字符串对象的第pos位置之后的len个字符初始化给对应的字符串对象
+// string(const string& str, size_t pos, size_t len = npos);
+string str22_1(str11, 0, 3);
+cout << "str22_1:" << str22_1 << endl;
 
+string str22_2(str11, 1, 3);
+cout << "str22_2:" << str22_2 << endl;
 
+string str22_3(str11, 2, 3);
+cout << "str22_3:" << str22_3 << endl;
 
+cout << " ---------------------------------------- " << endl;
 
+// 3.使用c类型字符串构造 string
+// 3.1使用长变量构造
+// string(const char* s);
+const char *s3 = "Hello, world!";
+string str31(s3);
+cout << "str31:" << str31 << endl;
 
+// 3.2通过字符串常量构造
+// string(const char* s);
+string str32("hello, world");
+cout << "str32:" << str32 << endl;
 
+// 3.3通过字符串前n个字符构造
+// string(const char* s, size_t n);
+string s33("123456789", 6);
+cout << "s33:" << s33 << endl;
+
+cout << " ---------------------------------------- " << endl;
+
+// 4.使用n个字符c构造 string
+// string(size_t n, char c);
+string str41_1(10, 'A');
+cout << "str41_1:" << str41_1 << endl;
+
+string str41_2(10, 'Z');
+cout << "str41_2:" << str41_2 << endl;
+
+cout << " -------------------- end -------------------- " << endl;
 ```
-#include <iostream>
-#include<string>
-using namespace std;
- 
-void test2(){
-   /*
-   char &operator[](int n);//重载[]运算符，n是下标
-   char &at(int n);//通过at方法获取下标为n的元素
-   */
-    string str1="hello,string类";//赋值运算符赋值初始化，一般不建议，在这里可以用，因为是常量，不会发生隐式转换
-    string str2("hello,string类");//直接赋值初始化，建议使用该方法
-    str2[4]='H';//将字符串第五个元素改为H
-    cout<<str2<<endl;
-    cout<<str2[4]<<endl;
- 
-    str1.at(1)='E';//使用at方法取值然后修改值
-    cout<<str1<<endl;
-    cout<<str1[1]<<endl;
- 
-    try{
-        str1[100000]='H';//数组下标访问越界，使用operator[]方法不会抛出异常
-    }
-    catch(exception &str){
-        cout<<str.what()<<endl;//接收来自try的异常
- 
-    }
-    printf("hello,string测试\n");//测试
- 
-}
- 
-int main()
-{
-    test2();//调用函数
-    return 0;
-}
-```
 
+执行结果
+
+```log
+ -------------------- begain -------------------- 
+str11 :123456789
+ ---------------------------------------- 
+str21 :123456789
+str22_1:123
+str22_2:234
+str22_3:345
+ ---------------------------------------- 
+str31:Hello, world!
+str32:hello, world
+s33:123456
+ ---------------------------------------- 
+str41_1:AAAAAAAAAA
+str41_2:ZZZZZZZZZZ
+ -------------------- end -------------------- 
+```
 
 
 
