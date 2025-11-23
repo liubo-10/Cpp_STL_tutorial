@@ -19,19 +19,18 @@ C风格字符串(以空字符结尾的字符数组)太过复杂难于掌握，�
 
 头文件:
 
-```C++
-#include<string>
+```cpp
+#include <string>
 ```
 
 # 💞️ String和c风格字符串对比
 
 ---
 
-* Char\*是一个指针，String是一个类
-* string封装了 char\*，管理这个字符串，是一个 char\* 型的容器。
-* String封装了很多实用的成员方法
-  查找find，拷贝copy，删除delete 替换replace，插入insert等
-* 不用考虑内存释放和越界
+1. char\*是一个指针，string是一个类
+2. string封装了 char\*，管理这个字符串，是一个 char\* 型的容器。
+3. string封装了很多实用的成员方法。查找find，拷贝copy，删除delete 替换replace，插入insert等
+4. 不用考虑内存释放和越界
 
   string管理char所分配的内存。每一次string的复制，取值都由string类负责维护，不用担心复制越界和取值越界等。
 
@@ -48,29 +47,29 @@ cout << " -------------------- begain -------------------- " << endl;
 // 1.无参默认构造 string
 // 创建一个空的字符串
 // string();
-string s11;
-s11 = "123456789";
-cout << "s11 :" << s11 << endl;
+string str11;
+str11 = "123456789";
+cout << "str11 :" << str11 << endl;
 
 cout << " ---------------------------------------- " << endl;
 
 // 2.拷贝构造 string
 // 2.1使用一个string对象初始化另一个string对象
 // string(const string& str);
-string s21(s11);
-cout << "s21 :" << s21 << endl;
+string str21(str11);
+cout << "str21 :" << str21 << endl;
 
 // 2.2选取 string 字符的拷贝构造
 // 将一个字符串对象的第pos位置之后的len个字符初始化给对应的字符串对象
 // string(const string& str, size_t pos, size_t len = npos);
-string s22_1(s11, 0, 3);
-cout << "s22_1:" << s22_1 << endl;
+string str22_1(str11, 0, 3);
+cout << "str22_1:" << str22_1 << endl;
 
-string s22_2(s11, 1, 3);
-cout << "s22_2:" << s22_2 << endl;
+string str22_2(str11, 1, 3);
+cout << "str22_2:" << str22_2 << endl;
 
-string s22_3(s11, 2, 3);
-cout << "s22_3:" << s22_3 << endl;
+string str22_3(str11, 2, 3);
+cout << "str22_3:" << str22_3 << endl;
 
 cout << " ---------------------------------------- " << endl;
 
@@ -78,13 +77,13 @@ cout << " ---------------------------------------- " << endl;
 // 3.1使用长变量构造
 // string(const char* s);
 const char *s3 = "Hello, world!";
-string s31(s3);
-cout << "s31:" << s31 << endl;
+string str31(s3);
+cout << "str31:" << str31 << endl;
 
 // 3.2通过字符串常量构造
 // string(const char* s);
-string s32("hello, world");
-cout << "s32:" << s32 << endl;
+string str32("hello, world");
+cout << "str32:" << str32 << endl;
 
 // 3.3通过字符串前n个字符构造
 // string(const char* s, size_t n);
@@ -95,11 +94,11 @@ cout << " ---------------------------------------- " << endl;
 
 // 4.使用n个字符c构造 string
 // string(size_t n, char c);
-string s41_1(10, 'A');
-cout << "s41_1:" << s41_1 << endl;
+string str41_1(10, 'A');
+cout << "str41_1:" << str41_1 << endl;
 
-string s41_2(10, 'Z');
-cout << "s41_2:" << s41_2 << endl;
+string str41_2(10, 'Z');
+cout << "str41_2:" << str41_2 << endl;
 
 cout << " -------------------- end -------------------- " << endl;
 ```
@@ -108,19 +107,19 @@ cout << " -------------------- end -------------------- " << endl;
 
 ```log
  -------------------- begain -------------------- 
-s11 :123456789
+str11 :123456789
  ---------------------------------------- 
-s21 :123456789
-s22_1:123
-s22_2:234
-s22_3:345
+str21 :123456789
+str22_1:123
+str22_2:234
+str22_3:345
  ---------------------------------------- 
-s31:Hello, world!
-s32:hello, world
+str31:Hello, world!
+str32:hello, world
 s33:123456
  ---------------------------------------- 
-s41_1:AAAAAAAAAA
-s41_2:ZZZZZZZZZZ
+str41_1:AAAAAAAAAA
+str41_2:ZZZZZZZZZZ
  -------------------- end -------------------- 
 ```
 
