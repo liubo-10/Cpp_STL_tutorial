@@ -7,16 +7,16 @@
  * ---------------------------------------
  * | @brief   : main template
  ******************************************************************************/
-#include <stdio.h>  // C语言的标准库，包含C语言流操作 printf等
-#include <iostream> // 包含输入和输出操作
-#include <unistd.h> // pause()头文件
-#include <string.h> // C语言的标准库，包含字符串处理操作 strcpy等
-
-// #include "XXX.hpp"
+#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
+#include <iostream>  // 包含输入和输出操作
+#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h>  // pause()头文件
+#include <exception> // 引入 exception 头文件
 
 using std::cin;
 using std::cout;
 using std::endl;
+using std::string;
 
 int main()
 {
