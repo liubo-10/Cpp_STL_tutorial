@@ -24,61 +24,102 @@
 ```cpp
 cout << " -------------------- begain -------------------- " << endl;
 
-// 1.无参默认构造 string
-// 创建一个空的字符串
-// string();
-string str11;
-str11 = "123456789";
-cout << "str11 :" << str11 << endl;
+// 拼接方式1: 重载 += 运算符
 
-cout << " ---------------------------------------- " << endl;
+// 1.参数是 string 类型
+// string &operator+=(const string &str);
+string str11("hello,");
+string str1_1("world!");
+str11 += str1_1; //两个对象相加赋值给str111对象
+cout << "str11:" << str11 << endl;
 
-// 2.拷贝构造 string
-// 2.1使用一个string对象初始化另一个string对象
-// string(const string& str);
-string str21(str11);
-cout << "str21 :" << str21 << endl;
+// 2 参数是 const char * 类型
+// string &operator +=(const char *str);//c风格
 
-// 2.2选取 string 字符的拷贝构造
-// 将一个字符串对象的第pos位置之后的len个字符初始化给对应的字符串对象
-// string(const string& str, size_t pos, size_t len = npos);
-string str22_1(str11, 0, 3);
-cout << "str22_1:" << str22_1 << endl;
+// 2.1 通过定义变量拼接
+const char *s2 = "67890";
+string str21("12345");
+str21 += s2;
+cout << "str21:" << str21 << endl;
 
-string str22_2(str11, 1, 3);
-cout << "str22_2:" << str22_2 << endl;
+// 2.2 字符串常量直接拼接
+string str22("abcde");
+str22 += "fghij";
+cout << "str22:" << str22 << endl;
 
-string str22_3(str11, 2, 3);
-cout << "str22_3:" << str22_3 << endl;
-
-cout << " ---------------------------------------- " << endl;
-
-// 3.使用c类型字符串构造 string
-// 3.1使用长变量构造
-// string(const char* s);
-const char *s3 = "Hello, world!";
-string str31(s3);
+// 3.参数是 const char 类型
+// string &operator +=(const char c);
+string str31("abcde");
+str31 += "f";
+const char c3 = 'g';
+str31 += c3;
 cout << "str31:" << str31 << endl;
 
-// 3.2通过字符串常量构造
-// string(const char* s);
-string str32("hello, world");
-cout << "str32:" << str32 << endl;
-
-// 3.3通过字符串前n个字符构造
-// string(const char* s, size_t n);
-string s33("123456789", 6);
-cout << "s33:" << s33 << endl;
-
 cout << " ---------------------------------------- " << endl;
 
-// 4.使用n个字符c构造 string
-// string(size_t n, char c);
-string str41_1(10, 'A');
-cout << "str41_1:" << str41_1 << endl;
+// 拼接方式2: append 函数
 
-string str41_2(10, 'Z');
-cout << "str41_2:" << str41_2 << endl;
+// 4.参数是 string 类型
+
+// 4.1 把字符串s拼接在当前字符串后面
+// string &append(const string &s);
+string str41("hello,");
+string str4_1("world!");
+str41.append(str4_1);
+cout << "str41:" << str41 << endl;
+
+// 4.2 将s从 start 开始n个字符赋值给字符串
+// string &append(const string &s, int start, int n);
+string str4_2("1234567890");
+
+string str42_0("hello");
+str42_0.append(str4_2, 0, 3);
+cout << "str42_0:" << str42_0 << endl;
+
+string str42_1("hello");
+str42_1.append(str4_2, 1, 3);
+cout << "str42_1:" << str42_1 << endl;
+
+string str42_2("hello");
+str42_2.append(str4_2, 2, 3);
+cout << "str42_2:" << str42_2 << endl;
+
+// 5.参数是 const char *s 类型
+// string &append(const char *s);//append追加方法
+
+// 5.1 通过定义变量拼接
+const char *s5_1 = "12345";
+string str51("god");
+str51.append(s5_1);
+cout << "str51:" << str51 << endl;
+
+// 5.2 字符串常量直接拼接
+string str52("god");
+str52.append("67890");
+cout << "str52:" << str52 << endl;
+
+// 5.3 把字符串 const char *s 的前n个字符追加到当前的字符串之后
+// string &append(const char *s, int n);
+const char *s5_3 = "1234567890";
+
+string str53_0("study");
+str53_0.append(s5_3, 0); //前0个追加给 str53_0 对象
+cout << "str53_0:" << str53_0 << endl;
+
+string str53_1("study");
+str53_1.append(s5_3, 2); //前2个追加给 str53_1 对象
+cout << "str53_1:" << str53_1 << endl;
+
+string str53_2("study");
+str53_2.append(s5_3, 4); //前4个追加给 str53_2 对象
+cout << "str53_2:" << str53_2 << endl;
+
+// 6.参数是 const char c 类型
+// string &append(int n,char c);
+
+string str6("AAA");
+str6.append(3, 'B');
+cout << "str6 :" << str6 << endl;
 
 cout << " -------------------- end -------------------- " << endl;
 ```
@@ -87,19 +128,21 @@ cout << " -------------------- end -------------------- " << endl;
 
 ```log
  -------------------- begain -------------------- 
-str11 :123456789
+str11:hello,world!
+str21:1234567890
+str22:abcdefghij
+str31:abcdefg
  ---------------------------------------- 
-str21 :123456789
-str22_1:123
-str22_2:234
-str22_3:345
- ---------------------------------------- 
-str31:Hello, world!
-str32:hello, world
-s33:123456
- ---------------------------------------- 
-str41_1:AAAAAAAAAA
-str41_2:ZZZZZZZZZZ
+str41:hello,world!
+str42_0:hello123
+str42_1:hello234
+str42_2:hello345
+str51:god12345
+str52:god67890
+str53_0:study
+str53_1:study12
+str53_2:study1234
+str6 :AAABBB
  -------------------- end -------------------- 
 ```
 
@@ -108,18 +151,6 @@ str41_2:ZZZZZZZZZZ
 
 
 
-string拼接操作
-
-```c++
-string& operator+=(const string& str);//重载+=操作符
-string& operator+=(const char* str);//重载+=操作符
-string& operator+=(const char c);//重载+=操作符
-string& append(const char *s);//把字符串s连接到当前字符串结尾
-string& append(const char *s, int n);//把字符串s的前n个字符连接到当前字符串结尾
-string& append(const string &s);//同operator+=()
-string& append(const string &s, int pos, int n);//把字符串s中从pos开始的n个字符连接到当前字符串结尾
-string& append(int n, char c);//在当前字符串结尾添加n个字符c
-```
 
 
 
