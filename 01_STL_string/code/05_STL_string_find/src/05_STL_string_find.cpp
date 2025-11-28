@@ -35,14 +35,14 @@ int main()
     int find12=str11.find(str1_1,1);
     cout << "find12:" << find12 << endl;
 
+    string str1_2("World");
+    int find13=str11.find(str1_2);
+    cout << "find13:" << find13 << endl;
 
 
 
 
 
-
-
-    
     cout << " -------------------- end -------------------- " << endl;
 
     return EXIT_SUCCESS;
