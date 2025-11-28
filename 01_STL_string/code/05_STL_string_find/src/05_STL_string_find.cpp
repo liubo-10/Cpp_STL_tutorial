@@ -29,19 +29,11 @@ int main()
     //查找str第一次出现的位置，从第pos位置开始查找
     string str11("world,hello,world!");
     string str1_1("world");
-    int find1=str11.find(str1_1);
-    cout << "find1:" << find1 << endl;
+    int find11=str11.find(str1_1);
+    cout << "find11:" << find11 << endl;
 
-
-
-
-
-
-
-
-
-
-
+    int find12=str11.find(str1_1,1);
+    cout << "find12:" << find12 << endl;
 
 
     cout << " -------------------- end -------------------- " << endl;
