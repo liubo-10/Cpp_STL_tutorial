@@ -24,7 +24,6 @@ int main()
 
     // replace替换方法，从pos开始到n的位置的元素替换为str
     // string &replace(int pos,int n,const string &str);
-
     string str("http://www.hhh.key.123.key.hhh.999.key.com.cn");
     string str11("###");
     while (1) {

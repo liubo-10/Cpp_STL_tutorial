@@ -1,4 +1,4 @@
-# 01_CPP_STL之string_基本操作
+# 01_CPP_STL之string_基础
 
 * 👋 Hi, I’m liubo
 * 👀 I’m interested in

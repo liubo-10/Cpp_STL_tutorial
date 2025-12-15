@@ -262,27 +262,75 @@ find54:3
 
 
 
+### ✨ string的替换
 
 
+```cpp
+cout << " -------------------- begain -------------------- " << endl;
 
+// replace替换方法，从pos开始到n的位置的元素替换为str
+// string &replace(int pos,int n,const string &str);
+string str("http://www.hhh.key.123.key.hhh.999.key.com.cn");
+string str11("###");
+while (1) {
+    int ret1 = str.find("hhh");
+    if (ret1 == -1) {
+        break;
+    }
+    str.replace(ret1, 3, str11);
+    cout << "str:" << str << endl;
+}
 
+cout << " ---------------------------------------- " << endl;
 
+// string &replace(int pos,int n,const char *s);
+const char *str21 = "***";
+while (1) {
+    int ret2 = str.find("key");
+    if (ret2 == -1) {
+        break;
+    }
+    str.replace(ret2, 3, str21);
+    cout << "str:" << str << endl;
+}
 
+cout << " -------------------- end -------------------- " << endl;
 
-
-
-
-string比较操作
-
-```c++
-/*
-compare函数在>时返回 1，<时返回 -1，==时返回 0。
-比较区分大小写，比较时参考字典顺序，排越前面的越小。
-大写的A比小写的a小。
-*/
-int compare(const string &s) const;//与字符串s比较
-int compare(const char *s) const;//与字符串s比较
 ```
+
+
+
+执行结果
+
+```log
+ -------------------- begain -------------------- 
+str:http://www.###.key.123.key.hhh.999.key.com.cn
+str:http://www.###.key.123.key.###.999.key.com.cn
+ ---------------------------------------- 
+str:http://www.###.***.123.key.###.999.key.com.cn
+str:http://www.###.***.123.***.###.999.key.com.cn
+str:http://www.###.***.123.***.###.999.***.com.cn
+ -------------------- end -------------------- 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
