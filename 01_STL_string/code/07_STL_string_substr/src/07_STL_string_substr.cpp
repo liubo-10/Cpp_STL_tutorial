@@ -26,7 +26,7 @@ int main()
     // string substr(int pos=0,int n=npos) const;
     string str1_1("hello,world!");
     string str11 = str1_1.substr(6,5);
-    cout << "find11:" << find11 << endl;
+    cout << "str11:" << str11 << endl;
 
     string str1_2{"http://www.hhh.key.123.key.hhh.999.key.com.cn"};
 
@@ -65,7 +65,7 @@ int main()
     
     string str51("hello,,,,,world!");
     str51.erase(5,5);//删除3到4位置的元素
-    cout << "str41:" << str41 << endl;
+    cout << "str51:" << str51 << endl;
 
     cout << " -------------------- end -------------------- " << endl;
 
