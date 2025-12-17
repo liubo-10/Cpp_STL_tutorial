@@ -1,5 +1,5 @@
 /*****************************************************************************
- * | @file    : 07_STL_string_substr.cpp
+ * | @file    : 08_STL_string_substr.cpp
  * | @author  : liubo
  * --------------------------------------
  * | @version  @date
@@ -25,7 +25,7 @@ int main()
     // 1. 返回由pos开始的到n组成的字符串
     // string substr(int pos=0,int n=npos) const;
     string str1_1("hello,world!");
-    string str11 = str1_1.substr(6,5);
+    string str11 = str1_1.substr(6, 5);
     cout << "str11:" << str11 << endl;
 
     string str1_2{"http://www.hhh.key.123.key.hhh.999.key.com.cn"};
@@ -50,21 +50,20 @@ int main()
     // 3. 在pos位置前插入 const char *s
     // string &insert(int pos,const char *s);
     string str31("helloworld!");
-    str31.insert(5,",,,");
+    str31.insert(5, ",,,");
     cout << "str31:" << str31 << endl;
-
 
     // 4. 指定的位置pos前插入n个c
     // string &insert(int pos,int n,char c);
     string str41("helloworld!");
-    str41.insert(5, 10 ,',');
+    str41.insert(5, 10, ',');
     cout << "str41:" << str41 << endl;
-    
+
     // 5. 删除从pos开始的n个元素
     // string &erase(int pos,int n=npos);
-    
+
     string str51("hello,,,,,world!");
-    str51.erase(5,5);//删除3到4位置的元素
+    str51.erase(5, 5); //删除3到4位置的元素
     cout << "str51:" << str51 << endl;
 
     cout << " -------------------- end -------------------- " << endl;

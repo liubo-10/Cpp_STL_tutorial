@@ -307,43 +307,84 @@ str:http://www.###.***.123.***.###.999.***.com.cn
  -------------------- end -------------------- 
 ```
 
+### ✨ string的子串操作
+
+```cpp
+cout << " -------------------- begain -------------------- " << endl;
+
+// 1. 返回由pos开始的到n组成的字符串
+// string substr(int pos=0,int n=npos) const;
+string str1_1("hello,world!");
+string str11 = str1_1.substr(6, 5);
+cout << "str11:" << str11 << endl;
+
+string str1_2{"http://www.hhh.key.123.key.hhh.999.key.com.cn"};
+
+int front = 0;
+while (1) {
+    int end = str1_2.find(".", front); //find方法如果查找到了，返回下标位置，查找不到返回-1
+    if (end == -1) {
+        cout << str1_2.substr(front, str1_2.size() - front) << endl;
+        break;
+    }
+    cout << str1_2.substr(front, end - front) << endl;
+    front = end + 1;
+}
+
+// 2. 在pos位置前插入 string &str
+// string &insert(int pos,const string &str);
+string str21("helloworld!");
+str21.insert(5, str1_1);
+cout << "str21:" << str21 << endl;
+
+// 3. 在pos位置前插入 const char *s
+// string &insert(int pos,const char *s);
+string str31("helloworld!");
+str31.insert(5, ",,,");
+cout << "str31:" << str31 << endl;
+
+// 4. 指定的位置pos前插入n个c
+// string &insert(int pos,int n,char c);
+string str41("helloworld!");
+str41.insert(5, 10, ',');
+cout << "str41:" << str41 << endl;
+
+// 5. 删除从pos开始的n个元素
+// string &erase(int pos,int n=npos);
+
+string str51("hello,,,,,world!");
+str51.erase(5, 5); //删除3到4位置的元素
+cout << "str51:" << str51 << endl;
+
+cout << " -------------------- end -------------------- " << endl;
 
 
+```
 
+执行结果
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-string子串
-
-```c++
-string substr(int pos = 0, int n = npos) const;//返回由pos开始的n个字符组成的字符串
+```log
+ -------------------- begain -------------------- 
+str11:world
+http://www
+hhh
+key
+123
+key
+hhh
+999
+key
+com
+cn
+str21:hellohello,world!world!
+str31:hello,,,world!
+str41:hello,,,,,,,,,,world!
+str51:helloworld!
+ -------------------- end -------------------- 
 ```
 
 
 
-string插入和删除操作
-
-```c++
-string& insert(int pos, const char* s); //插入字符串
-string& insert(int pos, const string& str); //插入字符串
-string& insert(int pos, int n, char c);//在指定位置插入n个字符c
-string& erase(int pos, int n = npos);//删除从Pos开始的n个字符 
-```
 
 
 
