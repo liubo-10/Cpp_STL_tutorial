@@ -22,32 +22,50 @@ int main()
 {
     cout << " -------------------- begain -------------------- " << endl;
 
-    // replace替换方法，从pos开始到n的位置的元素替换为str
-    // string &replace(int pos,int n,const string &str);
+    // 1. 返回由pos开始的到n组成的字符串
+    // string substr(int pos=0,int n=npos) const;
+    string str1_1("hello,world!");
+    string str11 = str1_1.substr(6,5);
+    cout << "find11:" << find11 << endl;
 
-    string str("http://www.hhh.key.123.key.hhh.999.key.com.cn");
-    string str11("###");
+    string str1_2{"http://www.hhh.key.123.key.hhh.999.key.com.cn"};
+
+    int front = 0;
     while (1) {
-        int ret1 = str.find("hhh");
-        if (ret1 == -1) {
+        int end = str1_2.find(".", front); //find方法如果查找到了，返回下标位置，查找不到返回-1
+        if (end == -1) {
+            cout << str1_2.substr(front, str1_2.size() - front) << endl;
             break;
         }
-        str.replace(ret1, 3, str11);
-        cout << "str:" << str << endl;
+        cout << str1_2.substr(front, end - front) << endl;
+        front = end + 1;
     }
 
-    cout << " ---------------------------------------- " << endl;
+    // 2. 在pos位置前插入 string &str
+    // string &insert(int pos,const string &str);
+    string str21("helloworld!");
+    str21.insert(5, str1_1);
+    cout << "str21:" << str21 << endl;
 
-    // string &replace(int pos,int n,const char *s);
-    const char *str21 = "***";
-    while (1) {
-        int ret2 = str.find("key");
-        if (ret2 == -1) {
-            break;
-        }
-        str.replace(ret2, 3, str21);
-        cout << "str:" << str << endl;
-    }
+    // 3. 在pos位置前插入 const char *s
+    // string &insert(int pos,const char *s);
+    string str31("helloworld!");
+    str31.insert(5,",,,");
+    cout << "str31:" << str31 << endl;
+
+
+    // 4. 指定的位置pos前插入n个c
+    // string &insert(int pos,int n,char c);
+    string str41("helloworld!");
+    str41.insert(5, 10 ,',');
+    cout << "str41:" << str41 << endl;
+    
+    // 5. 删除从pos开始的n个元素
+    // string &erase(int pos,int n=npos);
+    
+    string str51("hello,,,,,world!");
+    str51.erase(5,5);//删除3到4位置的元素
+    cout << "str41:" << str41 << endl;
 
     cout << " -------------------- end -------------------- " << endl;
 
