@@ -82,6 +82,7 @@ int main()
     cout << (int *)s.c_str() << endl; // "qqqqqqqqqqqqqqqqqqqqq"首地址 与 "abcdefg"首地址不相同 被分配了新内存
 
     cout << "----------------end------------------" << endl;
+    
     return EXIT_SUCCESS;
 }
 
