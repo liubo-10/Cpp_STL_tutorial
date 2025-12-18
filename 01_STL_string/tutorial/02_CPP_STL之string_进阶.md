@@ -1,4 +1,4 @@
-# 02_CPP_STL之string_进阶操作
+# 02_CPP_STL之string_进阶
 
 * 👋 Hi, I’m liubo
 * 👀 I’m interested in
@@ -307,7 +307,57 @@ str:http://www.###.***.123.***.###.999.***.com.cn
  -------------------- end -------------------- 
 ```
 
-### ✨ string的子串操作
+
+### ✨ string的比较
+
+
+```cpp
+cout << " -------------------- begain -------------------- " << endl;
+
+// 1. 字符比较,根据ASCII码,逐字符表进行比较
+// >返回1，<返回-1，==返回0;
+// int compare(const string &s) const;
+
+string str11("hello,world!");
+string str12("helllo,World!");
+if (str11.compare(str12) == 0) {
+    cout << "str11 等于 str12" << endl;
+}
+else if (str11.compare(str12) > 0) {
+    cout << "str11 大于 str12" << endl;
+}
+else {
+    cout << "str11 小于 str12" << endl;
+}
+
+// int compare(const char *s) const;
+
+if (str11.compare("hello,zorld!") == 0) {
+    cout << "str11 等于 \"hello,zorld!\"" << endl;
+}
+else if (str11.compare("hello,zorld!") > 0) {
+    cout << "str11 大于 \"hello,zorld!\" " << endl;
+}
+else {
+    cout << "str11 小于 \"hello,zorld!\"" << endl;
+}
+
+cout << " -------------------- end -------------------- " << endl;
+```
+
+
+执行结果
+
+```log
+ -------------------- begain -------------------- 
+str11 大于 str12
+str11 小于 "hello,zorld!"
+ -------------------- end -------------------- 
+```
+
+
+
+### ✨ string的子串
 
 ```cpp
 cout << " -------------------- begain -------------------- " << endl;
@@ -385,10 +435,7 @@ str51:helloworld!
 
 
 
-
-
-
-string和c-style字符串转换
+### ✨ string和c-style字符串转换
 
 ```c++
 //string 转 char*
@@ -401,9 +448,6 @@ string str(s);
 
 
 
-在c++中存在一个从const char*到string的隐式类型转换，却不存在从一个string对象到C_string的自动类型转换。对于string类型的字符串，可以通过c_str()函数返回string对象对应的C_string.
-
-通常，程序员在整个程序中应坚持使用string类对象，直到必须将内容转化为char*时才将其转换为C_string.
 
 
 

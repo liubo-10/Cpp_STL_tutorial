@@ -34,7 +34,7 @@ C风格字符串(以空字符结尾的字符数组)太过复杂难于掌握，�
 4. 不用考虑内存释放和越界
 
   string管理char所分配的内存。每一次string的复制，取值都由string类负责维护，不用担心复制越界和取值越界等。
-
+  string.c_str() 可将 string 装换为 const char \*str
 ## 💞️ string 的基本操作
 
 ---
