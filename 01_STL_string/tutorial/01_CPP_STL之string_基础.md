@@ -38,7 +38,7 @@ C风格字符串(以空字符结尾的字符数组)太过复杂难于掌握，�
 
 ### ✨ string和c-style字符串转换
 
-```c++
+```cpp
 //string 转 char*
 string str = "it";
 const char* cstr = str.c_str();
@@ -121,7 +121,7 @@ cout << " -------------------- end -------------------- " << endl;
 执行结果
 
 ```log
- -------------------- begain -------------------- 
+-------------------- begain -------------------- 
 str11 :123456789
  ---------------------------------------- 
 str21 :123456789
@@ -346,8 +346,8 @@ basic_string::at: __n (which is 100) >= this->size() (which is 12)
 
 版权声明：本文参考了其他资料和CSDN博主的文章，遵循CC 4.0 BY-SA版权协议，现附上原文出处链接及本声明。
 
-1. [https://blog.csdn.net/m0_74126249/article/details/132269079](https://blog.csdn.net/m0_74126249/article/details/132269079)
-2. [https://blog.csdn.net/qq_55610255/article/details/132947932](https://blog.csdn.net/qq_55610255/article/details/132947932)
+1. [HTTPS://BLOG.CSDN.NET/M0_74126249/article/details/132269079](https://blog.csdn.net/m0_74126249/article/details/132269079)
+2. [https://blog.csdn.net/QQ_55610255/article/details/132947932](https://blog.csdn.net/qq_55610255/article/details/132947932)
 
 ---
 ---

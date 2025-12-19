@@ -1,5 +1,5 @@
 /***********************************************************
- * @file name: 01_STL_mystring_imp.cpp
+ * @file name: 10_STL_mystring_implement.cpp
  * @author: liubo
  * @date: 2024.02.01
  * @describe: template
@@ -139,7 +139,5 @@ copy constructor
 The string is:Visual C++ 6.0 Programming.
 The length is:256
 ----------------end------------------
-
-
 
  */
