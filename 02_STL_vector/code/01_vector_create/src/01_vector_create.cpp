@@ -48,13 +48,13 @@ int main()
     // vector<T> vectorname(size, value);
     vector<int> vector_3(10, 1); // 创建一个10个int的vector，且每个元素初值为1
     cout << "vector_3: ";
-    printVector(vector_3);
+    print_vector(vector_3);
 
     // 4.拷贝构造
     // vector<T> vectorname2(vectorname1);
     vector<int> vector_4(vector_3); // third temp 拷贝给vector forth ，两者元素值完全相同
     cout << "vector_4: ";
-    printVector(vector_4);
+    print_vector(vector_4);
 
     // 5.利用数组构造容器
     // T m[] = {a, b, c, .....};
@@ -62,19 +62,19 @@ int main()
     int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     vector<int> vector_5(a, a + 10); // 从数组区间[a[0], a[10])中获得初值,注意左开右闭，a[10]无意义这里助于理解
     cout << "vector_5: ";
-    printVector(vector_5);
+    print_vector(vector_5);
 
     // 6.将[v.begin(),v.end())区间中的元素拷贝给本身，注意左闭右开
     // vector<T> vectorname2(vectorname1.begin(), vectorname1.end());
     vector<int> vector_6(fifth.begin(), fifth.end() - 5); // temp [temp.begin(),temp.end()-5)区间的元素赋给fifth，注意左开右闭
     cout << "vector_6: ";
-    printVector(vector_6);
+    print_vector(vector_6);
 
     // 7.列表初始化构造容器
     // vector<T> vectorname{a, b, c, .....};
     vector<int> vector_7 = {-1, 0, 3, 5, 7, 9}; // 列表初始化
     cout << "vector_7: ";
-    printVector(vector_7);
+    print_vector(vector_7);
 
     printf("--------------------end----------------------\n");
     // cin.get();
