@@ -66,7 +66,7 @@ int main()
 
     // 6.将[v.begin(),v.end())区间中的元素拷贝给本身，注意左闭右开
     // vector<T> vectorname2(vectorname1.begin(), vectorname1.end());
-    vector<int> vector_6(fifth.begin(), fifth.end() - 5); // temp [temp.begin(),temp.end()-5)区间的元素赋给fifth，注意左开右闭
+    vector<int> vector_6(vector_5.begin(), vector_5.end() - 5); // temp [temp.begin(),temp.end()-5)区间的元素赋给fifth，注意左开右闭
     cout << "vector_6: ";
     print_vector(vector_6);
 
