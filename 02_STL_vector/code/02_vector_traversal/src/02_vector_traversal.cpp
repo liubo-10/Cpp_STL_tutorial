@@ -45,6 +45,7 @@ int main()
     vector<int> vector_1{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "vector_1: ";
     print_vector(vector_1);
+    cout << "vector_1: ";
     print_vector1(vector_1);
 
     printf("--------------------end----------------------\n");
