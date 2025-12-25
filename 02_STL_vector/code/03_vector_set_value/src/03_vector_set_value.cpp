@@ -41,7 +41,7 @@ int main()
     // 1. 重载赋值运算符 = 
     // vector& operator=(const vector &v); 
     vector<int> vector_11;
-    vector_11 = first;
+    vector_11 = vector_01;
     cout << "vector_11: ";
     print_vector(vector_11);
 
