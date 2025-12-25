@@ -5,7 +5,7 @@
  * | @version  @date
  * |  V1.0.0    2025-12-20
  * ---------------------------------------
- * | @brief   : 创建 vector 测试
+ * | @brief   : vector 遍历
  ******************************************************************************/
 #include <stdio.h>  // C语言的标准库，包含C语言流操作 printf等
 #include <string.h> // C语言的标准库，包含字符串处理操作 strcpy等
@@ -20,15 +20,15 @@ using std::endl;
 using std::vector;
 
 // vector的遍历
-void print_vector(vector<int> &v)
-{ // 利用迭代器打印 v
+void print_vector_1(vector<int> &v)
+{
     for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
-        cout << *it << " ";
+        cout << *it << " "; // 利用迭代器打印 v
     }
     cout << endl;
 }
 
-void print_vector1(vector<int> &v)
+void print_vector_2(vector<int> &v)
 {
     for (auto n : v) {
         cout << n << " ";
@@ -44,9 +44,9 @@ int main()
     // vector<T> vectorname;
     vector<int> vector_1{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "vector_1: ";
-    print_vector(vector_1);
+    print_vector_1(vector_1);
     cout << "vector_1: ";
-    print_vector1(vector_1);
+    print_vector_2(vector_1);
 
     printf("--------------------end----------------------\n");
 
@@ -57,14 +57,9 @@ int main()
  * end of file
  ******************************************************************************/
 
-/* --------------------begain-------------------
-vector_1: 
-vector_2: 0 0 0 0 0 0 0 0 0 0 
-vector_3: 1 1 1 1 1 1 1 1 1 1 
-vector_4: 1 1 1 1 1 1 1 1 1 1 
-vector_5: 0 1 2 3 4 5 6 7 8 9 
-vector_6: 0 1 2 3 4 
-vectora6: 0 1 2 3 4 5 6 7 8 9 
-vector_7: -1 0 3 5 7 9 
-vectora7: 1 0 -3 -5 -7 -9 
---------------------end---------------------- */
+/* 
+--------------------begain-------------------
+vector_1: 0 1 2 3 4 5 6 7 8 9 
+vector_1: 0 1 2 3 4 5 6 7 8 9 
+--------------------end----------------------
+*/

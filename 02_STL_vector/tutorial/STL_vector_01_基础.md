@@ -135,6 +135,8 @@ vectora7: 1 0 -3 -5 -7 -9
 
 方法1：
 
+迭代器iterator中的begin和end函数是左闭右开的区间。
+
 ```cpp
 // vector的遍历
 
@@ -152,8 +154,6 @@ void print_vector(vector<int> &v)
 
 }
 ```
-
-迭代器iterator中的begin和end函数是左闭右开的区间。
 
 
 
@@ -176,7 +176,7 @@ void print_vector(vector<int> &v)
 
 函数原型：
 
-```c++
+```cpp
 vector& operator=(const vector &v); //重载赋值运算符
 assign(v.begin(),v.end());          //将[v.begin(),v.end())区间中的元素赋值给本身
 assign(n,elem);                     //将n个elem赋值给本身
@@ -191,7 +191,7 @@ assign: 将新内容赋给vector，替换其当前内容，并相应地修改其
 
 使用示例:
 
-```c++
+```cpp
 #include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
 #include <iostream>  // 包含输入和输出操作
 #include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
