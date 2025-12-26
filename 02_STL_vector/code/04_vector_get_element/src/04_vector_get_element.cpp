@@ -35,8 +35,6 @@ int main()
     }
     cout << endl;
 
-    cout << " ---------------------------------------- " << endl;
-
     // 2. 使用函数at  访问 vector 元素
     // at(int idx);
     //返回索引idx所指的数据，如果idx越界，抛出out_of_range异常。
@@ -46,7 +44,7 @@ int main()
     }
     cout << endl;
 
-    // 2. 使用函数 front back 访问 vector 元素
+    // 3. 使用函数 front back 访问 vector 元素
     // at(int idx);
     // front() 返回容器中第一个数据元素
     // back() 返回容器中最后一个数据元素
