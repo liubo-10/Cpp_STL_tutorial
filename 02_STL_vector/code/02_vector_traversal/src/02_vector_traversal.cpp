@@ -9,7 +9,6 @@
  ******************************************************************************/
 #include <stdio.h>  // C语言的标准库，包含C语言流操作 printf等
 #include <string.h> // C语言的标准库，包含字符串处理操作 strcpy等
-#include <unistd.h> // pause()头文件
 #include <iostream> // 包含输入和输出操作
 
 #include <vector>
@@ -36,6 +35,23 @@ void print_vector_2(vector<int> &v)
     cout << endl;
 }
 
+void print_vector_3(vector<int> &v)
+{
+    for (int i = 0; i < v.size(); ++i) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+
+void print_vector_4(vector<int> &v)
+{
+    for (int i = 0; i < v.size(); i++) {
+        cout << v.at(i) << " ";
+    }
+
+    cout << endl;
+}
+
 int main()
 {
     printf("--------------------begain-------------------\n");
@@ -43,10 +59,17 @@ int main()
     // 1.构造一个空容器，没有元素。
     // vector<T> vectorname;
     vector<int> vector_1{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    cout << "vector_1: ";
+    cout << "print_vector_1: ";
     print_vector_1(vector_1);
-    cout << "vector_1: ";
+
+    cout << "print_vector_2: ";
     print_vector_2(vector_1);
+
+    cout << "print_vector_3: ";
+    print_vector_3(vector_1);
+
+    cout << "print_vector_4: ";
+    print_vector_4(vector_1);
 
     printf("--------------------end----------------------\n");
 

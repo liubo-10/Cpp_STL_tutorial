@@ -18,6 +18,211 @@
 
 
 
+# 五、vector的元素插入
+
+函数原型：
+
+```c++
+push_back(ele); //尾部插入元素ele
+insert(const_iterator pos,ele); //在迭代器指向的位置pos处插入一个元素ele
+insert(const_iterator pos,int count,ele); //在迭代器指向的位置pos处插入count个元素ele
+```
+
+push_back: 在vector当前最后一个元素的末尾添加一个新元素。val的内容被复制(或移动)到新元素中。
+
+将容器大小增加了1，当且仅当新vector大小 > 当前vector容量时，会自动重新分配存储空间。
+
+
+
+使用示例:
+
+```c++
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+
+// vector的遍历
+void printVector(vector<int> &v)
+{
+    for (auto n : v)
+    {
+        cout << n << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    printf("--------------------begain-------------------\n");
+    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    vector<int> v_test(a, a + 10);
+
+    for (int i = 0; i < 3; ++i)
+    {
+        v_test.push_back(10);//尾部插入3个10
+    }
+    cout << "在尾部插入3个10，打印 v_test: ";
+    printVector(v_test);
+
+    v_test.insert(v_test.begin(), 10); //在首位插入10
+    cout << "在第首位插入10，打印 v_test: ";
+    printVector(v_test);
+
+    v_test.insert(v_test.begin(), 2, 20);//在首位插入2个20
+    cout << "在首位插入2个20，打印 v_test: ";
+    printVector(v_test);
+
+    v_test.insert(v_test.begin() + 3,30); //在第3位后面插入30
+    cout << "在第3位后面插入30，打印 v_test: ";
+    printVector(v_test);
+
+    v_test.insert(v_test.begin() + 4, 2, 40); //在第4位后面插入2个40
+    cout << "在第4位后面插入2个40，打印 v_test: ";
+    printVector(v_test);
+
+    v_test.insert(v_test.end() - 3, 2, 50);//在倒数第3位前面插入2个50
+    cout << "在倒数第3位前面插入2个50，打印 v_test: ";
+    printVector(v_test);
+
+    printf("--------------------end----------------------\n");
+    // cin.get();
+    // getchar();
+    // pause();
+    return EXIT_SUCCESS;
+}
+```
+
+测试结果:
+
+```log
+--------------------begain-------------------
+在尾部插入3个10，打印 v_test: 0 1 2 3 4 5 6 7 8 9 10 10 10 
+在第首位插入10，打印 v_test: 10 0 1 2 3 4 5 6 7 8 9 10 10 10 
+在首位插入2个20，打印 v_test: 20 20 10 0 1 2 3 4 5 6 7 8 9 10 10 10 
+在第3位后面插入30，打印 v_test: 20 20 10 30 0 1 2 3 4 5 6 7 8 9 10 10 10 
+在第4位后面插入2个40，打印 v_test: 20 20 10 30 40 40 0 1 2 3 4 5 6 7 8 9 10 10 10 
+在倒数第3位前面插入2个50，打印 v_test: 20 20 10 30 40 40 0 1 2 3 4 5 6 7 8 9 50 50 10 10 10 
+--------------------end----------------------
+```
+
+# 六、vector的元素删除
+
+函数原型：
+
+```c++
+pop_back(); //删除最后一个元素
+erase(const_iterator pos); //删除迭代器指向的元素
+erase(const_iterator begin,const_iterator end); //删除迭代器从begin到end之间的元素
+clear(); //删除容器中所有元素
+```
+
+使用示例:
+
+```c++
+#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
+#include <iostream>  // 包含输入和输出操作
+#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
+#include <unistd.h>  // pause()头文件
+#include <vector>
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+
+// vector的遍历
+void printVector(vector<int> &v)
+{
+    for (auto n : v)
+    {
+        cout << n << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    printf("--------------------begain-------------------\n");
+    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    // 使用 pop_back 删除最后一个元素
+    v_test.pop_back();
+    cout << "使用 pop_back 删除最后一个元素后，打印v_test: ";
+    printVector(v_test);
+
+    // 使用 erase 删除首个元素
+    v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    v_test.erase(v_test.begin());
+    cout << "使用 erase 删除首个元素，打印v_test: ";
+    printVector(v_test);
+
+    // 使用 erase 删除第二个元素
+    v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    v_test.erase(v_test.begin() + 1);
+    cout << "使用 erase 删除第二个元素，打印v_test: ";
+    printVector(v_test);
+
+    // 使用 erase 删除全部元素
+    v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    v_test.erase(v_test.begin(), v_test.end());
+    cout << "使用 erase 删除全部元素，打印v_test: ";
+    printVector(v_test);
+
+    // 使用 erase 删除前三个元素
+    v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    v_test.erase(v_test.begin(), v_test.begin() + 3);
+    cout << "使用 erase 删除前三个元素，打印v_test: ";
+    printVector(v_test);
+
+    // 使用 erase 删除后三个元素
+    v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    v_test.erase(v_test.end() - 3, v_test.end());
+    cout << "使用 erase 删除后三个元素，打印v_test: ";
+    printVector(v_test);
+
+    // 使用 erase 删除前三个后三个之外的元素
+    v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    v_test.erase(v_test.begin() + 3, v_test.end() - 3);
+    cout << "使用 erase 删除前三个后三个之外的元素，打印v_test: ";
+    printVector(v_test);
+
+    // 使用 clear 删除全部元素
+    v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    v_test.clear(); // 调用7，清空所有元素
+    cout << "使用 clear 删除全部元素，打印v_test: ";
+    printVector(v_test);
+
+    printf("--------------------end----------------------\n");
+    // cin.get();
+    // getchar();
+    // pause();
+    return EXIT_SUCCESS;
+}
+
+```
+
+测试结果:
+
+```log
+--------------------begain-------------------
+使用 pop_back 删除最后一个元素后，打印v_test: 0 1 2 3 4 5 6 7 8 
+使用 erase 删除首个元素，打印v_test: 1 2 3 4 5 6 7 8 9 
+使用 erase 删除第二个元素，打印v_test: 0 2 3 4 5 6 7 8 9 
+使用 erase 删除全部元素，打印v_test: 
+使用 erase 删除前三个元素，打印v_test: 3 4 5 6 7 8 9 
+使用 erase 删除后三个元素，打印v_test: 0 1 2 3 4 5 6 
+使用 erase 删除前三个后三个之外的元素，打印v_test: 0 1 2 7 8 9 
+使用 clear 删除全部元素，打印v_test: 
+--------------------end----------------------
+```
+
+
+
+
+
+
 # 一、swap函数
 
 函数原型:
