@@ -43,7 +43,7 @@ using std::endl;
 using std::vector;
 
 // vector的遍历
-void printVector(vector<int> &v)
+void print_vector(vector<int> &v)
 {
     for (auto n : v)
     {
@@ -64,27 +64,27 @@ int main()
         v_test.push_back(10);//尾部插入3个10
     }
     cout << "在尾部插入3个10，打印 v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     v_test.insert(v_test.begin(), 10); //在首位插入10
     cout << "在第首位插入10，打印 v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     v_test.insert(v_test.begin(), 2, 20);//在首位插入2个20
     cout << "在首位插入2个20，打印 v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     v_test.insert(v_test.begin() + 3,30); //在第3位后面插入30
     cout << "在第3位后面插入30，打印 v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     v_test.insert(v_test.begin() + 4, 2, 40); //在第4位后面插入2个40
     cout << "在第4位后面插入2个40，打印 v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     v_test.insert(v_test.end() - 3, 2, 50);//在倒数第3位前面插入2个50
     cout << "在倒数第3位前面插入2个50，打印 v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     printf("--------------------end----------------------\n");
     // cin.get();
@@ -133,7 +133,7 @@ using std::endl;
 using std::vector;
 
 // vector的遍历
-void printVector(vector<int> &v)
+void print_vector(vector<int> &v)
 {
     for (auto n : v)
     {
@@ -150,49 +150,49 @@ int main()
     // 使用 pop_back 删除最后一个元素
     v_test.pop_back();
     cout << "使用 pop_back 删除最后一个元素后，打印v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     // 使用 erase 删除首个元素
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     v_test.erase(v_test.begin());
     cout << "使用 erase 删除首个元素，打印v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     // 使用 erase 删除第二个元素
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     v_test.erase(v_test.begin() + 1);
     cout << "使用 erase 删除第二个元素，打印v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     // 使用 erase 删除全部元素
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     v_test.erase(v_test.begin(), v_test.end());
     cout << "使用 erase 删除全部元素，打印v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     // 使用 erase 删除前三个元素
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     v_test.erase(v_test.begin(), v_test.begin() + 3);
     cout << "使用 erase 删除前三个元素，打印v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     // 使用 erase 删除后三个元素
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     v_test.erase(v_test.end() - 3, v_test.end());
     cout << "使用 erase 删除后三个元素，打印v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     // 使用 erase 删除前三个后三个之外的元素
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     v_test.erase(v_test.begin() + 3, v_test.end() - 3);
     cout << "使用 erase 删除前三个后三个之外的元素，打印v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     // 使用 clear 删除全部元素
     v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     v_test.clear(); // 调用7，清空所有元素
     cout << "使用 clear 删除全部元素，打印v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
 
     printf("--------------------end----------------------\n");
     // cin.get();
@@ -246,7 +246,7 @@ using std::endl;
 using std::vector;
 
 // vector的遍历
-void printVector(vector<int> &v)
+void print_vector(vector<int> &v)
 {
     for (auto n : v)
     {
@@ -262,12 +262,12 @@ int main()
     vector<int> v_test2 = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 
     cout << "交换前：" << endl;
-    printVector(v_test1);
-    printVector(v_test2);
+    print_vector(v_test1);
+    print_vector(v_test2);
     cout << "交换后：" << endl;
     v_test1.swap(v_test2); // 调用互换函数
-    printVector(v_test1);
-    printVector(v_test2);
+    print_vector(v_test1);
+    print_vector(v_test2);
 
     printf("--------------------end----------------------\n");
     // cin.get();

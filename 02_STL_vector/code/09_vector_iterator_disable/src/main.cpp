@@ -22,7 +22,7 @@ void test1();
 void test2();
 
 // vector的遍历
-void printVector(vector<int> &v)
+void print_vector(vector<int> &v)
 {
     for (auto n : v)
     {

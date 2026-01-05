@@ -59,28 +59,28 @@ void resize_test(){
     cout << "resize_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "初始数据: ";
-    printVector(v_test);
+    print_vector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl << endl;
 
     vector<int> v_test1 = v_test;
     v_test1.resize(5);
     cout << "resize 5: ";
-    printVector(v_test1);
+    print_vector(v_test1);
     cout << "size = " << v_test1.size() << endl;
     cout << "capacity = " << v_test1.capacity() << endl << endl;
 
     vector<int> v_test2 = v_test;
     v_test2.resize(20);
     cout << "resize 20: ";
-    printVector(v_test2);
+    print_vector(v_test2);
     cout << "size = " << v_test2.size() << endl;
     cout << "capacity = " << v_test2.capacity() << endl << endl;
 
     vector<int> v_test3 = v_test;
     v_test3.resize(20, 9);
     cout << "resize 20,9: ";
-    printVector(v_test3);
+    print_vector(v_test3);
     cout << "size = " << v_test3.size() << endl;
     cout << "capacity = " << v_test3.capacity() << endl << endl;
 }
@@ -126,7 +126,7 @@ void reserve_test(){
     cout << "reserve_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "初始数据: ";
-    printVector(v_test);
+    print_vector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl << endl;
 
@@ -134,14 +134,14 @@ void reserve_test(){
     vector<int> v_test1 = v_test;
     v_test1.reserve(5); // capacity == size == 10
     cout << "reserve 5: ";
-    printVector(v_test1);
+    print_vector(v_test1);
     cout << "size = " << v_test1.size() << endl;
     cout << "capacity = " << v_test1.capacity() << endl << endl;
 
     vector<int> v_test2 = v_test;
     v_test2.reserve(30); // 使得capacity=30，里面的元素不会改变
     cout << "reserve 30: ";
-    printVector(v_test2);
+    print_vector(v_test2);
     cout << "size = " << v_test2.size() << endl;
     cout << "capacity = " << v_test2.capacity() << endl << endl;
 
@@ -186,14 +186,14 @@ void clear_test(){
     cout << "clear_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "初始数据: ";
-    printVector(v_test);
+    print_vector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl << endl;
 
     // clear是清空，不是置零，清空所有元素，所以size为0，但是capacity不变，
     v_test.clear();
     cout << "clear: ";
-    printVector(v_test);
+    print_vector(v_test);
     cout << "empty = " << v_test.empty() << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl << endl;
@@ -236,7 +236,7 @@ void push_back_test()
     cout << "push_back_test: " << endl;
     vector<int> v_test;
     cout << "未初始化vector: ";
-    printVector(v_test);
+    print_vector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl
          << endl;
@@ -380,14 +380,14 @@ void swap_test()
     cout << "swap_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     cout << "初始数据: ";
-    printVector(v_test);
+    print_vector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl
          << endl;
 
     v_test.reserve(30); // 使得capacity=30，里面的元素不会改变
     cout << "reserve 30: ";
-    printVector(v_test);
+    print_vector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl
          << endl;
@@ -397,7 +397,7 @@ void swap_test()
     vector<int>(v_test).swap(v_test);
 
     cout << "swap v_test: ";
-    printVector(v_test);
+    print_vector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl
          << endl;
