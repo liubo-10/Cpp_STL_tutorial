@@ -51,26 +51,17 @@ int main()
 
 void resize_test()
 {
-
-    //返回容器中元素的个数
-    //size();
-
-    //容器的容量
-    //capacity();
-
-    //判断容器是否为空
-    //empty();
-
     cout << "resize_test: " << endl;
-    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    cout << "初始数据: ";
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    vector<int> v_test1 = v_test;
-    v_test1.resize(5);
+    cout << "初始数据: ";
+    print_vector(vector_11);
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl;
+    cout << "max_size = " << vector_11.max_size() << endl << endl;
+
+    vector<int> vector_12 = vector_11;
+    vector_12.resize(5);
     cout << "resize 5: ";
     print_vector(v_test1);
     cout << "size = " << v_test1.size() << endl;

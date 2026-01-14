@@ -1,6 +1,8 @@
+# 04_STL_vector_size_and_capacity
+
 * 👋 Hi, I’m liubo
-* 👀 I’m interested in harmony
-* 🌱 I’m currently learning harmony
+* 👀 I’m interested in
+* 🌱 I’m currently learning
 * 💞️ I’m looking to collaborate on ...
 * 📫 How to reach me ...
 * 📇 sssssdsdsdsdsdsdasd
@@ -12,33 +14,53 @@
 * 🚨 gdfgdshdfhfhygjtyu
 
 
-> # STL_vector_04_size_and_capacity
 
+## 💞️ vector 数据量和容量基本函数
 
+---
 
-# 一、vector数据量和容量的获取
+### ✨ size()
 
-```c++
+```cpp
 size();     //返回容器中元素的个数
-capacity(); //容器的容量
-empty();    //判断容器是否为空
 ```
-
-## size
 
 作用：返回vector中元素的个数。
 
-【注意】vector中保存的实际对象的数量，不一定等于它的存储空间大小（容量）。
+注意: vector中保存的实际对象的数量，不一定等于它的存储空间大小（容量）。
 
-## capacity
+
+### ✨ capacity()
+
+```cpp
+capacity(); //容器的容量
+```
+
 
 作用：返回当前为vector分配的存储空间大小（容量），以元素个数表示。
 
 【注意】这个容量不一定等于向量的大小。它可以相等或更大，额外的空间允许容纳增长，而不需要在每次插入时重新分配。这个容量并没有假设向量的大小有限制。当此容量耗尽并且需要更多容量时，容器会自动对其进行扩展(重新分配其存储空间)。vector的大小的理论极限由成员max_size给出。可以通过调用vector::reserve成员显式地改变vector的容量。
 
+### ✨ empty()
+
+```cpp
+empty();    //判断容器是否为空
+```
+
+作用：判断向量是否为空
+
+### ✨ max_size()
 
 
-## 二、resize对vector数据量和容量的操作
+```cpp
+max_size();     //返回容器中元素的个数 ### 容器所能容纳的最大元素数目
+```
+
+容器所能容纳的最大元素数目，这是系统或者库所实施的限制。但是容器不一定保证能达到该大小，有可能在还未达到该大小的时候，就已经无法继续分配任何的空间了。
+
+## 💞️ resize() 对数据量和容量的操作
+
+---
 
 函数原型：
 
