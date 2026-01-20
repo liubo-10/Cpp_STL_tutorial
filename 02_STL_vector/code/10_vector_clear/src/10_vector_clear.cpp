@@ -30,7 +30,7 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
-    cout << __FUNCTION__ << endl;
+    cout << __FILE__ << endl;
 
     vector<int> v_test{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 

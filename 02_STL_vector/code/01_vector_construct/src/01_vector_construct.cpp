@@ -21,7 +21,8 @@ using std::vector;
 
 // vector的遍历
 void print_vector(vector<int> &v)
-{ // 利用迭代器打印 v
+{
+    // 利用迭代器打印 v
     for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
         cout << *it << " ";
     }
@@ -31,6 +32,8 @@ void print_vector(vector<int> &v)
 int main()
 {
     printf("--------------------begain-------------------\n");
+
+    cout << __FILE__ << endl;
 
     // 1.构造一个空容器，没有元素。
     // vector<T> vectorname;
@@ -97,6 +100,7 @@ int main()
  * end of file
  ******************************************************************************/
 
+// result
 /* --------------------begain-------------------
 vector_1: 
 vector_2: 0 0 0 0 0 0 0 0 0 0 

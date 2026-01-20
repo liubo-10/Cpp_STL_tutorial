@@ -4,6 +4,7 @@
  * --------------------------------------
  * | @version  @date
  * |    V1     2026-01-15
+ * |    V2     2026-01-20
  * ---------------------------------------
  * | @brief   : vector 数据量和容量测试
  ******************************************************************************/
@@ -30,32 +31,83 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
-    cout << __FUNCTION__ << endl;
+    cout << __FILE__ << endl;
 
-    vector<int> v_test{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << "test1: " << endl;
+    vector<int> v_test = {0, 1, 2, 3};
+    auto it = v_test.begin();
 
-    cout << "初始数据: " << endl;
-    print_vector(v_test);
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    cout << "addr of it: " << &*it << endl
+         << endl;
 
-    v_test.reserve(30); // 使得capacity=30，里面的元素不会改变
-    cout << "reserve 30: ";
-    print_vector(v_test);
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+    auto it1 = v_test.begin();
+
+    cout << "push_back 0: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it1 << endl
+         << endl;
 
-    // vector<int>(v_test) 是创建一个匿名对象，并拷贝v_test的数据
-    // 以此匿名对象与v_test交换，交换完后系统自动删除匿名对象
-    vector<int>(v_test1).swap(v_test);
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+    auto it2 = v_test.begin();
 
-    cout << "swap v_test: ";
-    print_vector(v_test);
+    cout << "push_back 0: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl
+         << endl;
+
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+    auto it3 = v_test.begin();
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl;
+    cout << "addr of it3: " << &*it3 << endl
+         << endl;
+
+    // 将容量用完
+    while (v_test.size() != v_test.capacity())
+    {
+        v_test.push_back(0);
+    }
+    v_test.push_back(0);
+    auto it4 = v_test.begin();
+
+    cout << "push_back 0: " << endl;
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it: " << &*it << endl;
+    cout << "addr of it1: " << &*it1 << endl;
+    cout << "addr of it2: " << &*it2 << endl;
+    cout << "addr of it3: " << &*it3 << endl;
+    cout << "addr of it4: " << &*it4 << endl
+         << endl;
 
     printf("--------------------end----------------------\n");
     return EXIT_SUCCESS;

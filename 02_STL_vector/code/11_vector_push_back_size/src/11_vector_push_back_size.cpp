@@ -30,7 +30,7 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
-    cout << __FUNCTION__ << endl;
+    cout << __FILE__ << endl;
 
     vector<int> v_test;
     cout << "未初始化的 v_test: " << endl;

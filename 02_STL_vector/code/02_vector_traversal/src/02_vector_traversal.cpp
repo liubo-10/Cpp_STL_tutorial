@@ -56,6 +56,8 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
+    cout << __FILE__ << endl;
+
     // 1.构造一个空容器，没有元素。
     // vector<T> vectorname;
     vector<int> vector_1{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
