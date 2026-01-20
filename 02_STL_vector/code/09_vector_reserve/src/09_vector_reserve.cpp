@@ -1,11 +1,9 @@
 /*****************************************************************************
- * | @file    : 08_vector_resize.cpp
+ * | @file    : 09_vector_reserve.cpp
  * | @author  : liubo
  * --------------------------------------
  * | @version  @date
- * |    V1     2025-04-04
- * |    V2     2025-04-07
- * |    V3     2025-12-30
+ * |    V1     2026-01-14
  * ---------------------------------------
  * | @brief   : vector 数据量和容量测试
  ******************************************************************************/
@@ -43,28 +41,20 @@ int main()
     cout << "max_size = " << vector_11.max_size() << endl << endl;
 
     vector<int> vector_12 = vector_11;
-    vector_12.resize(5);
-    cout << "resize(5): " << endl;
+    vector_12.reserve(5); // capacity == size == 10
+    cout << "reserve 5: " << endl;
     print_vector(vector_12);
     cout << "size = " << vector_12.size() << endl;
     cout << "capacity = " << vector_12.capacity() << endl;
     cout << "max_size = " << vector_12.max_size() << endl << endl;
 
     vector<int> vector_13 = vector_11;
-    vector_13.resize(20);
-    cout << "resize(20): " << endl;
+    vector_13.reserve(30); // 使得capacity=30，里面的元素不会改变
+    cout << "reserve 30: " << endl;
     print_vector(vector_13);
     cout << "size = " << vector_13.size() << endl;
     cout << "capacity = " << vector_13.capacity() << endl;
-    cout << "max_size = " << vector_13.max_size() << endl << endl;
-
-    vector<int> vector_14 = vector_11;
-    vector_14.resize(20, 9);
-    cout << "resize(20,9): " << endl;
-    print_vector(vector_14);
-    cout << "size = " << vector_14.size() << endl;
-    cout << "capacity = " << vector_14.capacity() << endl;
-    cout << "max_size = " << vector_14.max_size() << endl << endl;
+    cout << "max_size = " << vector_12.max_size() << endl << endl;
 
     printf("--------------------end----------------------\n");
     return EXIT_SUCCESS;

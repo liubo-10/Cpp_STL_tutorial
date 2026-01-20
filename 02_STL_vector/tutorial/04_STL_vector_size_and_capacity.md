@@ -51,9 +51,8 @@ empty();    //判断容器是否为空
 
 ### ✨ max_size()
 
-
 ```cpp
-max_size();     //返回容器中元素的个数 ### 容器所能容纳的最大元素数目
+max_size();     //返回容器所能容纳的最大元素数目
 ```
 
 容器所能容纳的最大元素数目，这是系统或者库所实施的限制。但是容器不一定保证能达到该大小，有可能在还未达到该大小的时候，就已经无法继续分配任何的空间了。
@@ -64,7 +63,7 @@ max_size();     //返回容器中元素的个数 ### 容器所能容纳的最大
 
 函数原型：
 
-```c++
+```cpp
 //重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
 resize(int num);
 
@@ -76,7 +75,7 @@ resize(int num, elem);
 
 使用示例:
 
-```c++
+```cpp
 void resize_test(){
     cout << "resize_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -110,7 +109,7 @@ void resize_test(){
 
 测试结果:
 
-```tex
+```log
 resize_test: 
 初始数据: 0 1 2 3 4 5 6 7 8 9 
 size = 10
@@ -131,11 +130,13 @@ capacity = 20
 
 
 
-# 三、reserve对vector数据量和容量的操作
+## 💞️ reserve() 对数据量和容量的操作
+
+---
 
 函数原型：
 
-```c++
+```cpp
 reserve(int len); //容器预留len个元素长度，预留位置不初始化，元素不可访问
 ```
 
@@ -143,7 +144,7 @@ reserve(int len); //容器预留len个元素长度，预留位置不初始化，
 
 使用示例:
 
-```c++
+```cpp
 void reserve_test(){
     cout << "reserve_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -172,7 +173,7 @@ void reserve_test(){
 
 测试结果:
 
-```tex
+```log
 reserve_test: 
 初始数据: 0 1 2 3 4 5 6 7 8 9 
 size = 10
@@ -187,15 +188,14 @@ size = 10
 capacity = 30
 ```
 
-reserve 是保留的意思，reserve的值小于size也不会使元素消失，此时的capacity==size
-
+reserve 是保留的意思，reserve的值小于size也不会使元素消失，此时的capacity\==size
 
 
 # 三、clear对vector数据量和容量的操作
 
 函数原型：
 
-```c++
+```cpp
 clear(); //删除容器中所有元素
 ```
 
@@ -203,7 +203,7 @@ clear(); //删除容器中所有元素
 
 使用示例:
 
-```c++
+```cpp
 void clear_test(){
     cout << "clear_test: " << endl;
     vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -224,7 +224,7 @@ void clear_test(){
 
 测试结果:
 
-```tex
+```log
 clear_test: 
 初始数据: 0 1 2 3 4 5 6 7 8 9 
 size = 10
@@ -238,13 +238,13 @@ capacity = 10
 
 clear 只清零大小，不改变容量
 
-
+        // clear是清空，不是置零，清空所有元素，所以size为0，但是capacity不变，
 
 # 三、push_back对vector数据量和容量的操作
 
 函数原型：
 
-```c++
+```cpp
 push_back(ele); //尾部插入元素ele
 ```
 
@@ -252,7 +252,7 @@ push_back(ele); //尾部插入元素ele
 
 使用示例:
 
-```c++
+```cpp
 void push_back_test()
 {
     cout << "push_back_test: " << endl;
@@ -340,7 +340,7 @@ void push_back_test()
 
 测试结果:
 
-```tex
+```log
 push_back_test: 
 未初始化vector: 
 size = 0
@@ -388,7 +388,7 @@ count:0
 
 函数原型：
 
-```c++
+```cpp
 swap(v); //容器v和当前容器互换
 ```
 
@@ -396,7 +396,7 @@ swap(v); //容器v和当前容器互换
 
 使用示例:
 
-```c++
+```cpp
 void swap_test()
 {
     cout << "swap_test: " << endl;
@@ -428,7 +428,7 @@ void swap_test()
 
 测试结果:
 
-```tex
+```log
 swap_test: 
 初始数据: 0 1 2 3 4 5 6 7 8 9 
 size = 10

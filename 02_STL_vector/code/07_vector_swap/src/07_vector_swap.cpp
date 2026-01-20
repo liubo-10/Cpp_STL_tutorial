@@ -32,18 +32,40 @@ int main()
 {
     printf("--------------------begain-------------------\n");
     vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    vector<int> vector_12{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<int> vector_12{9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 
     cout << "交换前：" << endl;
+    cout << "vector_11: ";
     print_vector(vector_11);
+    cout << "vector_12: ";
     print_vector(vector_12);
 
     //调用互换函数
     vector_11.swap(vector_12);
 
     cout << "交换后：" << endl;
+    cout << "vector_11: ";
     print_vector(vector_11);
+    cout << "vector_12: ";
     print_vector(vector_12);
+
+    vector<int> vector_13{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<int> vector_14{9, 8, 7, 6, 5};
+
+    cout << "交换前：" << endl;
+    cout << "vector_13: ";
+    print_vector(vector_13);
+    cout << "vector_14: ";
+    print_vector(vector_14);
+
+    //调用互换函数
+    vector_13.swap(vector_14);
+
+    cout << "交换后：" << endl;
+    cout << "vector_13: ";
+    print_vector(vector_13);
+    cout << "vector_14: ";
+    print_vector(vector_14);
 
     printf("--------------------end----------------------\n");
     return EXIT_SUCCESS;
