@@ -34,49 +34,46 @@ int main()
     cout << __FILE__ << endl;
 
     cout << "test1: " << endl;
-    vector<int> v_test = {0, 1, 2, 3};
+    vector<int> v_test = {0, 1, 2};
     auto it = v_test.begin();
 
+    cout << "v_test origin: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
-    cout << "addr of it: " << &*it << endl
-         << endl;
+    cout << "addr of it: " << &*it << endl << endl;
 
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
+    // push_back（） 对 vector 地址的影响
+    cout << "The influence of push_back on address: " << endl;
+
+    // 第一次将容量用完
+    while (v_test.size() != v_test.capacity()) {
         v_test.push_back(0);
     }
     v_test.push_back(0);
     auto it1 = v_test.begin();
 
-    cout << "push_back 0: " << endl;
+    cout << "Use up the capacity: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of it: " << &*it << endl;
-    cout << "addr of it1: " << &*it1 << endl
-         << endl;
+    cout << "addr of it1: " << &*it1 << endl << endl;
 
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
+    // 第二次将容量用完
+    while (v_test.size() != v_test.capacity()) {
         v_test.push_back(0);
     }
     v_test.push_back(0);
     auto it2 = v_test.begin();
 
-    cout << "push_back 0: " << endl;
+    cout << "Use up the capacity: " << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "addr of it: " << &*it << endl;
     cout << "addr of it1: " << &*it1 << endl;
-    cout << "addr of it2: " << &*it2 << endl
-         << endl;
+    cout << "addr of it2: " << &*it2 << endl << endl;
 
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
+    // 第三次将容量用完
+    while (v_test.size() != v_test.capacity()) {
         v_test.push_back(0);
     }
     v_test.push_back(0);
@@ -88,12 +85,10 @@ int main()
     cout << "addr of it: " << &*it << endl;
     cout << "addr of it1: " << &*it1 << endl;
     cout << "addr of it2: " << &*it2 << endl;
-    cout << "addr of it3: " << &*it3 << endl
-         << endl;
+    cout << "addr of it3: " << &*it3 << endl << endl;
 
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
+    // 第四次将容量用完
+    while (v_test.size() != v_test.capacity()) {
         v_test.push_back(0);
     }
     v_test.push_back(0);
@@ -106,8 +101,38 @@ int main()
     cout << "addr of it1: " << &*it1 << endl;
     cout << "addr of it2: " << &*it2 << endl;
     cout << "addr of it3: " << &*it3 << endl;
-    cout << "addr of it4: " << &*it4 << endl
+    cout << "addr of it4: " << &*it4 << endl << endl;
+
+    // reserve（） 对 vector 地址的影响
+    cout << "The influence of reserve on address: " << endl;
+
+    v_test.resize(10);
+    vector<int>(v_test).swap(v_test);
+    auto it5 = v_test.begin();
+
+    cout << "swap v_test: ";
+    cout << "size = " << v_test.size() << endl;
+    cout << "capacity = " << v_test.capacity() << endl;
+    cout << "addr of it5: " << &*it5 << endl
          << endl;
+
+    v_test.reserve(20);
+    auto it6 = v_test.begin();
+
+    cout << "addr of it6: " << &*it6 << endl
+         << endl;
+
+    v_test.reserve(30);
+    auto it7 = v_test.begin();
+
+    cout << "addr of it7: " << &*it7 << endl
+         << endl;
+
+
+
+
+
+
 
     printf("--------------------end----------------------\n");
     return EXIT_SUCCESS;

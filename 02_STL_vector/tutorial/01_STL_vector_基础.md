@@ -13,7 +13,7 @@
 * 🍰 dazdsxasxsaxsaasdsa
 * 🚨 gdfgdshdfhfhygjtyu
 ## 💞️ vector 简介
-vector模板是STL(Standard Template Library,标准模板库)中的一个容器类，使用方法类似数组。
+vector 模板是 STL (Standard Template Library，标准模板库)中的一个容器类，使用方法类似数组。
 
 使用时包含头文件:
 

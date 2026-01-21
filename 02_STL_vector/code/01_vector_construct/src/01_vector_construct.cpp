@@ -19,10 +19,10 @@ using std::cout;
 using std::endl;
 using std::vector;
 
-// vector的遍历
+//vector的遍历
 void print_vector(vector<int> &v)
 {
-    // 利用迭代器打印 v
+    //利用迭代器打印 v
     for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
         cout << *it << " ";
     }
@@ -35,47 +35,49 @@ int main()
 
     cout << __FILE__ << endl;
 
-    // 1.构造一个空容器，没有元素。
-    // vector<T> vectorname;
+    //1.构造一个空容器。
+    //vector<T> vectorname;
     vector<int> vector_11; // 创建一个值类型为int的空vector
     cout << "vector_11: ";
     print_vector(vector_11);
 
-    // 2.构造一个包含size个元素的容器。每个元素都是0。
-    // vector<T> vectorname(size);
+    //2.构造一个包含size个元素的容器，每个元素都是0。
+    //vector<T> vectorname(size);
     vector<int> vector_21(10); // 创建一个10个int的vector，且每个元素初值为0
     cout << "vector_21: ";
     print_vector(vector_21);
 
-    // 3.构造一个包含size个元素的容器。每个元素都是val。
-    // vector<T> vectorname(size, value);
+    //3.构造一个包含size个元素的容器，每个元素都是 value
+    //vector<T> vectorname(size, value);
     vector<int> vector_31(10, 1); // 创建一个10个int的vector，且每个元素初值为1
     cout << "vector_31: ";
     print_vector(vector_31);
 
-    // 4.拷贝构造
-    // vector<T> vectorname2(vectorname1);
-    vector<int> vector_41(vector_31); // third temp 拷贝给vector forth ，两者元素值完全相同
+    //4.拷贝构造
+    //vector<T> vectorname2(vectorname1);
+    vector<int> vector_40{4, 3, 2, 1, 0};
+    vector<int> vector_41(vector_40); // third temp 拷贝给vector forth ，两者元素值完全相同
     cout << "vector_41: ";
     print_vector(vector_41);
 
-    // 5.利用数组构造容器
-    // T m[] = {a, b, c, .....};
-    // vector<T> vectorname(m, m + sizeof(m) / sizeof(T));
-    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    vector<int> vector_51(a, a + 10); // 从数组区间[a[0], a[10])中获得初值,注意左闭右开，a[10]无意义这里助于理解
+    //5.利用数组构造容器
+    //T m[] = {a, b, c, .....};
+    //vector<T> vectorname(m, m + sizeof(m) / sizeof(T));
+    int a[6] = {5, 4, 3, 2, 1, 0};
+    vector<int> vector_51(a, a + 6); //从数组区间[a[0], a[6])中获得初值,注意左闭右开，a[6]无意义这里助于理解
     cout << "vector_51: ";
     print_vector(vector_51);
 
-    // 6.将[v.begin(),v.end())区间中的元素拷贝给本身，注意左闭右开
-    // vector<T> vectorname2(vectorname1.begin(), vectorname1.end());
-
-    // temp [temp.begin(),temp.end()-5)区间的元素赋给fifth，注意左开右闭
-    vector<int> vector_61(vector_51.begin(), vector_51.end() - 5);
+    //6.利用迭代器构造容器
+    //将[v.begin(),v.end())区间中的元素拷贝给本身，注意左闭右开
+    //vector<T> vectorname2(vectorname1.begin(), vectorname1.end());
+    vector<int> vector_60{6, 5, 4, 3, 2, 1, 0};
+    vector<int> vector_61(vector_60.begin(), vector_60.end());
     cout << "vector_61: ";
     print_vector(vector_61);
 
-    vector<int> vector_62(vector_51.begin(), vector_51.end());
+    // temp [temp.begin(),temp.end()-3)区间的元素赋给 vector_62, 注意左开右闭
+    vector<int> vector_62(vector_60.begin(), vector_60.end() - 3);
     cout << "vector_62: ";
     print_vector(vector_62);
 
