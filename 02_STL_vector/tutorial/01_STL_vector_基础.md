@@ -139,42 +139,60 @@ vector_72: 1 0 -3 -5 -7 -9
 ### ✨ vector 的遍历
 
 方法1：
-
+利用迭代器遍历 vector
 迭代器iterator中的begin和end函数是左闭右开的区间。
-
 ```cpp
 // vector的遍历
-
-void print_vector(vector<int> &v)
-
-{ // 利用迭代器打印 v
-
-    for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
-
-        cout << *it << " ";
-
-    }
-
-    cout << endl;
-
+void print_vector_1(vector<int> &v)
+{
+    for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
+        cout << *it << " "; // 利用迭代器打印 v
+    }
+    cout << endl;
 }
 ```
 
-
-
 方法2：
+利用 for 容器循环遍历 vector
 
-```c++
-void print_vector(vector<int> &v)
-{ 
-    for (auto n : v)
-    {
+```cpp
+void print_vector_2(vector<int> &v)
+{
+    for (auto n : v) {
         cout << n << " ";
     }
     cout << endl;
 }
 ```
 
+
+
+方法3：
+利用下标循环遍历 vector
+
+```cpp
+void print_vector_3(vector<int> &v)
+{
+    for (int i = 0; i < v.size(); ++i) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+```
+
+
+方法4：
+利用 size() 函数循环遍历 vector
+
+```cpp
+void print_vector_4(vector<int> &v)
+{
+    for (int i = 0; i < v.size(); i++) {
+        cout << v.at(i) << " ";
+    }
+    cout << endl;
+}
+```
 
 ### ✨ vector 的赋值
 
