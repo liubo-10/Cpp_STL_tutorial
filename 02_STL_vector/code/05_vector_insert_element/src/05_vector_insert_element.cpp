@@ -31,8 +31,6 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
-    cout << __FILE__ << endl;
-
     // 插入方式1: push_back 函数
 
     // 1. 尾部插入元素ele

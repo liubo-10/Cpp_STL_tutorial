@@ -31,8 +31,6 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
-    cout << __FILE__ << endl;
-
     //删除方式1: pop_back 函数
 
     //1.尾部删除元素ele
