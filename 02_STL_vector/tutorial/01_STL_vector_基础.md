@@ -165,8 +165,6 @@ void print_vector_2(vector<int> &v)
 }
 ```
 
-
-
 方法3：
 利用下标循环遍历 vector
 
@@ -179,7 +177,6 @@ void print_vector_3(vector<int> &v)
     cout << endl;
 }
 ```
-
 
 方法4：
 利用 size() 函数循环遍历 vector
@@ -204,7 +201,7 @@ assign(v.begin(),v.end());          //将[v.begin(),v.end())区间中的元素�
 assign(n,elem);                     //将n个elem赋值给本身
 
 int myints[];
-third.assign(myints,myints+3);   // assigning from array.
+v.assign(myints,myints+n);   // assigning from array.
 ```
 
 assign: 将新内容赋给vector，替换其当前内容，并相应地修改其大小。
