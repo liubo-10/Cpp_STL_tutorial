@@ -7,6 +7,10 @@
  * |    V2     2025-12-26
  * ---------------------------------------
  * | @brief   : vector 插入元素测试
+ * 
+ * 
+ * 
+ * https://blog.csdn.net/2401_88591507/article/details/146243185?ops_request_misc=&request_id=&biz_id=102&utm_term=vector%20insert&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-146243185.142^v102^pc_search_result_base8&spm=1018.2226.3001.4187
  ******************************************************************************/
 #include <stdio.h>  // C语言的标准库，包含C语言流操作 printf等
 #include <iostream> // 包含输入和输出操作

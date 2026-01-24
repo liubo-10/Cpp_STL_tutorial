@@ -213,61 +213,64 @@ assign: 将新内容赋给vector，替换其当前内容，并相应地修改其
 ```cpp
 printf("--------------------begain-------------------\n");
 
-vector<int> vector_01 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+vector<int> vector_01{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 cout << "vector_01: ";
 print_vector(vector_01);
 
-// 赋值方式1: 运算符 = 重载
+//赋值方式1: 运算符 = 重载
 
-// 1. 重载赋值运算符 =
-// vector& operator=(const vector &v);
+//1. 重载赋值运算符 =
+//vector& operator=(const vector &v);
 vector<int> vector_11;
 vector_11 = vector_01;
 cout << "vector_11: ";
 print_vector(vector_11);
+cout << endl;
 
-cout << " ---------------------------------------- " << endl;
+//赋值方式2: assign 函数
 
-// 赋值方式2: assign 函数
-
-// 2. 函数参数使用迭代器
-// assign(v.begin(),v.end());
-// 将[v.begin(),v.end())区间中的元素赋值给本身
-
+//2. 函数参数为迭代器
+//assign(v.begin(),v.end());
+//将[v.begin(),v.end())区间中的元素赋值给本身
 vector<int> vector_21;
 
-vector_21.assign(vector_01.begin(), vector_01.end()); // 把 vector_01 值赋给 vector_21,其余值删除,左闭右开
+//把 vector_01 值赋给 vector_21,其余值删除,左闭右开
+vector_21.assign(vector_01.begin(), vector_01.end());
 cout << "vector_21: ";
 print_vector(vector_21);
 
-vector_21.assign(vector_01.begin(), vector_01.end() - 5); // 把 vector_01 除后五个值之外值赋给 vector_21,左闭右开
+//把 vector_01 除后五个值之外值赋给 vector_21,,其余值删除,左闭右开
+vector_21.assign(vector_01.begin(), vector_01.end() - 5);
 cout << "vector_21: ";
 print_vector(vector_21);
 
-// 3. 函数参数使用数值
-// assign(n,elem);
+//3. 函数参数为数值
+//assign(n,elem);
 //将n个elem赋值给本身
 
 vector<int> vector_31(10, 1);
 cout << "vector_31: ";
 print_vector(vector_31);
 
-vector_31.assign(5, 9); // 把5个9赋给 forth，其余值删除
+vector_31.assign(5, 9); // 把5个9赋给 vector_31, 其余值删除
 cout << "vector_31: ";
 print_vector(vector_31);
 
-// 4. 函数参数使用数组
+//4. 函数参数使用数组
+//int myints[];
+//v.assign(myints,myints+n);   // assigning from array.
+
 vector<int> vector_41(10, 1);
 cout << "vector_41: ";
 print_vector(vector_41);
 
 int myints[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-vector_41.assign(myints, myints + 5); //把 myints 前五个值赋给fifth，fifth左闭右开
+//把 myints 前五个值赋给 vector_41,其余值删除,左闭右开
+vector_41.assign(myints, myints + 5);
 cout << "vector_41: ";
 print_vector(vector_41);
 
 printf("--------------------end----------------------\n");
-
 ```
 
 测试结果:
@@ -276,7 +279,7 @@ printf("--------------------end----------------------\n");
 --------------------begain-------------------
 vector_01: 0 1 2 3 4 5 6 7 8 9 
 vector_11: 0 1 2 3 4 5 6 7 8 9 
- ---------------------------------------- 
+
 vector_21: 0 1 2 3 4 5 6 7 8 9 
 vector_21: 0 1 2 3 4 
 vector_31: 1 1 1 1 1 1 1 1 1 1 
@@ -291,7 +294,7 @@ vector_41: 0 1 2 3 4
 
 函数原型：
 
-```c++
+```cpp
 at(int idx);    //返回索引idx所指的数据，如果idx越界，抛出out_of_range异常。
 operator[idx];  //返回索引idx所指的数据，如果idx越界，运行直接报错
 front();        //返回容器中第一个数据元素
@@ -302,53 +305,45 @@ back();         //返回容器中最后一个数据元素
 
 使用示例:
 
-```c++
-#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
-#include <iostream>  // 包含输入和输出操作
-#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
-#include <unistd.h>  // pause()头文件
-#include <vector>
+```cpp
+printf("--------------------begain-------------------\n");
 
-using std::cin;
-using std::cout;
-using std::endl;
-using std::vector;
+// 访问方式1: 运算符 []
 
-int main()
-{
-    printf("--------------------begain-------------------\n");
-    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+// 1. 使用运算符 []  访问 vector 元素
+// operator[idx];
+// 返回索引idx所指的数据，如果idx越界，运行直接报错
+vector<int> vector_01{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    vector<int> v_test(a, a + 10);
-
-    cout << "调用at，打印 v_test: ";
-    for (int i = 0; i < v_test.size(); i++)
-    {
-        cout << v_test.at(i) << " ";
-    }
-    cout << endl;
-
-    cout << "调用[]，打印 v_test: ";
-    for (int i = 0; i < v_test.size(); ++i)
-    {
-        cout << v_test[i] << " "; // 调用2
-    }
-    cout << endl;
-
-    cout << "容器中第一个元素是：" << v_test.front() << endl;
-    cout << "容器中最后一个元素是：" << v_test.back() << endl;
-
-    printf("--------------------end----------------------\n");
-    // cin.get();
-    // getchar();
-    // pause();
-    return EXIT_SUCCESS;
+cout << "调用[]，打印 vector_01: ";
+for (int i = 0; i < vector_01.size(); ++i) {
+    cout << vector_01[i] << " "; // 调用2
 }
+cout << endl;
+
+// 2. 使用函数at  访问 vector 元素
+// at(int idx);
+//返回索引idx所指的数据，如果idx越界，抛出out_of_range异常。
+cout << "调用at，打印 vector_01: ";
+for (int i = 0; i < vector_01.size(); i++) {
+    cout << vector_01.at(i) << " ";
+}
+cout << endl;
+
+// 3. 使用函数 front back 访问 vector 元素
+// at(int idx);
+// front() 返回容器中第一个数据元素
+// back() 返回容器中最后一个数据元素
+
+cout << "vector_01 中第一个元素是：" << vector_01.front() << endl;
+cout << "vector_01 中最后一个元素是：" << vector_01.back() << endl;
+
+printf("--------------------end----------------------\n");
 ```
 
 测试结果:
 
-```tex
+```log
 --------------------begain-------------------
 调用at，打印 v_test: 0 1 2 3 4 5 6 7 8 9 
 调用[]，打印 v_test: 0 1 2 3 4 5 6 7 8 9 

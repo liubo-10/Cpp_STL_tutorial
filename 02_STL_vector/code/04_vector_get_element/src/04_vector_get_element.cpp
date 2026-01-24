@@ -29,7 +29,7 @@ int main()
     // 返回索引idx所指的数据，如果idx越界，运行直接报错
     vector<int> vector_01{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    cout << "调用[]，打印 vector_01: ";
+    cout << "use [] print vector_01: ";
     for (int i = 0; i < vector_01.size(); ++i) {
         cout << vector_01[i] << " "; // 调用2
     }
@@ -38,7 +38,7 @@ int main()
     // 2. 使用函数at  访问 vector 元素
     // at(int idx);
     //返回索引idx所指的数据，如果idx越界，抛出out_of_range异常。
-    cout << "调用at，打印 vector_01: ";
+    cout << "use at print vector_01: ";
     for (int i = 0; i < vector_01.size(); i++) {
         cout << vector_01.at(i) << " ";
     }
@@ -49,8 +49,8 @@ int main()
     // front() 返回容器中第一个数据元素
     // back() 返回容器中最后一个数据元素
 
-    cout << "vector_01 中第一个元素是：" << vector_01.front() << endl;
-    cout << "vector_01 中最后一个元素是：" << vector_01.back() << endl;
+    cout << "vector_01 first:" << vector_01.front() << endl;
+    cout << "vector_01 last:" << vector_01.back() << endl;
 
     printf("--------------------end----------------------\n");
     return EXIT_SUCCESS;

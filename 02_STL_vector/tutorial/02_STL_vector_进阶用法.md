@@ -15,17 +15,11 @@
 * 🚨 gdfgdshdfhfhygjtyu
 
 
-> # STL_vector_02_进阶用法
-
-
-
-
-
 # 五、vector的元素插入
 
 函数原型：
 
-```c++
+```cpp
 push_back(ele); //尾部插入元素ele
 insert(const_iterator pos,ele); //在迭代器指向的位置pos处插入一个元素ele
 insert(const_iterator pos,int count,ele); //在迭代器指向的位置pos处插入count个元素ele
@@ -39,7 +33,7 @@ push_back: 在vector当前最后一个元素的末尾添加一个新元素。val
 
 使用示例:
 
-```c++
+```cpp
 using std::cin;
 using std::cout;
 using std::endl;
@@ -114,7 +108,7 @@ int main()
 
 函数原型：
 
-```c++
+```cpp
 pop_back(); //删除最后一个元素
 erase(const_iterator pos); //删除迭代器指向的元素
 erase(const_iterator begin,const_iterator end); //删除迭代器从begin到end之间的元素
@@ -123,7 +117,7 @@ clear(); //删除容器中所有元素
 
 使用示例:
 
-```c++
+```cpp
 #include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
 #include <iostream>  // 包含输入和输出操作
 #include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
@@ -236,7 +230,7 @@ swap(v); //容器v和当前容器互换
 
 使用示例:
 
-```c++
+```cpp
 #include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
 #include <iostream>  // 包含输入和输出操作
 #include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
@@ -282,7 +276,7 @@ int main()
 
 测试结果:
 
-```tex
+```log
 --------------------begain-------------------
 交换前：
 0 1 2 3 4 5 6 7 8 9 
@@ -337,7 +331,7 @@ int main()
 
 测试示例:
 
-```c++
+```cpp
 void test1()
 {
     cout << "test1: " << endl;
@@ -444,7 +438,7 @@ void test1()
 
 测试结果:
 
-```tex
+```log
 test1: 
 size = 10
 capacity = 10
@@ -513,7 +507,7 @@ addr of it7: 0x5637910e07e0
 
 测试示例:
 
-```c++
+```cpp
 void test2()
 {
     cout << "test2: " << endl;
@@ -542,7 +536,7 @@ void test2()
 
 测试结果:
 
-```tex
+```log
 test2: 
 size = 10
 capacity = 10
@@ -562,31 +556,6 @@ addr of it2: 0x56396b34a2d4
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 本文链接：https://blog.csdn.net/m0_37251750/article/details/100071023
 
 ————————————————
@@ -597,35 +566,7 @@ addr of it2: 0x56396b34a2d4
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 本文链接：https://blog.csdn.net/fuxiaoxiaoyue/article/details/84847967
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -643,25 +584,6 @@ addr of it2: 0x56396b34a2d4
                             版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
 
 原文链接：https://blog.csdn.net/chen_hard/article/details/119759216
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -13,7 +13,7 @@
 * 🍰 dazdsxasxsaxsaasdsa
 * 🚨 gdfgdshdfhfhygjtyu
 
-## 💞️ string简介
+# 💞️ string简介
 
 ---
 C风格字符串(以空字符结尾的字符数组)太过复杂难于掌握，不适合大程序的开发，所以C++标准库定义了一种string类，定义在头文件\<string\>。
@@ -24,7 +24,7 @@ C风格字符串(以空字符结尾的字符数组)太过复杂难于掌握，�
 #include <string>
 ```
 
-## 💞️ String和c风格字符串对比
+# 💞️ String和c风格字符串对比
 
 ---
 

@@ -57,7 +57,7 @@ int main()
     cout << "vector_21: ";
     print_vector(vector_21);
 
-    //把 vector_01 除后五个值之外值赋给 vector_21,,其余值删除左闭右开
+    //把 vector_01 除后五个值之外值赋给 vector_21,,其余值删除,左闭右开
     vector_21.assign(vector_01.begin(), vector_01.end() - 5);
     cout << "vector_21: ";
     print_vector(vector_21);
@@ -96,11 +96,12 @@ int main()
  * end of file
 ******************************************************************************/
 
+//result:
 /* 
 --------------------begain-------------------
 vector_01: 0 1 2 3 4 5 6 7 8 9 
 vector_11: 0 1 2 3 4 5 6 7 8 9 
- ---------------------------------------- 
+
 vector_21: 0 1 2 3 4 5 6 7 8 9 
 vector_21: 0 1 2 3 4 
 vector_31: 1 1 1 1 1 1 1 1 1 1 
