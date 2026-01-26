@@ -88,7 +88,7 @@ int main()
 
     int a[3] = {100, 200, 300};
     vector<int> vector_42{0, 1, 2, 3, 4, 5};
-    vector_42.insert(vector_42.begin() + 2, a, a + 2); // 在索引2的位置插入数组 a 的所有元素
+    vector_42.insert(vector_42.begin() + 2, a, a + 3); // 在索引2的位置插入数组 a 的所有元素
     cout << "在索引2的位置插入数组 a 的所有元素，打印 vector_42:";
     print_vector(vector_42);
 
