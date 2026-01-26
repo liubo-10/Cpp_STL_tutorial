@@ -14,93 +14,127 @@
 * 🍰 dazdsxasxsaxsaasdsa
 * 🚨 gdfgdshdfhfhygjtyu
 
+## 💞️ vector的元素插入
 
-# 五、vector的元素插入
+---
 
 函数原型：
 
 ```cpp
-push_back(ele); //尾部插入元素ele
-insert(const_iterator pos,ele); //在迭代器指向的位置pos处插入一个元素ele
-insert(const_iterator pos,int count,ele); //在迭代器指向的位置pos处插入count个元素ele
+//1.尾部插入元素ele
+push_back(ele);
+
+//2.在迭代器指向的位置pos处插入一个元素ele
+insert(const_iterator pos,ele); 
+
+//3.在迭代器指向的位置pos处插入count个元素ele
+insert(const_iterator pos,int count,ele); 
+
+//4.插入一个范围的元素
+template <class InputIterator>
+void insert(const_iterator pos, InputIterator first, InputIterator last);
+
+//5.插入初始化列表中的元素（C++11 及以上）
+void insert(const_iterator pos, initializer_list<T> ilist);
+
 ```
 
 push_back: 在vector当前最后一个元素的末尾添加一个新元素。val的内容被复制(或移动)到新元素中。
 
-将容器大小增加了1，当且仅当新vector大小 > 当前vector容量时，会自动重新分配存储空间。
+将容器大小增加了1，当且仅当新vector大小大于当前vector容量时，会自动重新分配存储空间。
 
 
 
 使用示例:
 
 ```cpp
-using std::cin;
-using std::cout;
-using std::endl;
-using std::vector;
+printf("--------------------begain-------------------\n");
 
-// vector的遍历
-void print_vector(vector<int> &v)
-{
-    for (auto n : v)
-    {
-        cout << n << " ";
-    }
-    cout << endl;
+//插入方式1: push_back 函数
+
+//1. 尾部插入元素ele
+//push_back(ele);
+
+vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+for (int i = 0; i < 3; ++i) {
+    vector_11.push_back(10); //尾部插入3个10
 }
+cout << "vector_11: ";
+print_vector(vector_11);
 
-int main()
-{
-    printf("--------------------begain-------------------\n");
-    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+cout << endl;
 
-    vector<int> v_test(a, a + 10);
+//插入方式2: insert 函数
 
-    for (int i = 0; i < 3; ++i)
-    {
-        v_test.push_back(10);//尾部插入3个10
-    }
-    cout << "在尾部插入3个10，打印 v_test: ";
-    print_vector(v_test);
+//2.插入一个元素
+//iterator insert(const_iterator pos, const T& value);
+//在迭代器指向的位置 pos 前面插入一个元素 value
 
-    v_test.insert(v_test.begin(), 10); //在首位插入10
-    cout << "在第首位插入10，打印 v_test: ";
-    print_vector(v_test);
+vector<int> vector_21{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+vector_21.insert(vector_21.begin(), 10); //在首位插入10
+cout << "vector_21: ";
+print_vector(vector_21);
 
-    v_test.insert(v_test.begin(), 2, 20);//在首位插入2个20
-    cout << "在首位插入2个20，打印 v_test: ";
-    print_vector(v_test);
+vector<int> vector_22{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+vector_22.insert(vector_22.end(), 10); //在末位插入10
+cout << "vector_22: ";
+print_vector(vector_22);
 
-    v_test.insert(v_test.begin() + 3,30); //在第3位后面插入30
-    cout << "在第3位后面插入30，打印 v_test: ";
-    print_vector(v_test);
+//3.插入多个相同的元素
+//iterator insert(const_iterator pos, size_type count, const T& value);
+//在迭代器指向的位置 pos 前面插入 count 个元素 value
 
-    v_test.insert(v_test.begin() + 4, 2, 40); //在第4位后面插入2个40
-    cout << "在第4位后面插入2个40，打印 v_test: ";
-    print_vector(v_test);
+vector<int> vector_31{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+vector_31.insert(vector_31.begin(), 3, 10); //在首位插入3个10
+cout << "vector_31: ";
+print_vector(vector_31);
 
-    v_test.insert(v_test.end() - 3, 2, 50);//在倒数第3位前面插入2个50
-    cout << "在倒数第3位前面插入2个50，打印 v_test: ";
-    print_vector(v_test);
+vector<int> vector_32{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+vector_32.insert(vector_32.begin() + 3, 3, 30); //在索引3的位置前面插入3个30
+cout << "vector_32: ";
+print_vector(vector_32);
 
-    printf("--------------------end----------------------\n");
-    // cin.get();
-    // getchar();
-    // pause();
-    return EXIT_SUCCESS;
-}
+//4.插入一个范围的元素
+//template <class InputIterator>
+//void insert(const_iterator pos, InputIterator first, InputIterator last);
+
+vector<int> vector_40{99, 100, 101};
+vector<int> vector_41{0, 1, 2, 3, 4, 5};
+vector_41.insert(vector_41.begin() + 2, vector_40.begin(), vector_40.end()); // 在索引2的位置插入 vector_40 的所有元素
+cout << "vector_41:";
+print_vector(vector_41);
+
+int a[3] = {100, 200, 300};
+vector<int> vector_42{0, 1, 2, 3, 4, 5};
+vector_42.insert(vector_42.begin() + 2, a, a + 3); // 在索引2的位置插入数组 a 的所有元素，左闭右开
+cout << "vector_42:";
+print_vector(vector_42);
+
+//5.插入初始化列表中的元素（C++11 及以上）
+//void insert(const_iterator pos, initializer_list<T> ilist);
+
+vector<int> vector_51 = {0, 1, 2, 3, 4, 5};
+vector_51.insert(vector_51.begin() + 3, {99, 100, 101}); // 在索引3的位置插入初始化列表中的元素
+cout << "vector_51:";
+print_vector(vector_51);
+
+printf("--------------------end----------------------\n");
 ```
 
 测试结果:
 
 ```log
 --------------------begain-------------------
-在尾部插入3个10，打印 v_test: 0 1 2 3 4 5 6 7 8 9 10 10 10 
-在第首位插入10，打印 v_test: 10 0 1 2 3 4 5 6 7 8 9 10 10 10 
-在首位插入2个20，打印 v_test: 20 20 10 0 1 2 3 4 5 6 7 8 9 10 10 10 
-在第3位后面插入30，打印 v_test: 20 20 10 30 0 1 2 3 4 5 6 7 8 9 10 10 10 
-在第4位后面插入2个40，打印 v_test: 20 20 10 30 40 40 0 1 2 3 4 5 6 7 8 9 10 10 10 
-在倒数第3位前面插入2个50，打印 v_test: 20 20 10 30 40 40 0 1 2 3 4 5 6 7 8 9 50 50 10 10 10 
+vector_11: 0 1 2 3 4 5 6 7 8 9 10 10 10 
+
+vector_21: 10 0 1 2 3 4 5 6 7 8 9 
+vector_22: 0 1 2 3 4 5 6 7 8 9 10 
+vector_31: 10 10 10 0 1 2 3 4 5 6 7 8 9 
+vector_32: 0 1 2 30 30 30 3 4 5 6 7 8 9 
+vector_41:0 1 99 100 101 2 3 4 5 
+vector_42:0 1 100 200 300 2 3 4 5 
+vector_51:0 1 2 99 100 101 3 4 5 
 --------------------end----------------------
 ```
 

@@ -50,7 +50,7 @@ int main()
     cout << "vector_12: ";
     print_vector(vector_12);
 
-    cout << "----------------------------------------" << endl;
+    cout << endl;
 
     //删除方式2: erase 函数
 
@@ -80,7 +80,7 @@ int main()
 
     // 使用 erase 删除前三个元素
     vector<int> vector_32{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    vector_32.erase(vector_32.begin(), vector_32.begin() + 3);
+    vector_32.erase(vector_32.begin(), vector_32.begin() + 3);// 左闭右开
     cout << "vector_32: ";
     print_vector(vector_32);
 
