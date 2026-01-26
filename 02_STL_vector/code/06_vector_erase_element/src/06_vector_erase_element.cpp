@@ -104,7 +104,7 @@ int main()
     //删除容器中所有元素
 
     // 使用 clear 删除全部元素
-    vector_41{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<int> vector_41{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     vector_41.clear(); // 调用7，清空所有元素
     cout << "vector_41: ";
     print_vector(vector_41);
