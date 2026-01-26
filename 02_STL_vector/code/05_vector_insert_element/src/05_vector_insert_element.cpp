@@ -41,7 +41,7 @@ int main()
     for (int i = 0; i < 3; ++i) {
         vector_11.push_back(10); //尾部插入3个10
     }
-    cout << "在尾部插入3个10，打印 vector_11: ";
+    cout << "vector_11: ";
     print_vector(vector_11);
 
     cout << endl;
@@ -54,12 +54,12 @@ int main()
 
     vector<int> vector_21{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     vector_21.insert(vector_21.begin(), 10); //在首位插入10
-    cout << "在首位插入1个10，打印 vector_21: ";
+    cout << "vector_21: ";
     print_vector(vector_21);
 
     vector<int> vector_22{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     vector_22.insert(vector_22.end(), 10); //在末位插入10
-    cout << "在末位插入1个10，打印 vector_22: ";
+    cout << "vector_22: ";
     print_vector(vector_22);
 
     //3.插入多个相同的元素
@@ -68,12 +68,12 @@ int main()
 
     vector<int> vector_31{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     vector_31.insert(vector_31.begin(), 3, 10); //在首位插入3个10
-    cout << "在首位插入3个10，打印 vector_31: ";
+    cout << "vector_31: ";
     print_vector(vector_31);
 
     vector<int> vector_32{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     vector_32.insert(vector_32.begin() + 3, 3, 30); //在索引3的位置前面插入3个30
-    cout << "在索引3的位置前面插入3个30，打印 vector_32: ";
+    cout << "vector_32: ";
     print_vector(vector_32);
 
     //4.插入一个范围的元素
@@ -83,13 +83,13 @@ int main()
     vector<int> vector_40{99, 100, 101};
     vector<int> vector_41{0, 1, 2, 3, 4, 5};
     vector_41.insert(vector_41.begin() + 2, vector_40.begin(), vector_40.end()); // 在索引2的位置插入 vector_40 的所有元素
-    cout << "在索引2的位置插入 vector_40 的所有元素，打印 vector_41:";
+    cout << "vector_41:";
     print_vector(vector_41);
 
     int a[3] = {100, 200, 300};
     vector<int> vector_42{0, 1, 2, 3, 4, 5};
-    vector_42.insert(vector_42.begin() + 2, a, a + 3); // 在索引2的位置插入数组 a 的所有元素
-    cout << "在索引2的位置插入数组 a 的所有元素，打印 vector_42:";
+    vector_42.insert(vector_42.begin() + 2, a, a + 3); // 在索引2的位置插入数组 a 的所有元素，左闭右开
+    cout << "vector_42:";
     print_vector(vector_42);
 
     //5.插入初始化列表中的元素（C++11 及以上）
@@ -97,7 +97,7 @@ int main()
 
     vector<int> vector_51 = {0, 1, 2, 3, 4, 5};
     vector_51.insert(vector_51.begin() + 3, {99, 100, 101}); // 在索引3的位置插入初始化列表中的元素
-    cout << "在索引3的位置插入列表的所有元素，打印 vector_51:";
+    cout << "vector_51:";
     print_vector(vector_51);
 
     printf("--------------------end----------------------\n");
