@@ -35,6 +35,7 @@ int main()
     vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     vector<int> vector_12{9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 
+    cout << "befor swap" << endl;
     cout << "vector_11: ";
     print_vector(vector_11);
     cout << "vector_12: ";
@@ -43,7 +44,7 @@ int main()
     //调用互换函数
     vector_11.swap(vector_12);
 
-    cout << "use swap:" << endl;
+    cout << "after swap:" << endl;
     cout << "vector_11: ";
     print_vector(vector_11);
     cout << "vector_12: ";
@@ -52,7 +53,7 @@ int main()
     vector<int> vector_13{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     vector<int> vector_14{9, 8, 7, 6, 5};
 
-    cout << "交换前：" << endl;
+    cout << "befor swap" << endl;
     cout << "vector_13: ";
     print_vector(vector_13);
     cout << "vector_14: ";
@@ -61,7 +62,7 @@ int main()
     //调用互换函数
     vector_13.swap(vector_14);
 
-    cout << "交换后：" << endl;
+    cout << "after swap:" << endl;
     cout << "vector_13: ";
     print_vector(vector_13);
     cout << "vector_14: ";
