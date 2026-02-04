@@ -31,8 +31,6 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
-    cout << __FILE__ << endl;
-
     cout << "test1: " << endl;
     vector<int> v_test = {0, 1, 2};
     auto it = v_test.begin();

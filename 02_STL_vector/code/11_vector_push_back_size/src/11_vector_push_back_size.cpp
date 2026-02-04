@@ -30,8 +30,6 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
-    cout << __FILE__ << endl;
-
     vector<int> v_test;
     cout << "未初始化的 v_test: " << endl;
     cout << "size = " << v_test.size() << endl;

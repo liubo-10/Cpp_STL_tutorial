@@ -273,60 +273,64 @@ swap(v); //容器v和当前容器互换
 使用示例:
 
 ```cpp
-#include <stdio.h>   // C语言的标准库，包含C语言流操作 printf等
-#include <iostream>  // 包含输入和输出操作
-#include <string.h>  // C语言的标准库，包含字符串处理操作 strcpy等
-#include <unistd.h>  // pause()头文件
-#include <vector>
+printf("--------------------begain-------------------\n");
 
-using std::cin;
-using std::cout;
-using std::endl;
-using std::vector;
+vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+vector<int> vector_12{9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 
-// vector的遍历
-void print_vector(vector<int> &v)
-{
-    for (auto n : v)
-    {
-        cout << n << " ";
-    }
-    cout << endl;
-}
+cout << "befor swap" << endl;
+cout << "vector_11: ";
+print_vector(vector_11);
+cout << "vector_12: ";
+print_vector(vector_12);
 
-int main()
-{
-    printf("--------------------begain-------------------\n");
-    vector<int> v_test1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    vector<int> v_test2 = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+//调用互换函数
+vector_11.swap(vector_12);
 
-    cout << "交换前：" << endl;
-    print_vector(v_test1);
-    print_vector(v_test2);
-    cout << "交换后：" << endl;
-    v_test1.swap(v_test2); // 调用互换函数
-    print_vector(v_test1);
-    print_vector(v_test2);
+cout << "after swap:" << endl;
+cout << "vector_11: ";
+print_vector(vector_11);
+cout << "vector_12: ";
+print_vector(vector_12);
 
-    printf("--------------------end----------------------\n");
-    // cin.get();
-    // getchar();
-    // pause();
-    return EXIT_SUCCESS;
-}
+vector<int> vector_13{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+vector<int> vector_14{9, 8, 7, 6, 5};
+
+cout << "befor swap" << endl;
+cout << "vector_13: ";
+print_vector(vector_13);
+cout << "vector_14: ";
+print_vector(vector_14);
+
+//调用互换函数
+vector_13.swap(vector_14);
+
+cout << "after swap:" << endl;
+cout << "vector_13: ";
+print_vector(vector_13);
+cout << "vector_14: ";
+print_vector(vector_14);
+
+printf("--------------------end----------------------\n");
 ```
 
 测试结果:
 
 ```log
---------------------begain-------------------
-交换前：
-0 1 2 3 4 5 6 7 8 9 
-9 8 7 6 5 4 3 2 1 0 
-交换后：
-9 8 7 6 5 4 3 2 1 0 
-0 1 2 3 4 5 6 7 8 9 
---------------------end----------------------
+ --------------------begain-------------------
+ befor swap
+ vector_11: 0 1 2 3 4 5 6 7 8 9 
+ vector_12: 9 8 7 6 5 4 3 2 1 0 
+ after swap:
+ vector_11: 9 8 7 6 5 4 3 2 1 0 
+ vector_12: 0 1 2 3 4 5 6 7 8 9 
+ befor swap
+ vector_13: 0 1 2 3 4 5 6 7 8 9 
+ vector_14: 9 8 7 6 5 
+ after swap:
+ vector_13: 9 8 7 6 5 
+ vector_14: 0 1 2 3 4 5 6 7 8 9 
+ --------------------end----------------------
 ```
 
 
