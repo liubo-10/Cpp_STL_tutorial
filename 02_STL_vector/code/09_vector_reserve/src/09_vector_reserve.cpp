@@ -32,7 +32,7 @@ int main()
 
     vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    cout << "初始数据: " << endl;
+    cout << "origin: " << endl;
     print_vector(vector_11);
     cout << "size = " << vector_11.size() << endl;
     cout << "capacity = " << vector_11.capacity() << endl;

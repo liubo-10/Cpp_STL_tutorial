@@ -76,57 +76,80 @@ resize(int num, elem);
 使用示例:
 
 ```cpp
-void resize_test(){
-    cout << "resize_test: " << endl;
-    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    cout << "初始数据: ";
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl << endl;
+printf("--------------------begain-------------------\n");
 
-    vector<int> v_test1 = v_test;
-    v_test1.resize(5);
-    cout << "resize 5: ";
-    print_vector(v_test1);
-    cout << "size = " << v_test1.size() << endl;
-    cout << "capacity = " << v_test1.capacity() << endl << endl;
+vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    vector<int> v_test2 = v_test;
-    v_test2.resize(20);
-    cout << "resize 20: ";
-    print_vector(v_test2);
-    cout << "size = " << v_test2.size() << endl;
-    cout << "capacity = " << v_test2.capacity() << endl << endl;
+cout << "origin data: " << endl;
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl;
+cout << "max_size = " << vector_11.max_size() << endl << endl;
 
-    vector<int> v_test3 = v_test;
-    v_test3.resize(20, 9);
-    cout << "resize 20,9: ";
-    print_vector(v_test3);
-    cout << "size = " << v_test3.size() << endl;
-    cout << "capacity = " << v_test3.capacity() << endl << endl;
-}
+vector<int> vector_12 = vector_11;
+vector_12.resize(5);
+cout << "resize(5): " << endl;
+print_vector(vector_12);
+cout << "size = " << vector_12.size() << endl;
+cout << "capacity = " << vector_12.capacity() << endl;
+cout << "max_size = " << vector_12.max_size() << endl << endl;
+
+vector<int> vector_13 = vector_11;
+vector_13.resize(20);
+cout << "resize(20): " << endl;
+print_vector(vector_13);
+cout << "size = " << vector_13.size() << endl;
+cout << "capacity = " << vector_13.capacity() << endl;
+cout << "max_size = " << vector_13.max_size() << endl << endl;
+
+vector<int> vector_14 = vector_11;
+vector_14.resize(20, 9);
+cout << "resize(20,9): " << endl;
+print_vector(vector_14);
+cout << "size = " << vector_14.size() << endl;
+cout << "capacity = " << vector_14.capacity() << endl;
+cout << "max_size = " << vector_14.max_size() << endl << endl;
+
+printf("--------------------end----------------------\n");
 ```
 
 测试结果:
 
 ```log
-resize_test: 
-初始数据: 0 1 2 3 4 5 6 7 8 9 
+--------------------begain-------------------
+origin data: 
+0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 10
+max_size = 2305843009213693951
 
-resize 5: 0 1 2 3 4 
+resize(5): 
+0 1 2 3 4 
 size = 5
 capacity = 10
+max_size = 2305843009213693951
 
-resize 20: 0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 0 0 0 0 
+resize(20): 
+0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 0 0 0 0 
 size = 20
 capacity = 20
+max_size = 2305843009213693951
 
-resize 20,9: 0 1 2 3 4 5 6 7 8 9 9 9 9 9 9 9 9 9 9 9 
+resize(20,9): 
+0 1 2 3 4 5 6 7 8 9 9 9 9 9 9 9 9 9 9 9 
 size = 20
 capacity = 20
+max_size = 2305843009213693951
+
+--------------------end----------------------
 ```
+
+测试分析
+对于刚初始化的 vector_11 size 和 capacity 是一样的
+vector_12 resize(5)之后，只减少了元素数量的大小，容量保持不变。vector_12 中原来的元素被丢弃。
+vector_13 resize(20)之后，元素数量的大小超过了原来容量，容量增大到和 size 一致。vector_13 中原来的元素保持不变，都出来的位置用0补全。
+vector_14 与 vector_13 的操作相似，不同的是原来的元素保持不变，都出来的位置用9补全。
+max_size 是系统或者库所实施的限制，系统未变库未变所以大小恒定。
 
 
 
