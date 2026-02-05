@@ -43,7 +43,7 @@ int main()
         cout << "push_back(" << i << ")" << endl;
         print_vector(vector_11);
         cout << "size = " << vector_11.size() << endl;
-        cout << "capacity = " << vector_11.capacity() << endl<< endl;
+        cout << "capacity = " << vector_11.capacity() << endl << endl;
 
         if (pStart != &vector_11[0]) {
             pStart = &vector_11[0];
@@ -58,40 +58,40 @@ int main()
     }
     print_vector(vector_11);
     cout << "size = " << vector_11.size() << endl;
-    cout << "capacity = " << vector_11.capacity() << endl<< endl;
+    cout << "capacity = " << vector_11.capacity() << endl << endl;
 
     cout << "push_back 1 element: " << endl;
-    vector_11.push_back(0);
+    vector_11.push_back(1);
     print_vector(vector_11);
     cout << "size = " << vector_11.size() << endl;
-    cout << "capacity = " << vector_11.capacity() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl << endl;
 
     vector_11.reserve(100);
     cout << "reserve capacity 100" << endl;
     print_vector(vector_11);
     cout << "size = " << vector_11.size() << endl;
-    cout << "capacity = " << vector_11.capacity() << endl<< endl;
+    cout << "capacity = " << vector_11.capacity() << endl << endl;
 
     cout << "Use up the capacity: " << endl;
     while (vector_11.size() != vector_11.capacity()) {
-        vector_11.push_back(1);
+        vector_11.push_back(2);
     }
     print_vector(vector_11);
     cout << "size = " << vector_11.size() << endl;
-    cout << "capacity = " << vector_11.capacity() << endl<< endl;
+    cout << "capacity = " << vector_11.capacity() << endl << endl;
 
     // 再添加1个元素
     cout << "push_back 1 element" << endl;
-    vector_11.push_back(2);
+    vector_11.push_back(3);
     print_vector(vector_11);
     cout << "size = " << vector_11.size() << endl;
-    cout << "capacity = " << vector_11.capacity() << endl<< endl;
+    cout << "capacity = " << vector_11.capacity() << endl << endl;
 
     cout << "resize(50):" << endl;
     vector_11.resize(50);
     print_vector(vector_11);
     cout << "size = " << vector_11.size() << endl;
-    cout << "capacity = " << vector_11.capacity() << endl<< endl;
+    cout << "capacity = " << vector_11.capacity() << endl << endl;
 
     vector<int> vector_12;
     // 预先开辟空间
