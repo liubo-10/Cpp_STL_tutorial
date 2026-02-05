@@ -15,7 +15,7 @@
 
 
 
-## 💞️ vector 数据量和容量基本函数
+## 💞️ vector 大小和容量基本函数
 
 ---
 
@@ -57,7 +57,7 @@ max_size();     //返回容器所能容纳的最大元素数目
 
 容器所能容纳的最大元素数目，这是系统或者库所实施的限制。但是容器不一定保证能达到该大小，有可能在还未达到该大小的时候，就已经无法继续分配任何的空间了。
 
-## 💞️ resize() 对数据量和容量的操作
+## 💞️ resize() 对大小和容量的影响
 
 ---
 
@@ -144,7 +144,7 @@ max_size = 2305843009213693951
 --------------------end----------------------
 ```
 
-测试分析
+测试结果分析
 对于刚初始化的 vector_11 size 和 capacity 是一样的
 vector_12 resize(5)之后，只减少了元素数量的大小，容量保持不变。vector_12 中原来的元素被丢弃。
 vector_13 resize(20)之后，元素数量的大小超过了原来容量，容量增大到和 size 一致。vector_13 中原来的元素保持不变，都出来的位置用0补全。
@@ -153,7 +153,7 @@ max_size 是系统或者库所实施的限制，系统未变库未变所以大�
 
 
 
-## 💞️ reserve() 对数据量和容量的操作
+## 💞️ reserve() 对大小和容量的影响
 
 ---
 
@@ -168,53 +168,67 @@ reserve(int len); //容器预留len个元素长度，预留位置不初始化，
 使用示例:
 
 ```cpp
-void reserve_test(){
-    cout << "reserve_test: " << endl;
-    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    cout << "初始数据: ";
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl << endl;
+printf("--------------------begain-------------------\n");
 
-    // reserve 是保留的意思，reserve的值小于size也不会使元素消失，此时的capacity==size
-    vector<int> v_test1 = v_test;
-    v_test1.reserve(5); // capacity == size == 10
-    cout << "reserve 5: ";
-    print_vector(v_test1);
-    cout << "size = " << v_test1.size() << endl;
-    cout << "capacity = " << v_test1.capacity() << endl << endl;
+vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    vector<int> v_test2 = v_test;
-    v_test2.reserve(30); // 使得capacity=30，里面的元素不会改变
-    cout << "reserve 30: ";
-    print_vector(v_test2);
-    cout << "size = " << v_test2.size() << endl;
-    cout << "capacity = " << v_test2.capacity() << endl << endl;
+cout << "origin: " << endl;
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl;
+cout << "max_size = " << vector_11.max_size() << endl << endl;
 
-}
+vector<int> vector_12 = vector_11;
+vector_12.reserve(5); // capacity == size == 10
+cout << "reserve 5: " << endl;
+print_vector(vector_12);
+cout << "size = " << vector_12.size() << endl;
+cout << "capacity = " << vector_12.capacity() << endl;
+cout << "max_size = " << vector_12.max_size() << endl << endl;
+
+vector<int> vector_13 = vector_11;
+vector_13.reserve(30); // 使得capacity=30，里面的元素不会改变
+cout << "reserve 30: " << endl;
+print_vector(vector_13);
+cout << "size = " << vector_13.size() << endl;
+cout << "capacity = " << vector_13.capacity() << endl;
+cout << "max_size = " << vector_12.max_size() << endl << endl;
+
+printf("--------------------end----------------------\n");
 ```
 
 测试结果:
 
 ```log
-reserve_test: 
-初始数据: 0 1 2 3 4 5 6 7 8 9 
+--------------------begain-------------------
+origin: 
+0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 10
+max_size = 2305843009213693951
 
-reserve 5: 0 1 2 3 4 5 6 7 8 9 
+reserve 5: 
+0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 10
+max_size = 2305843009213693951
 
-reserve 30: 0 1 2 3 4 5 6 7 8 9 
+reserve 30: 
+0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 30
+max_size = 2305843009213693951
+
+--------------------end----------------------
 ```
 
-reserve 是保留的意思，reserve的值小于size也不会使元素消失，此时的capacity\==size
+测试结果分析：
+vector_12 的测试可知 ，reserve 的值小于size也不会使元素消失，此时的capacity\==size
+vector_13 的测试表明，reserve大于 size 也不会是元素增加
 
+## 💞️ clear() 对大小和容量的影响
 
-# 三、clear对vector数据量和容量的操作
+---
 
 函数原型：
 
