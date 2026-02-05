@@ -65,19 +65,19 @@ int main()
 //result:
 /* 
 --------------------begain-------------------
-origin: 
+vector_11:
 0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 10
 max_size = 2305843009213693951
 
-reserve 5: 
+vector_12:
 0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 10
 max_size = 2305843009213693951
 
-reserve 30: 
+vector_13:
 0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 30

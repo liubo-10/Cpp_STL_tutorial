@@ -172,27 +172,27 @@ printf("--------------------begain-------------------\n");
 
 vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-cout << "origin: " << endl;
+cout << "vector_11:" << endl;
 print_vector(vector_11);
 cout << "size = " << vector_11.size() << endl;
 cout << "capacity = " << vector_11.capacity() << endl;
 cout << "max_size = " << vector_11.max_size() << endl << endl;
 
-vector<int> vector_12 = vector_11;
+vector<int> vector_12(vector_11);
 vector_12.reserve(5); // capacity == size == 10
-cout << "reserve 5: " << endl;
+cout << "vector_12:" << endl;
 print_vector(vector_12);
 cout << "size = " << vector_12.size() << endl;
 cout << "capacity = " << vector_12.capacity() << endl;
 cout << "max_size = " << vector_12.max_size() << endl << endl;
 
-vector<int> vector_13 = vector_11;
+vector<int> vector_13(vector_11);
 vector_13.reserve(30); // 使得capacity=30，里面的元素不会改变
-cout << "reserve 30: " << endl;
+cout << "vector_13:" << endl;
 print_vector(vector_13);
 cout << "size = " << vector_13.size() << endl;
 cout << "capacity = " << vector_13.capacity() << endl;
-cout << "max_size = " << vector_12.max_size() << endl << endl;
+cout << "max_size = " << vector_13.max_size() << endl << endl;
 
 printf("--------------------end----------------------\n");
 ```
@@ -201,19 +201,19 @@ printf("--------------------end----------------------\n");
 
 ```log
 --------------------begain-------------------
-origin: 
+vector_11:
 0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 10
 max_size = 2305843009213693951
 
-reserve 5: 
+vector_12:
 0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 10
 max_size = 2305843009213693951
 
-reserve 30: 
+vector_13:
 0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 30
