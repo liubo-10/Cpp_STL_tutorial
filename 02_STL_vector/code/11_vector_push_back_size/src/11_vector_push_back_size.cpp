@@ -32,9 +32,9 @@ int main()
 
     vector<int> vector_11;
     cout << "vector_11:" << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl;
+    cout << "max_size = " << vector_11.max_size() << endl << endl;
 
     cout << "push_back 10 elements:" << endl;
     int *pStart = &vector_11[0];
@@ -88,7 +88,7 @@ int main()
     // 再添加1个元素
     cout << "push_back 1 element" << endl;
     vector_11.push_back(2);
-    print_vector(v_test);
+    print_vector(vector_11);
     cout << "size = " << vector_11.size() << endl;
     cout << "capacity = " << vector_11.capacity() << endl;
     cout << "max_size = " << vector_11.max_size() << endl << endl;
