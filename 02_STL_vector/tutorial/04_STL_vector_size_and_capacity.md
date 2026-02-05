@@ -80,31 +80,31 @@ printf("--------------------begain-------------------\n");
 
 vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-cout << "origin data: " << endl;
+cout << "vector_11:" << endl;
 print_vector(vector_11);
 cout << "size = " << vector_11.size() << endl;
 cout << "capacity = " << vector_11.capacity() << endl;
 cout << "max_size = " << vector_11.max_size() << endl << endl;
 
-vector<int> vector_12 = vector_11;
+vector<int> vector_12(vector_11);
 vector_12.resize(5);
-cout << "resize(5): " << endl;
+cout << "vector_12:" << endl;
 print_vector(vector_12);
 cout << "size = " << vector_12.size() << endl;
 cout << "capacity = " << vector_12.capacity() << endl;
 cout << "max_size = " << vector_12.max_size() << endl << endl;
 
-vector<int> vector_13 = vector_11;
+vector<int> vector_13(vector_11);
 vector_13.resize(20);
-cout << "resize(20): " << endl;
+cout << "vector_13:" << endl;
 print_vector(vector_13);
 cout << "size = " << vector_13.size() << endl;
 cout << "capacity = " << vector_13.capacity() << endl;
 cout << "max_size = " << vector_13.max_size() << endl << endl;
 
-vector<int> vector_14 = vector_11;
+vector<int> vector_14(vector_11);
 vector_14.resize(20, 9);
-cout << "resize(20,9): " << endl;
+cout << "vector_14:" << endl;
 print_vector(vector_14);
 cout << "size = " << vector_14.size() << endl;
 cout << "capacity = " << vector_14.capacity() << endl;
@@ -117,25 +117,25 @@ printf("--------------------end----------------------\n");
 
 ```log
 --------------------begain-------------------
-origin data: 
+vector_11:
 0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 10
 max_size = 2305843009213693951
 
-resize(5): 
+vector_12:
 0 1 2 3 4 
 size = 5
 capacity = 10
 max_size = 2305843009213693951
 
-resize(20): 
+vector_13:
 0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 0 0 0 0 
 size = 20
 capacity = 20
 max_size = 2305843009213693951
 
-resize(20,9): 
+vector_14:
 0 1 2 3 4 5 6 7 8 9 9 9 9 9 9 9 9 9 9 9 
 size = 20
 capacity = 20

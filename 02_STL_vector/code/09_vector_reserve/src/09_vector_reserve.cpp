@@ -52,7 +52,7 @@ int main()
     print_vector(vector_13);
     cout << "size = " << vector_13.size() << endl;
     cout << "capacity = " << vector_13.capacity() << endl;
-    cout << "max_size = " << vector_12.max_size() << endl << endl;
+    cout << "max_size = " << vector_13.max_size() << endl << endl;
 
     printf("--------------------end----------------------\n");
     return EXIT_SUCCESS;
