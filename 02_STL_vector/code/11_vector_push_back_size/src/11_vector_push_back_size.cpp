@@ -30,87 +30,87 @@ int main()
 {
     printf("--------------------begain-------------------\n");
 
-    vector<int> v_test;
-    cout << "未初始化的 v_test: " << endl;
+    vector<int> vector_11;
+    cout << "vector_11:" << endl;
     cout << "size = " << v_test.size() << endl;
     cout << "capacity = " << v_test.capacity() << endl;
     cout << "max_size = " << v_test.max_size() << endl << endl;
 
-    cout << "添加10个元素: " << endl;
-    int *pStart = &v_test[0];
+    cout << "push_back 10 elements:" << endl;
+    int *pStart = &vector_11[0];
     int count = 0;
     for (int i = 0; i < 10; ++i) {
-        v_test.push_back(i);
+        vector_11.push_back(i);
         cout << "push_back(" << i << ")" << endl;
-        print_vector(v_test);
-        cout << "size = " << v_test.size() << endl;
-        cout << "capacity = " << v_test.capacity() << endl;
+        print_vector(vector_11);
+        cout << "size = " << vector_11.size() << endl;
+        cout << "capacity = " << vector_11.capacity() << endl;
 
-        if (pStart != &v_test[0]) {
-            pStart = &v_test[0];
+        if (pStart != &vector_11[0]) {
+            pStart = &vector_11[0];
             count++;
         }
     }
     cout << "adress change count:" << count << endl << endl;
 
-    cout << "将容量用完: " << endl;
-    while (v_test.size() != v_test.capacity()) {
-        v_test.push_back(0);
+    cout << "Use up the capacity: " << endl;
+    while (vector_11.size() != vector_11.capacity()) {
+        vector_11.push_back(0);
     }
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    print_vector(vector_11);
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl;
+    cout << "max_size = " << vector_11.max_size() << endl << endl;
 
-    cout << "在添加1个元素: " << endl;
-    v_test.push_back(0);
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    cout << "push_back 1 element: " << endl;
+    vector_11.push_back(0);
+    print_vector(vector_11);
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl;
+    cout << "max_size = " << vector_11.max_size() << endl << endl;
 
-    v_test.reserve(100);
+    vector_11.reserve(100);
     cout << "reserve capacity 100" << endl;
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    print_vector(vector_11);
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl;
+    cout << "max_size = " << vector_11.max_size() << endl << endl;
 
-    cout << "再将容量用完: " << endl;
-    while (v_test.size() != v_test.capacity()) {
-        v_test.push_back(1);
+    cout << "Use up the capacity: " << endl;
+    while (vector_11.size() != vector_11.capacity()) {
+        vector_11.push_back(1);
     }
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    print_vector(vector_11);
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl;
+    cout << "max_size = " << vector_11.max_size() << endl << endl;
 
     // 再添加1个元素
-    cout << "再添加1个元素" << endl;
-    v_test.push_back(2);
+    cout << "push_back 1 element" << endl;
+    vector_11.push_back(2);
     print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl;
+    cout << "max_size = " << vector_11.max_size() << endl << endl;
 
     cout << "resize(50):" << endl;
-    v_test.resize(50);
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl;
-    cout << "max_size = " << v_test.max_size() << endl << endl;
+    vector_11.resize(50);
+    print_vector(vector_11);
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl;
+    cout << "max_size = " << vector_11.max_size() << endl << endl;
 
-    vector<int> v_test2;
+    vector<int> vector_12;
     // 预先开辟空间
-    v_test2.reserve(100000);
+    vector_12.reserve(100000);
 
-    cout << "添加100000个元素: " << endl;
-    pStart = &v_test2[0];
+    cout << "push_back 100000 elements:" << endl;
+    pStart = &vector_12[0];
     count = 0;
     for (int i = 0; i < 100000; ++i) {
-        v_test2.push_back(i);
-        if (pStart != &v_test2[0]) {
-            pStart = &v_test2[0];
+        vector_12.push_back(i);
+        if (pStart != &vector_12[0]) {
+            pStart = &vector_12[0];
             count++;
         }
     }

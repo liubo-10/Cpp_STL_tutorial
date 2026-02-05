@@ -241,36 +241,47 @@ clear(); //删除容器中所有元素
 使用示例:
 
 ```cpp
-void clear_test(){
-    cout << "clear_test: " << endl;
-    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    cout << "初始数据: ";
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl << endl;
+printf("--------------------begain-------------------\n");
 
-    // clear是清空，不是置零，清空所有元素，所以size为0，但是capacity不变，
-    v_test.clear();
-    cout << "clear: ";
-    print_vector(v_test);
-    cout << "empty = " << v_test.empty() << endl;
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl << endl;
-}
+vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+cout << "before clear: " << endl;
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "empty = " << vector_11.empty() << endl;
+cout << "capacity = " << vector_11.capacity() << endl;
+cout << "max_size = " << vector_11.max_size() << endl << endl;
+
+vector_11.clear();
+cout << "after clear: " << endl;
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "empty = " << vector_11.empty() << endl;
+cout << "capacity = " << vector_11.capacity() << endl;
+cout << "max_size = " << vector_11.max_size() << endl << endl;
+
+printf("--------------------end----------------------\n");
 ```
 
 测试结果:
 
 ```log
-clear_test: 
-初始数据: 0 1 2 3 4 5 6 7 8 9 
+--------------------begain-------------------
+before clear: 
+0 1 2 3 4 5 6 7 8 9 
 size = 10
+empty = 0
 capacity = 10
+max_size = 2305843009213693951
 
-clear: 
-empty = 1
+after clear: 
+
 size = 0
+empty = 1
 capacity = 10
+max_size = 2305843009213693951
+
+--------------------end----------------------
 ```
 
 clear 只清零大小，不改变容量
