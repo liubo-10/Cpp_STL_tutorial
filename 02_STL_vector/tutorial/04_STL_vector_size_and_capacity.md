@@ -222,7 +222,7 @@ max_size = 2305843009213693951
 --------------------end----------------------
 ```
 
-测试结果分析：
+结果分析：
 vector_12 的测试可知 ，reserve 的值小于size也不会使元素消失，此时的capacity\==size
 vector_13 的测试表明，reserve大于 size 也不会是元素增加
 
@@ -284,11 +284,12 @@ max_size = 2305843009213693951
 --------------------end----------------------
 ```
 
+结果分析：
 clear 只清零大小，不改变容量
+clear是清空，不是置零，清空所有元素，所以size为0，但是capacity不变，
 
-        // clear是清空，不是置零，清空所有元素，所以size为0，但是capacity不变，
-
-# 三、push_back对vector数据量和容量的操作
+## 💞️ push_back() 对大小和容量的影响 
+---
 
 函数原型：
 
@@ -301,132 +302,189 @@ push_back(ele); //尾部插入元素ele
 使用示例:
 
 ```cpp
-void push_back_test()
-{
-    cout << "push_back_test: " << endl;
-    vector<int> v_test;
-    cout << "未初始化vector: ";
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl
-         << endl;
+printf("--------------------begain-------------------\n");
 
-    cout << "添加10个元素: " << endl;
-    int *pStart = &v_test[0];
-    int count = 0;
-    for (int i = 0; i < 10; ++i)
-    {
-        v_test.push_back(i);
-        cout << "capacity: " << v_test.capacity() << "  size: " << v_test.size() << endl;
-        if (pStart != &v_test[0])
-        {
-            pStart = &v_test[0];
-            count++;
-        }
+vector<int> vector_11;
+cout << "vector_11:" << endl;
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+cout << "push_back 10 elements:" << endl;
+int *pStart = &vector_11[0];
+int count = 0;
+for (int i = 0; i < 10; ++i) {
+    vector_11.push_back(i);
+    cout << "push_back(" << i << ")" << endl;
+    print_vector(vector_11);
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+    if (pStart != &vector_11[0]) {
+        pStart = &vector_11[0];
+        count++;
     }
-    cout << "count:" << count << endl;
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    cout << endl;
-
-    // 添加1个元素
-    cout << "size = capacity\n";
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
-
-    cout << "insert one element\n";
-    v_test.push_back(0);
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl
-         << endl;
-
-    v_test.reserve(100);
-    cout << "reserve capacity 100\n";
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
-
-    // 将容量用完
-    while (v_test.size() != v_test.capacity())
-    {
-        v_test.push_back(0);
-    }
-    cout << endl;
-
-    // 添加1个元素
-    cout << "size = capacity\n";
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl;
-
-    cout << "insert one element\n";
-    v_test.push_back(0);
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl
-         << endl;
-
-    v_test.resize(50);
-    cout << "resize size 50\n";
-    cout << "capacity:" << v_test.capacity() << "  size:" << v_test.size() << endl
-         << endl;
-
-    vector<int> v1;
-    // 预先开辟空间
-    v1.reserve(100000);
-
-    pStart = &v1[0];
-    count = 0;
-    for (int i = 0; i < 100000; i++)
-    {
-        v1.push_back(i);
-        if (pStart != &v1[0])
-        {
-            pStart = &v1[0];
-            count++;
-        }
-    }
-    cout << "count:" << count << endl;
 }
+cout << "adress change count:" << count << endl << endl;
+
+cout << "Use up the capacity: " << endl;
+while (vector_11.size() != vector_11.capacity()) {
+    vector_11.push_back(0);
+}
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+cout << "push_back 1 element: " << endl;
+vector_11.push_back(1);
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+vector_11.reserve(100);
+cout << "reserve capacity 100" << endl;
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+cout << "Use up the capacity: " << endl;
+while (vector_11.size() != vector_11.capacity()) {
+    vector_11.push_back(2);
+}
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+// 再添加1个元素
+cout << "push_back 1 element" << endl;
+vector_11.push_back(3);
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+cout << "resize(50):" << endl;
+vector_11.resize(50);
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+vector<int> vector_12;
+// 预先开辟空间
+vector_12.reserve(100000);
+
+cout << "push_back 100000 elements:" << endl;
+pStart = &vector_12[0];
+count = 0;
+for (int i = 0; i < 100000; ++i) {
+    vector_12.push_back(i);
+    if (pStart != &vector_12[0]) {
+        pStart = &vector_12[0];
+        count++;
+    }
+}
+cout << "adress change count:" << count << endl << endl;
+
+printf("--------------------end----------------------\n");
 ```
 
 测试结果:
 
 ```log
-push_back_test: 
-未初始化vector: 
+--------------------begain-------------------
+vector_11:
 size = 0
 capacity = 0
 
-添加10个元素: 
-capacity: 1  size: 1
-capacity: 2  size: 2
-capacity: 4  size: 3
-capacity: 4  size: 4
-capacity: 8  size: 5
-capacity: 8  size: 6
-capacity: 8  size: 7
-capacity: 8  size: 8
-capacity: 16  size: 9
-capacity: 16  size: 10
-count:5
+push_back 10 elements:
+push_back(0)
+0 
+size = 1
+capacity = 1
 
-size = capacity
-capacity:16  size:16
-insert one element
-capacity:32  size:17
+push_back(1)
+0 1 
+size = 2
+capacity = 2
+
+push_back(2)
+0 1 2 
+size = 3
+capacity = 4
+
+push_back(3)
+0 1 2 3 
+size = 4
+capacity = 4
+
+push_back(4)
+0 1 2 3 4 
+size = 5
+capacity = 8
+
+push_back(5)
+0 1 2 3 4 5 
+size = 6
+capacity = 8
+
+push_back(6)
+0 1 2 3 4 5 6 
+size = 7
+capacity = 8
+
+push_back(7)
+0 1 2 3 4 5 6 7 
+size = 8
+capacity = 8
+
+push_back(8)
+0 1 2 3 4 5 6 7 8 
+size = 9
+capacity = 16
+
+push_back(9)
+0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 16
+
+adress change count:5
+
+Use up the capacity: 
+0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 
+size = 16
+capacity = 16
+
+push_back 1 element: 
+0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 
+size = 17
+capacity = 32
 
 reserve capacity 100
-capacity:100  size:17
+0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 
+size = 17
+capacity = 100
 
-size = capacity
-capacity:100  size:100
-insert one element
-capacity:200  size:101
+Use up the capacity: 
+0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+size = 100
+capacity = 100
 
-resize size 50
-capacity:200  size:50
+push_back 1 element
+0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 
+size = 101
+capacity = 200
 
-count:0
+resize(50):
+0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+size = 50
+capacity = 200
+
+push_back 100000 elements:
+adress change count:0
+
+--------------------end----------------------
 ```
 
-当 capacity 不够用时扩容当前值的2倍
+结果分析：
+使用 push_back 在 vector 后面添加元素时，当 capacity 不够用时会扩容到当前值的2倍。当 capacity 够用时，不会改变。
 
 
 

@@ -116,3 +116,104 @@ int main()
 /*****************************************************************************
  * end of file
  ******************************************************************************/
+
+//result:
+/* 
+ --------------------begain-------------------
+ vector_11:
+ size = 0
+ capacity = 0
+ 
+ push_back 10 elements:
+ push_back(0)
+ 0 
+ size = 1
+ capacity = 1
+ 
+ push_back(1)
+ 0 1 
+ size = 2
+ capacity = 2
+ 
+ push_back(2)
+ 0 1 2 
+ size = 3
+ capacity = 4
+ 
+ push_back(3)
+ 0 1 2 3 
+ size = 4
+ capacity = 4
+ 
+ push_back(4)
+ 0 1 2 3 4 
+ size = 5
+ capacity = 8
+ 
+ push_back(5)
+ 0 1 2 3 4 5 
+ size = 6
+ capacity = 8
+ 
+ push_back(6)
+ 0 1 2 3 4 5 6 
+ size = 7
+ capacity = 8
+ 
+ push_back(7)
+ 0 1 2 3 4 5 6 7 
+ size = 8
+ capacity = 8
+ 
+ push_back(8)
+ 0 1 2 3 4 5 6 7 8 
+ size = 9
+ capacity = 16
+ 
+ push_back(9)
+ 0 1 2 3 4 5 6 7 8 9 
+ size = 10
+ capacity = 16
+ 
+ adress change count:5
+ 
+ Use up the capacity: 
+ 0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 
+ size = 16
+ capacity = 16
+ 
+ push_back 1 element: 
+ 0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 
+ size = 17
+ capacity = 32
+ 
+ reserve capacity 100
+ 0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 
+ size = 17
+ capacity = 100
+ 
+ Use up the capacity: 
+ 0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+ size = 100
+ capacity = 100
+ 
+ push_back 1 element
+ 0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 
+ size = 101
+ capacity = 200
+ 
+ resize(50):
+ 0 1 2 3 4 5 6 7 8 9 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+ size = 50
+ capacity = 200
+ 
+ push_back 100000 elements:
+ adress change count:0
+ 
+ --------------------end----------------------
+*/
+
+
+
+
+
