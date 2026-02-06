@@ -45,7 +45,8 @@ int main()
 
     // vector<int>(vector_12) 是创建一个匿名对象，并拷贝vector_11的数据
     // 以此匿名对象与vector_11交换，交换完后系统自动删除匿名对象
-    vector<int>(vector_12).swap(vector_11);
+    vector<int> vector_12;
+    vector_12.swap(vector_11);
 
     cout << "swap vector_12: ";
     print_vector(vector_11);
@@ -59,3 +60,23 @@ int main()
 /*****************************************************************************
  * end of file
  ******************************************************************************/
+
+ //result:
+/* 
+--------------------begain-------------------
+before clear: 
+0 1 2 3 4 5 6 7 8 9 
+size = 10
+empty = 0
+capacity = 10
+max_size = 2305843009213693951
+
+after clear: 
+
+size = 0
+empty = 1
+capacity = 10
+max_size = 2305843009213693951
+
+--------------------end----------------------
+*/
