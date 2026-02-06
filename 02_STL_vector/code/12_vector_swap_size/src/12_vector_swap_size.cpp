@@ -43,12 +43,18 @@ int main()
     cout << "size = " << vector_11.size() << endl;
     cout << "capacity = " << vector_11.capacity() << endl << endl;
 
-    // vector<int>(vector_12) 是创建一个匿名对象，并拷贝vector_11的数据
-    // 以此匿名对象与vector_11交换，交换完后系统自动删除匿名对象
     vector<int> vector_12;
     vector_12.swap(vector_11);
 
     cout << "swap vector_12: ";
+    print_vector(vector_11);
+    cout << "size = " << vector_11.size() << endl;
+    cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+    vector<int> vector_13{9,8,7,6};
+    vector_11.swap(vector_13);
+
+    cout << "swap vector_11: ";
     print_vector(vector_11);
     cout << "size = " << vector_11.size() << endl;
     cout << "capacity = " << vector_11.capacity() << endl << endl;
