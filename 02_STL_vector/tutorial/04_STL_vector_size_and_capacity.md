@@ -58,7 +58,6 @@ max_size();     //返回容器所能容纳的最大元素数目
 容器所能容纳的最大元素数目，这是系统或者库所实施的限制。但是容器不一定保证能达到该大小，有可能在还未达到该大小的时候，就已经无法继续分配任何的空间了。
 
 ## 💞️ resize() 对大小和容量的影响
-
 ---
 
 函数原型：
@@ -72,8 +71,7 @@ resize(int num, elem);
 ```
 
 
-
-使用示例:
+测试示例:
 
 ```cpp
 printf("--------------------begain-------------------\n");
@@ -154,7 +152,6 @@ max_size 是系统或者库所实施的限制，系统未变库未变所以大�
 
 
 ## 💞️ reserve() 对大小和容量的影响
-
 ---
 
 函数原型：
@@ -163,9 +160,7 @@ max_size 是系统或者库所实施的限制，系统未变库未变所以大�
 reserve(int len); //容器预留len个元素长度，预留位置不初始化，元素不可访问
 ```
 
-
-
-使用示例:
+测试示例:
 
 ```cpp
 printf("--------------------begain-------------------\n");
@@ -291,15 +286,7 @@ clear是清空，不是置零，清空所有元素，所以size为0，但是capa
 ## 💞️ push_back() 对大小和容量的影响 
 ---
 
-函数原型：
-
-```cpp
-push_back(ele); //尾部插入元素ele
-```
-
-
-
-使用示例:
+测试示例:
 
 ```cpp
 printf("--------------------begain-------------------\n");
@@ -491,51 +478,48 @@ adress change count:0
 ## 💞️ swap() 对大小和容量的影响 
 ---
 
-函数原型：
 
 ```cpp
-swap(v); //容器v和当前容器互换
-```
+printf("--------------------begain-------------------\n");
 
+vector<int> vector_11{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
+cout << "vector_11: " << endl;
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
 
-使用示例:
+vector_11.reserve(30); // 使得capacity=30，里面的元素不会改变
+cout << "reserve 30: ";
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
 
-```cpp
-void swap_test()
-{
-    cout << "swap_test: " << endl;
-    vector<int> v_test = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    cout << "初始数据: ";
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl
-         << endl;
+vector<int> vector_12;
+vector_12.swap(vector_11);
 
-    v_test.reserve(30); // 使得capacity=30，里面的元素不会改变
-    cout << "reserve 30: ";
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl
-         << endl;
+cout << "swap vector_12: ";
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
 
-    // vector<int>(v_test) 是创建一个匿名对象，并拷贝v_test的数据
-    // 以此匿名对象与v_test交换，交换完后系统自动删除匿名对象
-    vector<int>(v_test).swap(v_test);
+vector<int> vector_13{9,8,7,6};
+vector_11.swap(vector_13);
 
-    cout << "swap v_test: ";
-    print_vector(v_test);
-    cout << "size = " << v_test.size() << endl;
-    cout << "capacity = " << v_test.capacity() << endl
-         << endl;
-}
+cout << "swap vector_11: ";
+print_vector(vector_11);
+cout << "size = " << vector_11.size() << endl;
+cout << "capacity = " << vector_11.capacity() << endl << endl;
+
+printf("--------------------end----------------------\n");
 ```
 
 测试结果:
 
 ```log
-swap_test: 
-初始数据: 0 1 2 3 4 5 6 7 8 9 
+--------------------begain-------------------
+vector_11: 
+0 1 2 3 4 5 6 7 8 9 
 size = 10
 capacity = 10
 
@@ -543,12 +527,19 @@ reserve 30: 0 1 2 3 4 5 6 7 8 9
 size = 10
 capacity = 30
 
-swap v_test: 0 1 2 3 4 5 6 7 8 9 
-size = 10
-capacity = 10
+swap vector_12: 
+size = 0
+capacity = 0
+
+swap vector_11: 9 8 7 6 
+size = 4
+capacity = 4
+
+--------------------end----------------------
 ```
 
-当 swap 能够收缩vestor容量
+结果分析：
+swap 是完全交换，不仅仅交换了元素，大小和容量也都交换了。
 
 
 

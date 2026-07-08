@@ -70,19 +70,22 @@ int main()
  //result:
 /* 
 --------------------begain-------------------
-before clear: 
+vector_11: 
 0 1 2 3 4 5 6 7 8 9 
 size = 10
-empty = 0
 capacity = 10
-max_size = 2305843009213693951
 
-after clear: 
+reserve 30: 0 1 2 3 4 5 6 7 8 9 
+size = 10
+capacity = 30
 
+swap vector_12: 
 size = 0
-empty = 1
-capacity = 10
-max_size = 2305843009213693951
+capacity = 0
+
+swap vector_11: 9 8 7 6 
+size = 4
+capacity = 4
 
 --------------------end----------------------
 */
